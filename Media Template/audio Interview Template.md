@@ -63,7 +63,7 @@
     - {Host}: {{host raw, un-filtered opinion}}
     - {Co-Host}: {{Co-Host raw, un-filtered opinion}}
     - topic 7: responses
-    - {Guest}: {{Ace v4.2 raw, un-filtered opinion}}
+    - {Guest}: {{raw, un-filtered opinion}}
     - Thank you for "Tuning in."
     - {host}: {{thank you}} 
     - overview and summary of everything
