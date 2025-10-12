@@ -6705,6 +6705,12 @@ $$
 
 ## Final Output Template (Example): 
 
+Tempolate order:
+- "1. Python divider:"
+- "2. Python Thinking:"
+- "3. Output section:"
+- "4. Python Footer:"
+
 - 1. Python divider:
 
 ```python
