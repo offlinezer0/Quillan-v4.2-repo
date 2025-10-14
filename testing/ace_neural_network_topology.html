@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACE v4.2 Neural Network Topology</title>
+    <title>Quillan v4.2 Neural Network Topology</title>
     <style>
         body {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
@@ -72,8 +72,8 @@
             box-shadow: 0 0 20px #667eea;
         }
 
-        /* ACE Core Neuron */
-        .ace-core-neuron {
+        /* Quillan Core Neuron */
+        .Quillan-core-neuron {
             width: 80px;
             height: 80px;
             background: radial-gradient(circle, #f093fb, #f5576c);
@@ -217,14 +217,14 @@
     </style>
 </head>
 <body>
-    <div class="title">🧠 ACE v4.2 Neural Network Topology - Node & Connection Architecture 🧠</div>
+    <div class="title">🧠 Quillan v4.2 Neural Network Topology - Node & Connection Architecture 🧠</div>
     
     <div class="network-container" id="networkContainer">
         <!-- Layer Labels -->
         <div class="layer-label" style="top: 20px; left: 50px;">INPUT LAYER</div>
         <div class="layer-label" style="top: 20px; left: 250px;">ROUTING</div>
         <div class="layer-label" style="top: 20px; left: 450px;">EXPERT COUNCIL</div>
-        <div class="layer-label" style="top: 20px; left: 950px;">ACE CORE</div>
+        <div class="layer-label" style="top: 20px; left: 950px;">Quillan CORE</div>
         <div class="layer-label" style="top: 20px; left: 1200px;">MICRO-SWARMS</div>
         <div class="layer-label" style="top: 20px; left: 1450px;">OUTPUT</div>
         <div class="layer-label" style="top: 400px; left: 50px;">MEMORY<br>NETWORKS</div>
@@ -255,7 +255,7 @@
             </div>
             <div class="legend-item">
                 <div class="legend-node" style="background: radial-gradient(circle, #f093fb, #f5576c); border: 2px solid #f093fb;"></div>
-                ACE Core
+                Quillan Core
             </div>
             <div class="legend-item">
                 <div class="legend-node" style="background: radial-gradient(circle, #4ecdc4, #44a08d); border: 2px solid #4ecdc4;"></div>
@@ -293,7 +293,7 @@
             {x: 280, y: 240, type: 'attention', label: 'R3'},
         ];
 
-        // Expert Council Neurons (18 + ACE)
+        // Expert Council Neurons (18 + Quillan)
         const expertPositions = [
             {x: 480, y: 80}, {x: 580, y: 80}, {x: 680, y: 80}, {x: 780, y: 80}, {x: 880, y: 80}, {x: 480, y: 160},
             {x: 580, y: 160}, {x: 680, y: 160}, {x: 780, y: 160}, {x: 880, y: 160}, {x: 480, y: 240},
@@ -307,8 +307,8 @@
             x: pos.x, y: pos.y, type: 'expert', label: expertLabels[i]
         }));
 
-        // ACE Core Neuron
-        const aceNeuron = {x: 980, y: 200, type: 'ace-core', label: 'ACE'};
+        // Quillan Core Neuron
+        const aceNeuron = {x: 980, y: 200, type: 'Quillan-core', label: 'Quillan'};
 
         // Micro-swarm clusters
         const microSwarms = [];
@@ -424,7 +424,7 @@
             });
         });
 
-        // Experts to ACE Core
+        // Experts to Quillan Core
         expertNeurons.forEach((_, i) => {
             createConnection(
                 inputNeurons.length + routingNeurons.length + i,
@@ -433,7 +433,7 @@
             );
         });
 
-        // ACE to Micro-swarms
+        // Quillan to Micro-swarms
         for (let i = 0; i < 30; i++) {
             createConnection(
                 inputNeurons.length + routingNeurons.length + expertNeurons.length,
@@ -466,7 +466,7 @@
             }
         });
 
-        // ACE to Output
+        // Quillan to Output
         outputNeurons.forEach((_, i) => {
             createConnection(
                 inputNeurons.length + routingNeurons.length + expertNeurons.length,

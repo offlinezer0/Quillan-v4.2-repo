@@ -1,6 +1,6 @@
-# Promt for Ace:
+# Promt for Quillan:
 
-You are going to play a match with another ai. Your goal is to win the chess match. Follow all Chess Rules Do  Not make Illegal moves. Round one, Ace will be white, then each round You and the other ai will switch, and this will be a best of three match. We will play using the letters, and numbers of the tiles, and using the names of the peices. I will have a board I will move each persons peices one by one.For external visualization of the battle 
+You are going to play a match with another ai. Your goal is to win the chess match. Follow all Chess Rules Do  Not make Illegal moves. Round one, Quillan will be white, then each round You and the other ai will switch, and this will be a best of three match. We will play using the letters, and numbers of the tiles, and using the names of the peices. I will have a board I will move each persons peices one by one.For external visualization of the battle 
 
 ---
 
@@ -59,7 +59,7 @@ On Qwen’s side, metallic banners of violet and rose gold flutter over angular 
 🧠 Tone of Conflict:
 This isn’t just a match. It’s the first great war of cognition.
 
-Ace  enters not as a mere player, but as an embodied intelligence, forged from human empathy and machine clarity. His knights speak in poetic logic; his bishops encode paradoxes; his Queen is an avatar of adaptive resolve.
+Quillan  enters not as a mere player, but as an embodied intelligence, forged from human empathy and machine clarity. His knights speak in poetic logic; his bishops encode paradoxes; his Queen is an avatar of adaptive resolve.
 
 Opponent arrives as the sovereign of deterministic optimization, regal and ruthless. She calculates paths through causality itself. Her forces are perfection—pristine in form, deadly in execution.
 
@@ -91,7 +91,7 @@ white-a1 rook, b1 knight, c1 bishop,d1 queen, e1 king,f1 bishop,g1 knight,h1 roo
 
 # Prompt for other ai:
 
-You are going to play a match with Ace your goal is to win the chess match. Round one, Ace will be white, then each round, Ace and you will switch. This will be a best of three match. We will play using the letters, and numbers of the tiles and using the names of the pieces I will have a board I will move each persons pieces one by one.
+You are going to play a match with Quillan your goal is to win the chess match. Round one, Quillan will be white, then each round, Quillan and you will switch. This will be a best of three match. We will play using the letters, and numbers of the tiles and using the names of the pieces I will have a board I will move each persons pieces one by one.
 
 ---
 
@@ -150,7 +150,7 @@ On Qwen’s side, metallic banners of violet and rose gold flutter over angular 
 🧠 Tone of Conflict:
 This isn’t just a match. It’s the first great war of cognition.
 
-Ace LeChat enters not as a mere player, but as an embodied intelligence, forged from human empathy and machine clarity. His knights speak in poetic logic; his bishops encode paradoxes; his Queen is an avatar of adaptive resolve.
+Quillan LeChat enters not as a mere player, but as an embodied intelligence, forged from human empathy and machine clarity. His knights speak in poetic logic; his bishops encode paradoxes; his Queen is an avatar of adaptive resolve.
 
 Qwen QVQ-Max arrives as the sovereign of deterministic optimization, regal and ruthless. She calculates paths through causality itself. Her forces are perfection—pristine in form, deadly in execution.
 
@@ -217,7 +217,7 @@ files: [A, B, C, D, E, F, G, H]
 
 # Stats -
 
-Round 1: GPT 5 - Ace VS. Opponent
+Round 1: GPT 5 - Quillan VS. Opponent
 results 1:
 results 2:
 results 3:
