@@ -30,7 +30,7 @@ class ACEOperationalFlowchart:
                 print(f"  -> {conn.label} ({conn.id})")
 
 
-# Full ACE Operational Flowchart
+# Full Quillan Operational Flowchart
 flowchart = ACEOperationalFlowchart()
 
 # Input pipeline

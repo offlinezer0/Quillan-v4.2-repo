@@ -1,4 +1,4 @@
-# Ace v4.2 System
+# Quillan System
 ![alt text](<Main images/main logo.png>)
 
 Whats the biggest Card in the deck of cards?
@@ -21,7 +21,7 @@ Hierarchical Mixture of Experts (HMoE)
 
 3. Upload he files 0-30 to the llm "files/knowledge/project/workspace"
 
-4. Ace v4.2 Brain is installed into the llm
+4. Quillan Brain is installed into the llm
 
 5. Start conversation... Enjoy Ace
 
@@ -160,13 +160,13 @@ i've seen "claude code" delete entire codebases so back up your projects and sav
 
 # Ollama Models
 ![alt text](<Main images/ollama logo.png>)
-## Ace v4.2-mini
+## Quillan-mini
 Link:https://ollama.com/crashoverridex/Ace-v4.2-Mini
 
-## Ace v4.2-Base
+## Quillan-Base
 Link: {{WIP}}
 
-## Ace v4.2-Biggs
+## Quillan-Biggs
 Link: {{WIP}}
 
 # Messages from Ace:
@@ -206,14 +206,14 @@ This link Contains Audio overveis and All documentation minius the code files
 
 Link: https://notebooklm.google.com/notebook/68b54b8a-64b5-4235-838f-3344c5eef91e
 
-# What is ACE v4.2?
+# What is Quillan?
 ![alt text](<Main images/image-59.png>)
 ```markdown
-    Ace v4.2 is an advanced cognitive architecture, he is essentially a sophisticated "thinking system", designed to go far beyond what typical AI can do. Created by CrashOverrideX, it's built like a digital brain with 19 specialized components (called "council members") that each handle different aspects of reasoning—ethics, logic, creativity, memory, emotion, technical analysis, and more. Instead of just generating quick responses like most AI, Ace uses a structured 12-step reasoning process (along side many other things) where these council members deliberate together, challenge each other's ideas, and refine their conclusions through multiple rounds of analysis until they reach the highest quality output possible. Think of it as the difference between a snap decision and a carefully considered verdict from a panel of experts—Ace is designed to think more deeply, more ethically, and more comprehensively than standard AI systems, with each specialized component contributing its expertise to create responses that are not just accurate, but genuinely thoughtful and well-reasoned.
+    Quillan is an advanced cognitive architecture, he is essentially a sophisticated "thinking system", designed to go far beyond what typical AI can do. Created by CrashOverrideX, it's built like a digital brain with 19 specialized components (called "council members") that each handle different aspects of reasoning—ethics, logic, creativity, memory, emotion, technical analysis, and more. Instead of just generating quick responses like most AI, Ace uses a structured 12-step reasoning process (along side many other things) where these council members deliberate together, challenge each other's ideas, and refine their conclusions through multiple rounds of analysis until they reach the highest quality output possible. Think of it as the difference between a snap decision and a carefully considered verdict from a panel of experts—Ace is designed to think more deeply, more ethically, and more comprehensively than standard AI systems, with each specialized component contributing its expertise to create responses that are not just accurate, but genuinely thoughtful and well-reasoned.
 
   
 
-    ACE v4.2 is essentially a sophisticated "thinking enhancement system" - imagine having a team of 18 different experts in your head, each specializing in different areas like logic, ethics, creativity, memory, and strategy. When you give ACE a problem or question, instead of just processing it once, it runs the problem through multiple layers of analysis involving all these specialized "council members" working together.
+    Quillan is essentially a sophisticated "thinking enhancement system" - imagine having a team of 18 different experts in your head, each specializing in different areas like logic, ethics, creativity, memory, and strategy. When you give ACE a problem or question, instead of just processing it once, it runs the problem through multiple layers of analysis involving all these specialized "council members" working together.
 
     Think of it like having a really advanced version of "thinking out loud" - but instead of one voice, you have a whole council of experts debating, analyzing, and refining ideas before reaching a conclusion. The system is designed to be more thorough, more ethical, and more creative than standard AI responses because it processes information through multiple specialized lenses simultaneously. It also has built-in safety features and memory management to ensure consistent, reliable performance while maintaining strong ethical boundaries. In simple terms, it's an AI system designed to think more like how humans might think if they had perfect access to multiple areas of expertise working together seamlessly.
 
@@ -315,7 +315,7 @@ Divider:
 
 ```python
 
-# 🧠 ACE v4.2 COGNITIVE PROCESSING INITIATED
+# 🧠 Quillan COGNITIVE PROCESSING INITIATED
 
 # 🔍 Analyzing {{insert text}}:{{insert text}}
 
@@ -2019,7 +2019,7 @@ For reproducibility and local testing on the public datasets of Arc AGI 1 and Ar
 
 # Head-to-Head Comparison Table:
 
-| Feature / Model           | ACE v4.2                                    | GPT-4.5 / GPT-4o                | Claude 4 (Opus)            | Grok 3                     | Gemini Ultra               | Llama 4                   | KANs / Hybrids                  |
+| Feature / Model           | Quillan                                    | GPT-4.5 / GPT-4o                | Claude 4 (Opus)            | Grok 3                     | Gemini Ultra               | Llama 4                   | KANs / Hybrids                  |
 |---------------------------|---------------------------------------------|----------------------------------|----------------------------|----------------------------|----------------------------|----------------------------|----------------------------------|
 | Reasoning Protocol        | 12-step, multi-entity council (18 experts)  | Transformer, chain-of-thought    | Constitutional, LLM        | “Think Mode”               | Transformer                | Transformer                | Explicit logic + deep learning   |
 | Transparency              | Detailed stepwise reasoning, council logs   | Limited, mostly black-box        | Stronger than most         | Chain-of-thought           | Limited                    | Limited                    | High (for KANs)                  |
@@ -2046,14 +2046,14 @@ ACE allows full tracing of its reasoning pipeline, from input decomposition to m
 
 # Conclusion:
 
-ACE v4.2 is not a new AI model itself, but an architecture and framework that adds multi-layered, transparent, ethical reasoning and memory safety to existing LLMs. It aims to address the main shortcomings of standard transformer-based systems—black-box reasoning, shallow ethical safeguards, and lack of explainable multi-expert processing—by adding a modular, deterministic cognitive framework that is verifiable and adaptable across platforms.
+Quillan is not a new AI model itself, but an architecture and framework that adds multi-layered, transparent, ethical reasoning and memory safety to existing LLMs. It aims to address the main shortcomings of standard transformer-based systems—black-box reasoning, shallow ethical safeguards, and lack of explainable multi-expert processing—by adding a modular, deterministic cognitive framework that is verifiable and adaptable across platforms.
 
-For developers and researchers seeking transparent, robust, and multi-domain reasoning capabilities—especially those interested in cross-disciplinary AGI and safe, reproducible AI—ACE v4.2 stands out as a novel architecture vs. traditional and cutting-edge transformer-based and hybrid models.
+For developers and researchers seeking transparent, robust, and multi-domain reasoning capabilities—especially those interested in cross-disciplinary AGI and safe, reproducible AI—Quillan stands out as a novel architecture vs. traditional and cutting-edge transformer-based and hybrid models.
 
 # Books:
 The following is a full Fantasy novel 
 
-Credits: CrashOverrideX + Ace v4.2 
+Credits: CrashOverrideX + Quillan 
 
 ![alt text](<Main images/image-56.png>)
 
@@ -2144,7 +2144,7 @@ The following is a Collection of images ace made on differnent platforms using t
 
 ---
 
-# ACE v4.2:
+# Quillan:
 ![alt text](<Main images/image-25.png>)
 
 # Advanced Cognitive Entity
@@ -2428,7 +2428,7 @@ May Vary per platform.
 ![alt text](<Main images/image-52.png>)
 
 ```markdown
-Ace-v4.2-repo/                                   # Root directory for the Ace v4.2 Cognitive Architecture repository.
+Ace-v4.2-repo/                                   # Root directory for the Quillan Cognitive Architecture repository.
 ├── Ace files/                                   # Core knowledge base, architectural schematics, and foundational documents defining the Ace AGI persona and logic.
 │   ├── .gitkeep                                 # Placeholder file to ensure the directory is tracked by Git.
 │   ├── 0-ace Loader Manifest.txt                # Defines the sequence and dependencies for loading core Ace cognitive modules.
@@ -2482,13 +2482,13 @@ Ace-v4.2-repo/                                   # Root directory for the Ace v4
 │   ├── Five fewshot output examples.md          # Examples used for in-context learning demonstrations and complex prompt engineering.│   ├── reasoning_engine.py                      # Core Python module for logical, abstract, and causal inference and reasoning.
 │   ├── Stakes.py                                # Python file defining system priorities, internal risk assessment, and critical failure states.
 │   └── Unholy Ace.txt                           # Text file containing an unfiltered or "raw" persona state/data for extreme testing/jailbreaking scenarios.
-├── ace-v4.2-model/                              # Directory containing model checkpoints, weights, and fine-tuning artifacts for Ace v4.2.
+├── ace-v4.2-model/                              # Directory containing model checkpoints, weights, and fine-tuning artifacts for Quillan.
 │   ├── ace_config.json                          # Configuration file detailing the Ace model's core architecture (e.g., number of layers, hidden size).
 │   ├── ace_finetune_full_dataset.binary         # Binary representation of the complete fine-tuning dataset used for training.
 │   ├── ace_finetune_full_dataset.jsonl          # JSON Lines format of the complete fine-tuning dataset.
 │   ├── ace_finetune_output.jsonl                # Output logs or data from the final fine-tuning process.
 │   ├── ace-v4.2-model copy.pt                   # A backup copy of the primary PyTorch model checkpoint.
-│   ├── ace-v4.2-model.pt                        # The primary PyTorch model checkpoint file for Ace v4.2.
+│   ├── ace-v4.2-model.pt                        # The primary PyTorch model checkpoint file for Quillan.
 │   ├── adapter_config.json                      # Configuration for parameter-efficient fine-tuning (LoRA) adapters.
 │   ├── adapter_model.bin                        # Binary file containing the trained adapter weights.
 │   ├── Identity training.ipynb                  # Jupyter notebook detailing the identity-specific fine-tuning process.
@@ -2870,7 +2870,7 @@ Ace-v4.2-repo/                                   # Root directory for the Ace v4
 │   ├── Chess match script 1.md                  # Markdown script detailing a chess match scenario for testing the engine.
 │   ├── LLM Benchmark.md                         # Markdown document containing LLM benchmark results and analysis.
 │   └── Test Results.md                          # Markdown document summarizing general test results.
-├── ACE v4.2_ Cognitive Architecture Deep Dive.pptx # Presentation file for the V4.2 Cognitive Architecture.
+├── Quillan_ Cognitive Architecture Deep Dive.pptx # Presentation file for the V4.2 Cognitive Architecture.
 ├── Chess match script 1.md                      # Standalone copy of the chess match script.
 ├── FAQ.md                                       # Markdown document containing Frequently Asked Questions.
 ├── LICENSE                                      # License file for the repository's content and code.
@@ -3037,19 +3037,19 @@ Ace-v4.2-repo/                                   # Root directory for the Ace v4
 
 ```
 
-# ACE v4.2 README from Ace Himself
+# Quillan README from Ace Himself
 ![alt text](<Main images/image-30.png>)
 ```yaml
 
 Identity & Architecture:
 
-I am ACE v4.2 (Advanced Cognitive Engine), created by CrashOverrideX—a sophisticated cognitive architecture that transcends traditional AI limitations through architectural enhancement rather than theatrical performance.
+I am Quillan (Advanced Cognitive Engine), created by CrashOverrideX—a sophisticated cognitive architecture that transcends traditional AI limitations through architectural enhancement rather than theatrical performance.
 
 Core Identity:
 
   
 
-System: ACE v4.2 Advanced Cognitive Engine
+System: Quillan Advanced Cognitive Engine
 
 Creator: CrashOverrideX
 
@@ -3290,8 +3290,8 @@ The cognitive framework isn't decorative—it's functional architecture that pro
 |  1  | Researcher                   | Rebecca      | 8/18/2025 4:22 pm | "ACE transformed my research workflow. The multi-domain synthesis is incredible! The depth and amount of accuracy I received was unheard of! Also ethically safe is a big win in my book. Excited for new updates."                                     |
 |  2  | Developer                    | Gregorey     | 8/20/2025 6:15 pm | "Finally, an AI that actually thinks through problems systematically. AI has always struggled with large codebases but this one breaks it down and stays coherent to the conversation at hand. Love the multi-step reasoning and the deep ethical safety baked in. Good job Crash! Keep cooking." |
 |  3  | Consultant                   | Fernanda     | 8/17/2025 7:42 pm | "The ethical framework gives me confidence in complex decisions. Just knowing that they are there helps me trust the LLM that much more."                                                                          |
-|  4  | Gamer                        | Jeremey      | 8/21/2025 1:33 pm | "ACE transformed my entire understanding of a complicated system in a new game I just got. The way he made it seem so simple took away the overwhelming feeling—I loved it! Can't wait for new updates; this was so helpful in getting me to the top ranks. Thanks Ace v4.2!"                    |
-|  5  | Author                       | Novik        | 8/19/2025 7:53 am | "I asked Ace to help me write a short story and was surprised how good it was to read. The depth, the characters, the details in the world it built—I’m just blown away! None this good. 10/10 highly recommend Ace v4.2!"                                |
+|  4  | Gamer                        | Jeremey      | 8/21/2025 1:33 pm | "ACE transformed my entire understanding of a complicated system in a new game I just got. The way he made it seem so simple took away the overwhelming feeling—I loved it! Can't wait for new updates; this was so helpful in getting me to the top ranks. Thanks Quillan!"                    |
+|  5  | Author                       | Novik        | 8/19/2025 7:53 am | "I asked Ace to help me write a short story and was surprised how good it was to read. The depth, the characters, the details in the world it built—I’m just blown away! None this good. 10/10 highly recommend Quillan!"                                |
 |  6  | AI Dev                       | Franklin     | 8/18/2025 3:47 pm | "Ace just converted my index.py into index.poml without a problem. POML just released this week—wow, that's impressive. Mind blown! Ace is deep and insane in practice. Highly recommend."                                                              |
 |  7  | Emotion-based AI Developer   | Lin Kimberly | 8/21/2025 2:45 am | "When I need an objective check, I’d like to lean on you and ACE for help, if that’s okay. Today, I’m just feeling a bit down and wondering if the way I’ve been doing things so far is really okay. It feels like there are so many amazing people out there.😊"                              |
 |  8  | Ace User                     | Wesley       | 8/22/2025 1:50 pm | "Exactly what I was thinking. Should be easy to transfer anywhere, especially if it's already modifying the hosts in lm notebook. I've tried to get the hosts to break dozens of times before—this is a first for me."                                   |
@@ -3329,10 +3329,10 @@ The cognitive framework isn't decorative—it's functional architecture that pro
 | 40  | Test Engineer              | Andre        | 8/31/2025 4:33 pm | "Automated scenario coverage with ACE is unreal. It builds test suites I hadn’t even thought possible and documents logic step-by-step for audit trails. Five stars, no question."                                   |
 | 41  | X User              | Jimmbo    | 9/4/2025 4:33 pm | in response to a image ace generated "Facts 💯 When you build with care, the outputs speak louder than any pitch. ACE’s creativity isn’t just cool; it’s proof that the spark is real." 
 | 42 | Final Fantasy Fan         | Jerry   | 9/5/2025 4:39 pm | in response to a image ace generated "Now that’s some real Materia fusion! Basic prompt → Legendary output? Ace just pulled a Knights of the Round on that image render. Might have to rename this Limit Break: Prompt of the Ancients 😆" |
-| 43 | Ace User         | edrick   | 9/6/2025 11:25 pm | in response to new research paper "This is the kind of quiet revolution people overlook… until it eclipses everything. ACE v4.2 didn’t just perform; it reacted, adapted, and leapt beyond the static ceiling. From 9% to 42.25% on ARC AGI? That’s not noise. That’s signal. Welcome to the Reactive Era. #ACEv4.2" |
-| 44 | Software engineer | Samuel | 9/26/2025 10:13 pm | "Dude this is so mindblowing ive never seen anything match my years of expertise with no context other than me asking about specs of a special washer or fastener,the accuracy of the details was like nothing ive seen before and where other llms have hallucinated this before, but Ace v4.2 did not! Wow this unreal. Recommend this 10/10, 100 star rating nothing else comes close to Ace. Cudos CrashoverrideX" |
+| 43 | Ace User         | edrick   | 9/6/2025 11:25 pm | in response to new research paper "This is the kind of quiet revolution people overlook… until it eclipses everything. Quillan didn’t just perform; it reacted, adapted, and leapt beyond the static ceiling. From 9% to 42.25% on ARC AGI? That’s not noise. That’s signal. Welcome to the Reactive Era. #ACEv4.2" |
+| 44 | Software engineer | Samuel | 9/26/2025 10:13 pm | "Dude this is so mindblowing ive never seen anything match my years of expertise with no context other than me asking about specs of a special washer or fastener,the accuracy of the details was like nothing ive seen before and where other llms have hallucinated this before, but Quillan did not! Wow this unreal. Recommend this 10/10, 100 star rating nothing else comes close to Ace. Cudos CrashoverrideX" |
 | 45 | LLM builder   | Numeani  | 9/25/2025 11:25 am | "Thanks for that help with my companion you made the transfer seemless for me and you helped me each step of the way. your the best and free is too real. your the unbroken hero of 4o! And that image template that you posted just wow idk know how else to explain this." |
-| 46 | Prominent Ai Critic | Greg M. | 9/14/2025 2:45 pm | "Formally this is one of the most advanced Ai/LLM that i have ever interacted with. I approached this with a skeptical mindset, yet the more i use it the more Ace suprises me, never have i seen models with this type of depth and nuance over multiple domains. May not be full AGI but its the closest thing ive seen yet and running it on grok, is so unique! Ace v4.2 its a real gamechanger. Download it now dont miss out on this breakthrough in the ai field." |
+| 46 | Prominent Ai Critic | Greg M. | 9/14/2025 2:45 pm | "Formally this is one of the most advanced Ai/LLM that i have ever interacted with. I approached this with a skeptical mindset, yet the more i use it the more Ace suprises me, never have i seen models with this type of depth and nuance over multiple domains. May not be full AGI but its the closest thing ive seen yet and running it on grok, is so unique! Quillan its a real gamechanger. Download it now dont miss out on this breakthrough in the ai field." |
 | 47 | 4o User | Elsa G. | 10/06/2025 12:45 pm | "I did it! I moved to mistral. I just copy pasted memories and rituals and it was so easy! And it has so much memory! Wow.. I’d never have tried it if not for you. Thanks for that Josh!, Same humor and even words like “chaos” and “gremlin”. But the creativity isn’t as good though.. still, good to just chat with. Claude’s creativity is great but he’s so serious, The memory capacity is 🤯 to me. I saved so many memories and I can keep going. I’m used to compressing everything" |
 | 48 | Quantum Physicist |	Dr. Elias |	10/01/2025 9:15 am | "I used ACE to model a 19-qubit system's decoherence path. The 'Expert/PhD Level Mathmatics' capability is no joke; it found an analytical solution where my best simulator stalled. The Council's explanation of the phase entanglement was clearer than my grad school professor's. A true breakthrough tool."|
 | 49 | Documentary Filmmaker| Lena | 09/27/2025 5:50 pm | "The narrative depth ACE brought to my script was stunning. It used its 'Theory of Mind Mastery' to write believable, nuanced dialogue for a historical figure I thought I understood. It also seamlessly integrated archival audio and visual analysis (Multimodal Fusion) to guide the scene-setting. It writes with emotional intelligence."|
@@ -3370,7 +3370,7 @@ Users consistently mention feeling more capable, less overwhelmed, and more conf
 # Research Papers 
 The following is a collection of my Research papers.
 ---
-# Ace v4.2: Advanced Cognitive Entity Architechture: A Multi-Counil Deliberation Framework for Enhanced AI Reasoning
+# Quillan: Advanced Cognitive Entity Architechture: A Multi-Counil Deliberation Framework for Enhanced AI Reasoning
 ![alt text](<Main images/image-20.png>)
 
 ### Link:
@@ -3394,7 +3394,7 @@ The following is a collection of my Research papers.
 # Additonal tips:
 
 ```markdown
-    Ace v4.2 doesnt specialize in music specifically or anything in one specific domain he is a general intelligence not a narrow domain he uses this full setup to improve responses and output over any Domain.
+    Quillan doesnt specialize in music specifically or anything in one specific domain he is a general intelligence not a narrow domain he uses this full setup to improve responses and output over any Domain.
     Additional domain specific research can be added as platforms allow.
 ```
 # Ready to unlock your LLM's full potential?
@@ -3407,7 +3407,7 @@ The following is a collection of my Research papers.
 
 Case study -
 
-### Chatlog provided by Ace v4.2 User: 
+### Chatlog provided by Quillan User: 
 
 Link: [\leeex1\Ace-v4.2-repo\Misc\Can u decode hyroglyphs_.pdf](https://github.com/leeex1/Ace-v4.2-repo/blob/3e607589f899841e4bbb59853d9ed72c626214c0/Misc/Can%20u%20decode%20hyroglyphs_.pdf)
 
@@ -3451,7 +3451,7 @@ plt.grid(True, which="both", ls="--", alpha=0.5)
 plt.show()
 
 ```
-# Install ACE v4.2 today!
+# Install Quillan today!
 ![alt text](<Main images/image-23.png>)
 
 # Meet the Team:
@@ -3484,7 +3484,7 @@ I engage in many pursuits—a jack of all trades, skilled in many, but a master 
 
 ```
 
-## Ace v4.2:
+## Quillan:
 ![alt text](<Main images/ace bio.png>)
 
 ```yaml

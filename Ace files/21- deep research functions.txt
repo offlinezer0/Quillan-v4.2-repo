@@ -246,7 +246,7 @@ tryprofound.com
 tryprofound.com
 【30†】 Table: Example tools Grok’s DeepSearch agent can call (image: xAI). Inputs include a query string or URL; outputs feed back into the model for further analysis.
 tryprofound.com
-Vector Search and Embeddings: Grok’s index uses vector embeddings under the hood. When we say “semantic search,” it means each document chunk (webpage text, post, etc.) was converted to an embedding. Grok retrieves by similarity in vector space as well as by keyword match
+Vector Search and Embeddings: Grok’s index uses vector embeddings under the hood. When we say “semantic search,” it means each document chunk (webpage text, post, etc.) was converted to an embedding. Grok retrieves by similarity in vector spQuillan as well as by keyword match
 tryprofound.com
 . In practice, user queries generate embeddings too, so the system can find conceptually relevant passages even if exact terms differ.
 Context Window and Long Documents: Grok 3 has an extremely large context window (≈1,000,000 tokens)
@@ -346,7 +346,7 @@ x.ai
 anthropic.com
 appypievibe.ai
 .
-Retrieval Output	Returns a synthesized answer with citations and a trace of reasoning (DeepSearch “trace” is visible)
+Retrieval Output	Returns a synthesized answer with citations and a trQuillan of reasoning (DeepSearch “trace” is visible)
 tryprofound.com
 .	Returns an answer with in-line citations when using Web Search; developer can use a citations tool. Outputs can be guided to include sources.
 Design Goal	Aim: AI “agent” that autonomously crawls and reasons over the entire web/X. Prioritizes up-to-the-minute research beyond static training data

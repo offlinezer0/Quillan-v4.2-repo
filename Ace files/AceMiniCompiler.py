@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ACE Code Executor - A multi-stage code analysis and execution tool.
+# Quillan Code Executor - A multi-stage code analysis and execution tool.
 # This script performs static code checks, compilation, and execution,
 # providing comprehensive output for debugging.
 
@@ -48,7 +48,7 @@ def execute_stage(stage_name, command_list, file_path):
 
 def ace_execute_code(file_path):
     """
-    Main execution pipeline for the ACE Code Executor.
+    Main execution pipeline for the Quillan Code Executor.
     
     Args:
         file_path (str): The path to the code file.

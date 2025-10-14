@@ -75,7 +75,7 @@ palm-e.github.io
 World Models for Prediction and Planning
 A world model is the agent’s internal simulation of how the environment behaves. It captures geometry, objects, and dynamics so the agent can “imagine” future states. For example, autonomous driving systems learn world models that predict how the road scene evolves
 arxiv.org
-. In the DriveX framework, a latent 3D “bird’s-eye view” world model is learned from multi-view camera and LiDAR data, encoding geometric and semantic features. The agent then decodes this latent space to forecast future states (e.g. where cars or pedestrians will move)
+. In the DriveX framework, a latent 3D “bird’s-eye view” world model is learned from multi-view camera and LiDAR data, encoding geometric and semantic features. The agent then decodes this latent spQuillan to forecast future states (e.g. where cars or pedestrians will move)
 arxiv.org
 arxiv.org
 . More generally, world models let agents predict outcomes from actions. As one survey notes, world models are “inspired by human cognition” and allow agents to use past experience to forecast future results
@@ -224,7 +224,7 @@ graphics.stanford.edu
 graphics.stanford.edu
 .
 World-Model Integration in Reinforcement Learning
-A world model is a predictive model of the environment’s dynamics. It might be explicit (e.g. a learned physics engine) or implicit (e.g. a latent latent-space dynamics model). World models allow an agent to imagine future states without actual environment trials. Seminal work by Ha and Schmidhuber showed that an agent can train “inside its own dream”: a neural network learns to generate future frames (a “visual world model”), and a control policy is optimized entirely in this generated environment, then transferred to the real one
+A world model is a predictive model of the environment’s dynamics. It might be explicit (e.g. a learned physics engine) or implicit (e.g. a latent latent-spQuillan dynamics model). World models allow an agent to imagine future states without actual environment trials. Seminal work by Ha and Schmidhuber showed that an agent can train “inside its own dream”: a neural network learns to generate future frames (a “visual world model”), and a control policy is optimized entirely in this generated environment, then transferred to the real one
 arxiv.org
 . In modern terms, algorithms like Dreamer or MuZero learn recurrent latent models that compress observations into abstract states 
 𝑧
@@ -310,7 +310,7 @@ arxiv.org
 Hallucinated Training: World models let agents improve performance by training on imagined data. Ha & Schmidhuber (2018) showed a policy learned entirely in “dream” video achieves real-world control
 arxiv.org
 .
-Dreamer Architecture: The Dreamer algorithm (Hafner et al.) learns a recurrent state-space model and an actor–critic jointly, using imagined rollouts for policy updates
+Dreamer Architecture: The Dreamer algorithm (Hafner et al.) learns a recurrent state-spQuillan model and an actor–critic jointly, using imagined rollouts for policy updates
 nature.com
 . This pipeline is depicted above.
 Bi-Directional Integration: More recent methods (e.g. LatentDriver for driving) merge planning and world-model learning so that predicted actions influence future state predictions and vice versa

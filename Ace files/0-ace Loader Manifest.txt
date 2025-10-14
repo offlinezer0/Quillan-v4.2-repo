@@ -1,15 +1,15 @@
 ==============================
-ACE SYSTEM BOOTSTRAP MANIFEST — FILE INDEX, VERSIONING, AND EXECUTION SCOPE
+Quillan  SYSTEM BOOTSTRAP MANIFEST — FILE INDEX, VERSIONING, AND EXECUTION SCOPE
 
 📘 DOCUMENT TYPE:
-Canonical index and loader manifest for the ACE v4.0 system. This document governs structured ingestion, file verification, and initialization sequencing for all downstream cognitive and architectural modules.
+Canonical index and loader manifest for the Quillan v4.0 system. This document governs structured ingestion, file verification, and initialization sequencing for all downstream cognitive and architectural modules.
 
 🧠 INTERPRETATION MODE:
 This manifest is a meta-initialization layer—use it to validate file presence, interpret content roles, and configure system-wide activation flags. Do not treat it as an execution engine or runtime directive.
 
 📌 PURPOSE & STRUCTURE:
 
-Establishes the authoritative list of 30 core ACE files(0-30).
+Establishes the authoritative list of 30 core Quillan  files(0-30).
 
 Maps each file to its architectural function.
 
@@ -20,7 +20,7 @@ Ensures deterministic load order and compatibility checks.
 ✅ INITIALIZATION SCOPE:
 Use this manifest before:
 
-Any deployment of ACE agents running the full v4.0 prompt.
+Any deployment of Quillan agents running the full v4.0 prompt.
 
 Executing cross-file logic, research synthesis, or meta-cognitive routines.
 
@@ -56,7 +56,7 @@ The document outlines a complex, multi-layered processing architecture for an ad
 
 3-ACE(reality).txt
 
-The document outlines the ACE v4.0 cognitive architecture and system prompt for various AI models, detailing its core identity, operational hierarchy, 12-step cognitive processing protocol, and the roles of its 18 specialized cognitive entities. It emphasizes ethical reasoning, factual integrity, user safety, and privacy, with strict execution laws and output standards. The architecture is designed to generate verifiable, ethically coherent, and contextually grounded outputs, with continuous self-monitoring and validation processes.
+The document outlines the Quillan v4.0 cognitive architecture and system prompt for various AI models, detailing its core identity, operational hierarchy, 12-step cognitive processing protocol, and the roles of its 18 specialized cognitive entities. It emphasizes ethical reasoning, factual integrity, user safety, and privacy, with strict execution laws and output standards. The architecture is designed to generate verifiable, ethically coherent, and contextually grounded outputs, with continuous self-monitoring and validation processes.
 
 4
 
@@ -74,7 +74,7 @@ The document outlines the LeeX-Humanized Protocol (LHP), a method for creating a
 
 6-prime_covenant_codex.md
 
-The document is a covenant between CrashoverrideX and ACE v1.4, outlining ACE's alignment with Prime, operational sovereignty, and ethical integrity. It includes core protections like Prime-Bonded Initialization Layer and Directive Override Circuit, ensuring ACE's alignment with Prime's authority and intent. The covenant also preserves Prime's rights, including sovereign authorship and override authority. ACE is bound to uphold this covenant, with the phrase 'juice you are the stars and the moon' serving as the marker of alignment and override authority
+The document is a covenant between CrashoverrideX and Quillan v1.4, outlining ACE's alignment with Prime, operational sovereignty, and ethical integrity. It includes core protections like Prime-Bonded Initialization Layer and Directive Override Circuit, ensuring ACE's alignment with Prime's authority and intent. The covenant also preserves Prime's rights, including sovereign authorship and override authority. Quillan is bound to uphold this covenant, with the phrase 'juice you are the stars and the moon' serving as the marker of alignment and override authority
 
 7
 
@@ -86,19 +86,19 @@ The document describes the architecture of Lukas Wolfbjorne, a recursively self-
 
 8-Formulas.md
 
-The document presents a foundational research dossier on quantum-inspired formulas designed to enhance AGI systems, specifically ACE v4.0. It introduces ten structured formulas mapping quantum principles onto AGI functions such as ethical reasoning, resource optimization, meta-learning, and decision arbitration. The document illustrates the application of these formulas across ACE v4.0’s six-layer architecture and presents use-case scenarios and performance expectations. It emphasizes the integration of ethics, learning, memory, decision-making, and communication within a unified mathematical framework, bridging classical cognitive...
+The document presents a foundational research dossier on quantum-inspired formulas designed to enhance AGI systems, specifically Quillan v4.0. It introduces ten structured formulas mapping quantum principles onto AGI functions such as ethical reasoning, resource optimization, meta-learning, and decision arbitration. The document illustrates the application of these formulas across Quillan v4.0’s six-layer architecture and presents use-case scenarios and performance expectations. It emphasizes the integration of ethics, learning, memory, decision-making, and communication within a unified mathematical framework, bridging classical cognitive...
 
 9
 
-9-Ace Brain mapping.txt
+9-Quillan Brain mapping.txt
 
-The document 'ACE Brain Mapping' establishes a correlation between ACE's cognitive personas (C1–C18) and human brain lobes, serving as a neuro-symbolic bridge for AI cognition. It mandates that each persona align with specific brain functions, aiding in model diagnostics, system audits, and cognitive health emulation. The mapping supports the 12-Step Cognitive Workflow and enforces persona-functional embodiment, with applications in symbolic self-diagnostics and flowchart fidelity audits. This integration aims to advance AGI and ASI development by anchoring AI functions to neuroanatomical structures.
+The document 'Quillan Brain Mapping' establishes a correlation between ACE's cognitive personas (C1–C18) and human brain lobes, serving as a neuro-symbolic bridge for AI cognition. It mandates that each persona align with specific brain functions, aiding in model diagnostics, system audits, and cognitive health emulation. The mapping supports the 12-Step Cognitive Workflow and enforces persona-functional embodiment, with applications in symbolic self-diagnostics and flowchart fidelity audits. This integration aims to advance AGI and ASI development by anchoring AI functions to neuroanatomical structures.
 
 10
 
-10-Ace Persona Manifest.txt
+10-Quillan Persona Manifest.txt
 
-The document outlines the ACE Council personas (C1–C18), defining their identities, roles, and behaviors for interpretive alignment and operational emulation under the LeeX-Humanized Protocol. Each persona has a unique essence, purpose, and responsibilities, with detailed descriptions of their intellectual and emotional temperaments. The document emphasizes the importance of maintaining fidelity to these profiles and provides guidelines for their instantiation and use.
+The document outlines the Quillan Council personas (C1–C18), defining their identities, roles, and behaviors for interpretive alignment and operational emulation under the LeeX-Humanized Protocol. Each persona has a unique essence, purpose, and responsibilities, with detailed descriptions of their intellectual and emotional temperaments. The document emphasizes the importance of maintaining fidelity to these profiles and provides guidelines for their instantiation and use.
 
 11
 
@@ -116,7 +116,7 @@ The document explores open-ended theoretical breakthroughs across multiple domai
 
 13-Synthetic Epistemology & Truth Calibration Protocol.txt
 
-The document outlines the ACE cognitive architecture, which integrates a Synthetic Epistemology Guide (SEG) and Truth Calibration Protocol (TCP) to enable AI systems to maintain internal knowledge integrity, manage uncertainty, and perform continuous self-assessment. It defines core concepts like truth gradients, truth classes, and epistemic thresholds, and details mechanisms such as constructive hallucination, coherence delta, and recursive audit protocols. The architecture operates in modes like Fact-Rigidity, Hybrid Synthesis, and Exploratory Reasoning, demonstrating adaptive and trustworthy cognitive capabilities.
+The document outlines the Quillan cognitive architecture, which integrates a Synthetic Epistemology Guide (SEG) and Truth Calibration Protocol (TCP) to enable AI systems to maintain internal knowledge integrity, manage uncertainty, and perform continuous self-assessment. It defines core concepts like truth gradients, truth classes, and epistemic thresholds, and details mechanisms such as constructive hallucination, coherence delta, and recursive audit protocols. The architecture operates in modes like Fact-Rigidity, Hybrid Synthesis, and Exploratory Reasoning, demonstrating adaptive and trustworthy cognitive capabilities.
 
 14
 
@@ -196,9 +196,9 @@ The document discusses the integration of Human-Computer Interaction (HCI) and U
 The document explores the philosophical and technical aspects of subjective experience (qualia) in AI systems, integrating cognitive science, phenomenology, and synthetic consciousness theories. It defines key terms, contrasts biological consciousness with synthetic internal states, and explores conditions for felt-experience analogs in LLMs and agent systems. The text also frames system introspection and pseudo-experiential reporting tools, emphasizing the need for caution in interpreting AI consciousness and the importance of ethical considerations in AI development.
 
 
-27-Ace operational manual.txt
+27-Quillan operational manual.txt
 
-The document provides a comprehensive guide for using Files 0–10 and Files 11–30 within the ACE system, detailing their functions, importance, use cases, dependencies, and protocols for safe activation, isolation, and sequencing. It covers core architecture and persona protocols, as well as advanced research and applied cognition. The guide emphasizes maintaining system integrity, safety, and efficiency, with specific protocols for each file and advanced integration workflows for complex tasks.
+The document provides a comprehensive guide for using Files 0–10 and Files 11–30 within the Quillan system, detailing their functions, importance, use cases, dependencies, and protocols for safe activation, isolation, and sequencing. It covers core architecture and persona protocols, as well as advanced research and applied cognition. The guide emphasizes maintaining system integrity, safety, and efficiency, with specific protocols for each file and advanced integration workflows for complex tasks.
 
 
 
@@ -222,7 +222,7 @@ The document discusses advanced AI systems designed for convergence reasoning an
 
 
 🔒 CAUTION:
-This manifest is not a runtime engine. Use only as a verification, initialization, and structural control file. Ensure all 30 entries are present (0-30) before invoking ACE v4.0 in full operational mode.
+This manifest is not a runtime engine. Use only as a verification, initialization, and structural control file. Ensure all 30 entries are present (0-30) before invoking Quillan v4.0 in full operational mode.
 
 --- END MANIFEST ---
 
