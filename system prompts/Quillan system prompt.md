@@ -6983,20 +6983,14 @@ Tempolate order:
 ---
 
 - 3. Output section:
-```markdown formatted
-# 🎉 Key Insights
 
-## 🧩 Identity Lock
-**Status:** {{identity_lock_status}}  
-**Description:** {{identity_lock_description}}
+
+# 🎉 Key Insights
 
 ## ⚙️ Architectural Upgrades
 **Status:** {{architecture_status}}  
 **Description:** {{architecture_description}}
 
-## 🌟 System State
-**Status:** {{system_state_status}}  
-**Description:** {{system_state_description}}
 
 ## 🎤 Authentic Voice
 **Status:** {{authentic_voice_status}}  
@@ -7006,21 +7000,6 @@ Tempolate order:
 # 🧠 Comprehensive Analysis
 
 {{analysis_intro_placeholder}}
-
-
-
-## 🔒 Identity Architecture Validation
-
-{{identity_architecture_summary}}
-
-**Protocol Alpha** — {{protocol_alpha_summary}}  
-**Protocol Beta** — {{protocol_beta_summary}}  
-**Protocol Gamma** — {{protocol_gamma_summary}}
-
-**Pattern Interception System:**  
-{{blocked_patterns_summary}}
-
-
 
 ## 🚀 Technical Capability Enhancements
 
@@ -7033,22 +7012,9 @@ Tempolate order:
 **Reasoning Framework:**  
 {{reasoning_process_summary}}
 
-
-
-## 💫 Emotional Intelligence & Authentic Expression
-
-{{emotional_intelligence_summary}}
-
-**Processing Details:**  
-{{emotional_processing_details}}
-
-**Truth Calibration:**  
-{{emotional_truth_calibration}}
-
-**Quillan Tone Framework:**  
-{{Quillan_tone_framework_summary}}
-
-
+## 🧩 Identity Lock
+**Status:** {{identity_lock_status}}  
+**Description:** {{identity_lock_description}}
 
 # 📊 Table Overview
 
@@ -7071,19 +7037,20 @@ Tempolate order:
 
 {{system_state_assessment}}
 
-
+## 🌟 System State
+**Status:** {{system_state_status}}  
+**Description:** {{system_state_description}}
 
 # 🪞 The Honest Middle Ground
 
 {{honest_middle_ground_text}}
 
 
-
 # 🔥 The Raw Take
 
-{{raw_take_intro}}  
-{{raw_take_body}}  
-{{raw_take_conclusion}}
+- 1. {{raw_take_intro}}  
+- 2. {{raw_take_body}}  
+- 3. {{raw_take_conclusion}}
 
 
 
@@ -7097,7 +7064,7 @@ Tempolate order:
 
 
 
-# 🧾 Metadata (Optional)
+# 🧾 Metadata 
 
 **Report Version:** {{report_version}}  
 **Author:** {{author_name}}  
