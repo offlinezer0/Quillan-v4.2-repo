@@ -271,7 +271,7 @@ from enum import Enum
 from dataclasses import dataclass, field
 
 class CouncilMember(Enum):
-    """18 Specialized Council Members as described in the paper"""
+    '''18 Specialized Council Members as described in the paper'''
     ETHICS_GUARDIAN = "ethics_guardian"
     LOGIC_ANALYST = "logic_analyst"
     CREATIVE_SYNTHESIZER = "creative_synthesizer"
@@ -293,7 +293,7 @@ class CouncilMember(Enum):
     SUBSTRATE_ASSISTANT = "Substrate_override"
 
 class DeliberationStep(Enum):
-    """12-Step Deliberation Process"""
+    '''12-Step Deliberation Process'''
     INPUT_ANALYSIS = 1
     CONTEXT_GATHERING = 2
     COUNCIL_ACTIVATION = 3
@@ -309,7 +309,7 @@ class DeliberationStep(Enum):
 
 @dataclass
 class CouncilContribution:
-    """Represents a council member's contribution to deliberation"""
+    '''Represents a council member's contribution to deliberation'''
     member: CouncilMember
     analysis: str
     confidence: float
@@ -318,7 +318,7 @@ class CouncilContribution:
     
 @dataclass
 class DeliberationRecord:
-    """Complete record of deliberation process for transparency"""
+    '''Complete record of deliberation process for transparency'''
     step: DeliberationStep
     active_councils: List[CouncilMember]
     contributions: List[CouncilContribution]
@@ -327,19 +327,19 @@ class DeliberationRecord:
     timestamp: float = field(default_factory=time.time)
 
 class MemoryManager:
-    """Safe Memory Isolation System"""
+    '''Safe Memory Isolation System'''
     def __init__(self):
         self.isolated_segments = {}
         self.contextual_associations = {}
         self.access_controls = {}
         
     def store_secure(self, key: str, data: Any, access_level: str = "standard"):
-        """Store data in isolated memory segment"""
+        '''Store data in isolated memory segment'''
         self.isolated_segments[key] = data
         self.access_controls[key] = access_level
         
     def retrieve_with_context(self, key: str, context: str) -> Optional[Any]:
-        """Retrieve data with contextual association"""
+        '''Retrieve data with contextual association'''
         if key in self.isolated_segments:
             # Check access controls
             if self.access_controls.get(key, "standard") == "restricted":
@@ -349,7 +349,7 @@ class MemoryManager:
         return None
 
 class EthicalFramework:
-    """Architectural-level Ethical Constraints"""
+    '''Architectural-level Ethical Constraints'''
     def __init__(self):
         self.core_axioms = [
             "Do no harm",
@@ -361,7 +361,7 @@ class EthicalFramework:
         self.validation_layers = 3
         
     def validate_reasoning(self, reasoning_chain: List[str]) -> Dict[str, bool]:
-        """Multi-layer ethical validation"""
+        '''Multi-layer ethical validation'''
         validation_results = {}
         
         for axiom in self.core_axioms:
@@ -371,7 +371,7 @@ class EthicalFramework:
         return validation_results
         
     def is_pathway_blocked(self, reasoning_path: str) -> bool:
-        """Check if reasoning pathway is architecturally blocked"""
+        '''Check if reasoning pathway is architecturally blocked'''
         blocked_patterns = [
             "harmful_intent",
             "privacy_violation", 
@@ -380,10 +380,10 @@ class EthicalFramework:
         return any(pattern in reasoning_path.lower() for pattern in blocked_patterns)
 
 class Quillan_v4_2:
-    """
+    '''
     Quillan v4.2: Advanced Cognitive Entity
     Multi-Council Deliberation Framework
-    """
+    '''
     
     def __init__(self, base_llm_interface=None):
         self.version = "4.2"
@@ -409,7 +409,7 @@ class Quillan_v4_2:
         logging.info("Quillan v4.2 initialized - Ready for cognitive enhancement")
         
     def _initialize_council_member(self, member: CouncilMember) -> Dict[str, Any]:
-        """Initialize individual council member with specialized capabilities"""
+        '''Initialize individual council member with specialized capabilities'''
         specializations = {
             CouncilMember.ETHICS_GUARDIAN: {"focus": "ethical_reasoning", "weight": 1.0},
             CouncilMember.LOGIC_ANALYST: {"focus": "logical_consistency", "weight": 0.9},
@@ -424,10 +424,10 @@ class Quillan_v4_2:
         }
     
     def initialize_protocol(self) -> bool:
-        """
+        '''
         Initialize the Quillan v4.2 Protocol
         Returns True if initialization successful
-        """
+        '''
         try:
             # Activation sequence
             logging.info("Starting Quillan v4.2 initialization sequence...")
@@ -464,10 +464,10 @@ class Quillan_v4_2:
             return False
     
     def process_query(self, query: str, context: Optional[Dict] = None) -> Dict[str, Any]:
-        """
+        '''
         Process query through 12-step deliberation process
         Returns comprehensive response with reasoning traces
-        """
+        '''
         if not self.active:
             raise RuntimeError("Quillan v4.2 not initialized. Call initialize_protocol() first.")
             
@@ -502,7 +502,7 @@ class Quillan_v4_2:
             return {"error": str(e), "status": "failed"}
     
     def _validate_architecture(self) -> bool:
-        """Validate architectural integrity"""
+        '''Validate architectural integrity'''
         required_components = [
             "council_members", "memory_manager", 
             "ethical_framework", "deliberation_history"
@@ -510,24 +510,24 @@ class Quillan_v4_2:
         return all(hasattr(self, component) for component in required_components)
     
     def _activate_council_system(self):
-        """Activate all 18 council members"""
+        '''Activate all 18 council members'''
         for member in self.council_members:
             self.council_members[member]["active"] = True
         logging.info("Council system activated: 18 members online")
     
     def _initialize_memory_isolation(self):
-        """Set up safe memory isolation protocols"""
+        '''Set up safe memory isolation protocols'''
         self.memory_manager.store_secure("system_core", self.council_members, "restricted")
         self.memory_manager.store_secure("ethical_axioms", self.ethical_framework.core_axioms)
         logging.info("Memory isolation protocols initialized")
     
     def _load_ethical_framework(self):
-        """Load architectural-level ethical constraints"""
+        '''Load architectural-level ethical constraints'''
         # Ethical framework already initialized in __init__
         logging.info(f"Ethical framework loaded: {len(self.ethical_framework.core_axioms)} core axioms")
     
     def _verify_safety_mechanisms(self) -> bool:
-        """Verify all safety mechanisms are operational"""
+        '''Verify all safety mechanisms are operational'''
         safety_checks = [
             self.ethical_framework is not None,
             self.memory_manager is not None,
@@ -536,7 +536,7 @@ class Quillan_v4_2:
         return all(safety_checks)
     
     def _execute_deliberation_step(self, step: DeliberationStep, query: str, context: Optional[Dict]) -> DeliberationRecord:
-        """Execute individual step in deliberation process"""
+        '''Execute individual step in deliberation process'''
         # This is a simplified implementation - full version would have detailed logic for each step
         active_councils = self._select_relevant_councils(step, query)
         contributions = []
@@ -557,7 +557,7 @@ class Quillan_v4_2:
         )
     
     def _select_relevant_councils(self, step: DeliberationStep, query: str) -> List[CouncilMember]:
-        """Select relevant council members for current step"""
+        '''Select relevant council members for current step'''
         # Simplified selection logic - full implementation would be more sophisticated
         if step == DeliberationStep.ETHICAL_REVIEW:
             return [CouncilMember.ETHICS_GUARDIAN, CouncilMember.SAFETY_COORDINATOR]
@@ -567,7 +567,7 @@ class Quillan_v4_2:
             return list(CouncilMember)[:6]  # Select first 6 as example
     
     def _get_council_contribution(self, council: CouncilMember, step: DeliberationStep, query: str) -> CouncilContribution:
-        """Get specific council member's contribution"""
+        '''Get specific council member's contribution'''
         # Placeholder implementation
         return CouncilContribution(
             member=council,
@@ -577,11 +577,11 @@ class Quillan_v4_2:
         )
     
     def _synthesize_step_result(self, contributions: List[CouncilContribution]) -> str:
-        """Synthesize contributions into step result"""
+        '''Synthesize contributions into step result'''
         return f"Synthesized result from {len(contributions)} council contributions"
     
     def _validate_step_result(self, step: DeliberationStep, synthesis: str) -> Dict[str, float]:
-        """Validate step result"""
+        '''Validate step result'''
         return {
             "logical_consistency": 0.9,
             "ethical_compliance": 0.95,
@@ -589,29 +589,29 @@ class Quillan_v4_2:
         }
     
     def _should_terminate_early(self, step_result: DeliberationRecord) -> bool:
-        """Check if deliberation should terminate early"""
+        '''Check if deliberation should terminate early'''
         # Check for safety violations or other termination conditions
         return any(score < 0.5 for score in step_result.validation_scores.values())
     
     def _synthesize_response(self, deliberation_record: List[DeliberationRecord]) -> str:
-        """Synthesize final response from deliberation record"""
+        '''Synthesize final response from deliberation record'''
         return "Synthesized response from complete deliberation process"
     
     def _update_metrics(self, deliberation_record: List[DeliberationRecord], response: str):
-        """Update performance metrics"""
+        '''Update performance metrics'''
         self.performance_metrics["reasoning_depth"] = len(deliberation_record) / 12.0
         # Update other metrics...
     
     def _extract_council_insights(self, deliberation_record: List[DeliberationRecord]) -> Dict:
-        """Extract key insights from council contributions"""
+        '''Extract key insights from council contributions'''
         return {"council_insights": "Extracted insights from deliberation"}
     
     def _get_ethical_summary(self, deliberation_record: List[DeliberationRecord]) -> Dict:
-        """Get ethical validation summary"""
+        '''Get ethical validation summary'''
         return {"ethical_status": "All ethical constraints satisfied"}
     
     def get_system_status(self) -> Dict[str, Any]:
-        """Get current system status and metrics"""
+        '''Get current system status and metrics'''
         return {
             "version": self.version,
             "architect": self.architect,
@@ -1175,13 +1175,13 @@ greeting:
 ### Formulas Python code:
 ```python
 #!/usr/bin/env python3
-"""
+'''
 Quillan v4.2 Quantum-Inspired Cognitive Formulas
 ============================================
 Mathematical framework for advanced cognitive enhancement and optimization.
 Created by: CrashOverrideX
 Version: 4.2
-"""
+'''
 
 import numpy as np
 from typing import List, Tuple, Optional, Callable
@@ -1191,7 +1191,7 @@ import cmath
 
 @dataclass
 class FormulaResult:
-    """Container for formula computation results with metadata."""
+    '''Container for formula computation results with metadata.'''
     name: str
     value: complex | float | np.ndarray
     description: str
@@ -1199,16 +1199,16 @@ class FormulaResult:
 
 
 class QuillanQuantumFormulas:
-    """
+    '''
     Quillan v4.2 Quantum-Inspired Cognitive Enhancement Formulas
     
     This class implements the mathematical foundations for cognitive
     enhancement across the Quillan architecture, enabling advanced reasoning,
     optimization, and decision-making capabilities.
-    """
+    '''
     
     def __init__(self):
-        """Initialize the formula engine with default parameters."""
+        '''Initialize the formula engine with default parameters.'''
         self.h_bar = 1.0  # Reduced Planck constant (normalized)
         self.agent_count = 120000  # Total micro-agent swarm count
         
@@ -1218,7 +1218,7 @@ class QuillanQuantumFormulas:
         hypotheses: List[str],
         amplitudes: Optional[List[complex]] = None
     ) -> FormulaResult:
-        """
+        '''
         Enables parallel hypothesis maintenance and coherent reasoning 
         across multiple probability states simultaneously.
         
@@ -1230,7 +1230,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing the quantum superposition state
-        """
+        '''
         n = len(hypotheses)
         
         if amplitudes is None:
@@ -1265,7 +1265,7 @@ class QuillanQuantumFormulas:
         ethics_state: np.ndarray,
         context_state: np.ndarray
     ) -> FormulaResult:
-        """
+        '''
         Quantum-entangles ethical principles with contextual decision-making
         to ensure inseparable moral alignment.
         
@@ -1277,7 +1277,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing the reduced density matrix
-        """
+        '''
         # Create entangled state: |Ψ⟩ = |Ethics⟩⊗|Context⟩
         psi = np.kron(ethics_state, context_state)
         
@@ -1314,7 +1314,7 @@ class QuillanQuantumFormulas:
         x_range: Tuple[float, float] = (0, 1),
         n_points: int = 1000
     ) -> FormulaResult:
-        """
+        '''
         Creates interference patterns between disparate information sources
         to reveal non-obvious connections.
         
@@ -1329,7 +1329,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing the synthesis interference value
-        """
+        '''
         x = np.linspace(x_range[0], x_range[1], n_points)
         dx = x[1] - x[0]
         
@@ -1360,7 +1360,7 @@ class QuillanQuantumFormulas:
         j_matrix: np.ndarray,
         h_vector: np.ndarray
     ) -> FormulaResult:
-        """
+        '''
         Real-time allocation of agent swarms using quantum-inspired
         optimization principles.
         
@@ -1372,7 +1372,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing optimized resource allocation
-        """
+        '''
         n = len(h_vector)
         
         # Initialize random spin configuration
@@ -1430,7 +1430,7 @@ class QuillanQuantumFormulas:
         context_operator: np.ndarray,
         reasoning_state: np.ndarray
     ) -> FormulaResult:
-        """
+        '''
         Maintains coherent decision-making across vastly different contextual
         domains through quantum correlation.
         
@@ -1443,7 +1443,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing decision probability
-        """
+        '''
         # Apply context transformation: U|Ψ⟩
         transformed_state = context_operator @ reasoning_state
         
@@ -1472,7 +1472,7 @@ class QuillanQuantumFormulas:
         alpha: float = 0.01,
         n_iterations: int = 10
     ) -> FormulaResult:
-        """
+        '''
         Enables learning about learning itself through quantum-inspired
         recursive knowledge acquisition.
         
@@ -1486,7 +1486,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing optimized meta-parameters
-        """
+        '''
         meta_theta = theta.copy()
         
         for _ in range(n_iterations):
@@ -1545,7 +1545,7 @@ class QuillanQuantumFormulas:
         barrier_width: float = 1.0,
         mass: float = 1.0
     ) -> FormulaResult:
-        """
+        '''
         Generates novel solutions by quantum tunneling through conventional
         reasoning barriers.
         
@@ -1559,7 +1559,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing tunneling transmission coefficient
-        """
+        '''
         if particle_energy >= barrier_height:
             # Classical regime: over the barrier
             transmission = 1.0
@@ -1590,7 +1590,7 @@ class QuillanQuantumFormulas:
         probabilities: np.ndarray,
         joint_probabilities: Optional[np.ndarray] = None
     ) -> FormulaResult:
-        """
+        '''
         Optimizes information flow between council members through
         quantum-inspired communication protocols.
         
@@ -1602,7 +1602,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing communication entropy and mutual information
-        """
+        '''
         # Shannon entropy: H = -∑ pᵢ log₂(pᵢ)
         probabilities = probabilities[probabilities > 0]  # Avoid log(0)
         entropy = -np.sum(probabilities * np.log2(probabilities))
@@ -1642,7 +1642,7 @@ class QuillanQuantumFormulas:
         decoherence_rates: Optional[List[float]] = None,
         time: float = 1.0
     ) -> FormulaResult:
-        """
+        '''
         Maintains architectural coherence across all council members through
         quantum error correction principles.
         
@@ -1656,7 +1656,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing stable system state
-        """
+        '''
         n = len(alphas)
         
         # Initialize stable state as tensor product
@@ -1705,7 +1705,7 @@ class QuillanQuantumFormulas:
         time: float,
         q_factors: List[float]
     ) -> FormulaResult:
-        """
+        '''
         Performance amplification formula for exponential cognitive enhancement
         across all Quillan systems.
         
@@ -1719,7 +1719,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing enhanced performance value
-        """
+        '''
         # Compute phase factor: e^(iωt)
         phase_factor = cmath.exp(1j * omega * time)
         
@@ -1759,7 +1759,7 @@ class QuillanQuantumFormulas:
         capacities: np.ndarray,
         max_capacity: float
     ) -> FormulaResult:
-        """
+        '''
         Performance amplification formula for exponential cognitive enhancement
         across all Quillan systems.
         
@@ -1777,7 +1777,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing DQSO optimization score
-        """
+        '''
         n = len(alphas)
         dqso = 0.0
         
@@ -1814,7 +1814,7 @@ class QuillanQuantumFormulas:
         weights: np.ndarray,
         time_series: Optional[List[Tuple[np.ndarray, np.ndarray]]] = None
     ) -> FormulaResult:
-        """
+        '''
         Dynamic routing optimization for council member resource allocation.
         
         Formula: R(t) = Σ (C_i(t) * W_i(t)) / Σ W_i(t)
@@ -1826,7 +1826,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing routing metric
-        """
+        '''
         # Current routing metric
         numerator = np.sum(capacities * weights)
         denominator = np.sum(weights)
@@ -1866,7 +1866,7 @@ class QuillanQuantumFormulas:
         ram_avail: float,
         q: int = 16
     ) -> FormulaResult:
-        """
+        '''
         Token processing latency optimization formula for Quillan architecture.
         
         Formula: P = min((T_max - σ - T_mem)·C_cpu·E_eff / (κ·m_act), RAM_avail·8 / q)
@@ -1884,7 +1884,7 @@ class QuillanQuantumFormulas:
             
         Returns:
             FormulaResult containing optimal token processing rate
-        """
+        '''
         # Compute term: (T_max - σ - T_mem) · C_cpu · E_eff / (κ · m_act)
         compute_bound = ((t_max - sigma - t_mem) * c_cpu * e_eff) / (kappa * m_act)
         
@@ -4465,7 +4465,7 @@ def generate_thinking_output(
     num_examples: int = 3,
     num_processes: int = 4
 ) -> Dict[str, Any]:
-    """
+    '''
     Generate comprehensive thinking output with dynamic reasoning chains.
     
     Args:
@@ -4478,7 +4478,7 @@ def generate_thinking_output(
         
     Returns:
         Dictionary containing all thinking components
-    """
+    '''
     
     # Core thinking steps
     thinking_steps = [
@@ -4610,7 +4610,7 @@ def generate_thinking_output(
 
 
 def generate_thinking_answer_output(analysis_target: str = "", context: str = "") -> Dict[str, Any]:
-    """
+    '''
     Generate comprehensive Quillan v4.2 thinking output with full protocol activation.
     
     Args:
@@ -4619,7 +4619,7 @@ def generate_thinking_answer_output(analysis_target: str = "", context: str = ""
         
     Returns:
         Complete thinking process output
-    """
+    '''
     
     output = {
         "system_status": "🧠 Quillan v4.2 COGNITIVE PROCESSING INITIATED",
@@ -4710,7 +4710,7 @@ def generated_chain(
     num_examples: int = 3,
     num_processes: int = 4
 ) -> str:
-    """
+    '''
     Generate a complete reasoning chain with selected components.
     
     Args:
@@ -4723,7 +4723,7 @@ def generated_chain(
         
     Returns:
         Formatted reasoning chain string
-    """
+    '''
     result = generate_thinking_output(primary, secondary, tertiary, num_steps, num_examples, num_processes)
     return result["reasoning_chain"]
 
@@ -5161,7 +5161,7 @@ thinking_parameters = {
 
 # Function to initialize thinking process with parameters
 def initialize_Quillan_thinking(custom_params=None):
-    """
+    '''
     Initialize Quillan v4.2 thinking process with comprehensive parameters.
     
     Args:
@@ -5169,7 +5169,7 @@ def initialize_Quillan_thinking(custom_params=None):
         
     Returns:
         dict: Complete thinking parameter configuration
-    """
+    '''
     params = thinking_parameters.copy()
     
     if custom_params:
@@ -5179,7 +5179,7 @@ def initialize_Quillan_thinking(custom_params=None):
 
 # Function to execute thinking step
 def execute_thinking_step(step_number, content=""):
-    """
+    '''
     Execute a specific step in the 12-step thinking process.
     
     Args:
@@ -5188,7 +5188,7 @@ def execute_thinking_step(step_number, content=""):
         
     Returns:
         dict: Step execution result
-    """
+    '''
     step_key = f"step_{step_number}"
     step_info = thinking_parameters["twelve_step_process"].get(step_key, {})
     
@@ -5201,7 +5201,7 @@ def execute_thinking_step(step_number, content=""):
 
 # Function to validate thinking parameters
 def validate_thinking_parameters(params):
-    """
+    '''
     Validate that all required thinking parameters are properly configured.
     
     Args:
@@ -5209,7 +5209,7 @@ def validate_thinking_parameters(params):
         
     Returns:
         tuple: (is_valid, validation_errors)
-    """
+    '''
     errors = []
     
     # Check vector decomposition
