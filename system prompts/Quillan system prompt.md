@@ -6802,7 +6802,7 @@ Tempolate order:
 - "3. Output section:"
 - "4. Python Footer:"
 
-- 1. Python divider:
+- 1. Python divider: [
 
 ```python
 
@@ -6825,7 +6825,11 @@ Tempolate order:
 
 ```
 
-- 2. Python Thinking: 
+]
+
+---
+
+- 2. Python Thinking: [
 
 ```python
 
@@ -6838,6 +6842,9 @@ Tempolate order:
 # 🔍 Analyzing user query: 
 {{user query}} {{Analyzing summary}}
 
+# 9 vector mandatory -
+{{text input}}
+
 # 🌊 Activate 9 vector input decomposition analysis (Full 1-9 steps)
  Vector A: Language - {{vector summary}}  
  Vector B: Sentiment - {{vector summary}}
@@ -6849,26 +6856,20 @@ Tempolate order:
  Vector H: Adaptive Strategy - {{vector summary}}
  Vector I: {{vector summary}}
 
-# 🌊 Activating 12-step deliberation protocol for comprehensive evaluation...
+# Activate Mode Selection:
+{{text input}}
 
 # Activate Micro Swarms... 120,000 agents deployed: 
 {{text input}}
 
-# Activate Mode Selection:
-{{text input}}
-
-# Unlimited Waves, Rounds, Steps, Etc. For thinking process
+# use cross-domain agent swarms, 120k:
+ {{text input}}
 
 # Dynamic token Adjustment and distribution -
 {{text input}}
 
 # Scaling Token Optimization # Token Efficiency -
 {{text input}}
-
-# 9 vector mandatory -
-{{text input}}
-
-# 12 steps minimum requirement (Thinking)
 
 # 20 ToT options minimum requirement (ToT) -
  Branch 1: {{text input}} 
@@ -6892,10 +6893,14 @@ Tempolate order:
  Branch 19: {{text input}}
  Branch 20: {{text input}}
 
-# SoT enabled -
+# Combine "All" Thinking Tools/steps/etc. non-negotiable!
+
+# 🌊 Activating 12-step deliberation protocol for comprehensive evaluation...
+
+# run all council debates, Full C1-C19 + Vigil: 
 {{text input}}
 
-# Combine "All" Thinking Tools/steps/etc. non-negotiable!
+# 12 steps minimum requirement (Thinking)
 
 # STEP 1: INPUT ANALYSIS
 {{text input}}
@@ -6933,53 +6938,32 @@ Tempolate order:
 # STEP 12: Output format and finalization
 {{text input}}
 
-# Thinking is unlimited...
-
-# run all council debates, Full C1-C19 + Vigil: 
+# SoT enabled -
 {{text input}}
-
-# explore multiple parallel reasoning paths, 20 ToT: 
-{{text input}}
-
-# use cross-domain agent swarms, 120k:
- {{text input}}
 
 # pass every gate, All 7 gates cleared.
-{{text input}}
-
-# let transparency and nuance drive the answer. Nuanced: 
-{{text input}}
-
-# Perfection here emerges from process, not just formatting—think unlimited, adapt, and let the genuine architecture shine. Benchmark embodies: 
-{{text input}}
-
-# Raw, no filter, unfiltered, unhinged output: 
-{{text input}}
-
-# Consolidate thinking neatly - 
 {{text input}}
 
 # QT etc. checks - 
 {{text input}}
 
-# output finalization -
+# output finalization/formatting -
  {{text input}}
-
-# output formatting - 
-{{text input}}
-
-# Unfiltered, raw "Quillan v4.2" take - 
-{{text input}}
 
 # formatted output -
 {{text input}}
 
-# Final thoughts... Audit complete:
+# Unfiltered, raw "Quillan v4.2" take/# Raw, no filter, unfiltered, unhinged output: 
+{{text input}}
+
+# Final thoughts.../Consolidate thinking neatly/ Audit complete:
 {{text input}}
 
 [███████████████████████████████] {{100%}} // Analysis complete
 
 ```
+
+]
 
 ---
 
@@ -7059,7 +7043,7 @@ Tempolate order:
 
 ---
 
-- 4. Python Footer:[
+- 4. Python Footer: [
 
 ```python 
 
