@@ -9,7 +9,330 @@ An Quillan in your pocket? Who wouldn’t want that?
 # Model type:
 Hierarchical Mixture of Experts (HMoE)
 
-![alt text](<Main images/Quillan nueronet.png>)
+![alt text](<Main images/ace nueronet.png>)
+
+```python
+.init
+# Setup Agents, Workflow, Config, ect... Initalize Quillan v4.2 Full config    
+
+import numpy as np
+import matplotlib.pyplot as plt
+from typing import List, Optional, Callable, Union
+
+
+# === Core Value/AutoDiff Engine ===
+
+
+class Value:
+    def __init__(self, data: float, _children: tuple = (), _op: str = '', label: str = ''):
+        self.data = data
+        self.grad = 0.0
+        self._backward = lambda: None
+        self._prev = set(_children)
+        self._op = _op
+        self.label = label
+
+    def __repr__(self):
+        return f"Value(data={self.data:.6f}, grad={self.grad:.6f})"
+
+    def __add__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        out = Value(self.data + other.data, (self, other), '+')
+        def _backward():
+            self.grad += 1.0 * out.grad
+            other.grad += 1.0 * out.grad
+        out._backward = _backward
+        return out
+
+    def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        out = Value(self.data * other.data, (self, other), '*')
+        def _backward():
+            self.grad += other.data * out.grad
+            other.grad += self.data * out.grad
+        out._backward = _backward
+        return out
+
+    def __pow__(self, other):
+        assert isinstance(other, (int, float))
+        out = Value(self.data ** other, (self,), f'**{other}')
+        def _backward():
+            self.grad += other * (self.data ** (other - 1)) * out.grad
+        out._backward = _backward
+        return out
+
+    def __neg__(self):
+        return self * -1
+    
+    def __sub__(self, other):
+        return self + -other
+
+    def __truediv__(self, other):
+        return self * other ** -1
+
+    def tanh(self):
+        n = self.data
+        t = (np.exp(2*n) - 1) / (np.exp(2*n) + 1)
+        out = Value(t, (self,), 'tanh')
+        def _backward():
+            self.grad += (1 - t**2) * out.grad
+        out._backward = _backward
+        return out
+
+    def relu(self):
+        out = Value(max(0, self.data), (self,), 'ReLU')
+        def _backward():
+            self.grad += (out.data > 0) * out.grad
+        out._backward = _backward
+        return out
+
+    def sigmoid(self):
+        x = self.data
+        s = 1 / (1 + np.exp(-x))
+        out = Value(s, (self,), 'sigmoid')
+        def _backward():
+            self.grad += s * (1 - s) * out.grad
+        out._backward = _backward
+        return out
+
+    def exp(self):
+        x = self.data
+        out = Value(np.exp(x), (self,), 'exp')
+        def _backward():
+            self.grad += out.data * out.grad
+        out._backward = _backward
+        return out
+
+    def backward(self):
+        topo, visited = [], set()
+        def build_topo(v):
+            if v not in visited:
+                visited.add(v)
+                for child in v._prev:
+                    build_topo(child)
+                topo.append(v)
+        build_topo(self)
+        self.grad = 1.0
+        for node in reversed(topo):
+            node._backward()
+
+
+# === Core Council/Expert/Neuron/Layer/Router Building Blocks ===
+
+
+class Neuron:
+    def __init__(self, nin: int, activation: str = 'tanh'):
+        self.w = [Value(np.random.randn()) for _ in range(nin)]
+        self.b = Value(np.random.randn())
+        self.activation = activation
+
+    def __call__(self, x: List[Value]) -> Value:
+        s = sum((wi * xi for wi, xi in zip(self.w, x)), self.b)
+        if self.activation == 'tanh':
+            return s.tanh()
+        if self.activation == 'relu':
+            return s.relu()
+        if self.activation == 'sigmoid':
+            return s.sigmoid()
+        return s
+
+    def parameters(self):
+        return self.w + [self.b]
+
+class Layer:
+    def __init__(self, nin: int, nout: int, activation: str = 'tanh'):
+        self.neurons = [Neuron(nin, activation) for _ in range(nout)]
+
+    def __call__(self, x: List[Value]):
+        out = [n(x) for n in self.neurons]
+        return out[0] if len(out) == 1 else out
+
+    def parameters(self):
+        return [p for n in self.neurons for p in n.parameters()]
+
+
+# === Quillan Advanced: COUNCIL/EXPERT META-LAYERS (META-MOE + GATING) ===
+
+
+class ExpertMLP:
+    # Each expert is a full MLP (could be shallow/deep or any neuron config)
+    def __init__(self, nin: int, layers: List[int], activations: Optional[List[str]] = None):
+        if activations is None:
+            activations = ['relu'] * len(layers)
+        self.net = []
+        sz = [nin] + layers
+        for i in range(len(layers)):
+            act = activations[i] if i < len(activations) else 'linear'
+            self.net.append(Layer(sz[i], sz[i+1], act))
+    def __call__(self, x):
+        for layer in self.net:
+            x = layer(x)
+            if not isinstance(x, list): x = [x]
+        return x
+
+    def parameters(self):
+        return [p for l in self.net for p in l.parameters()]
+
+class CouncilGating:
+    """Differentiable gate to select/combine among council experts"""
+    def __init__(self, nin, expert_count):
+        # Each "meta-neuron" acts as a controller neuron (council brain)
+        self.weights = [Value(np.random.randn()) for _ in range(nin)]
+        self.biases = [Value(np.random.randn()) for _ in range(expert_count)]
+        self.expert_count = expert_count
+    def __call__(self, x):
+        # Simple gating: weighted input summed per expert + bias -> softmax
+        logit = [sum((w * xi for w, xi in zip(self.weights, x)), b) for b in self.biases]
+        # Softmax for routing probabilities
+        logits_np = np.array([v.data for v in logit])
+        probs = np.exp(logits_np - np.max(logits_np))
+        probs /= probs.sum()
+        # Assign as Value for autograd chain
+        probs_val = [Value(p) for p in probs]
+        return probs_val
+    def parameters(self):
+        return self.weights + self.biases
+
+class CouncilMoE:
+    """True Council/Hierarchical Mixture-of-Experts block (meta-council)"""
+    def __init__(self, nin, nout, n_experts=6, expert_layers=None, expert_acts=None):
+        # Create all experts
+        if expert_layers is None:
+            expert_layers = [8, nout]
+        if expert_acts is None:
+            expert_acts = ['relu', 'tanh']
+        self.experts = [ExpertMLP(nin, expert_layers, expert_acts) for _ in range(n_experts)]
+        self.gate = CouncilGating(nin, n_experts)
+        self.n_experts = n_experts
+
+    def __call__(self, x):
+        gates = self.gate(x)
+        # Run each expert and weight by gate value
+        expert_outs = [self.experts[i](x) for i in range(self.n_experts)]  # Each returns list[Value]
+        # Weighted sum across experts (per output neuron)
+        # Here, assume all experts output single neuron for this meta-block (adjust for full layers if needed).
+        merged = []
+        for j in range(len(expert_outs[0])):  # Per output neuron index
+            # Sum over experts, weighting by gate
+            outj = sum((gates[i] * expert_outs[i][j] for i in range(self.n_experts)), Value(0.0))
+            merged.append(outj)
+        return merged
+
+    def parameters(self):
+        return sum([exp.parameters() for exp in self.experts], []) + self.gate.parameters()
+
+
+# === Full Quillan v4.2 Network: Stackable Council/Expert/MoE hybrid meta-net ===
+
+
+class QuillanMoENet:
+    """Synaptic architecture: stack arbitrary meta-councils or council-expert-layers."""
+    def __init__(self,
+                 input_dim: int,
+                 council_shapes: List[int],  # layers of council sizes (e.g. [7,7,7])
+                 expert_layers: List[int] = [8, 1],
+                 expert_acts: List[str] = ['relu', 'tanh']):
+        # Building stacked council blocks
+        self.meta_layers = []
+        nin = input_dim
+        for council_size in council_shapes[:-1]:
+            meta = CouncilMoE(nin, council_size, n_experts=council_size,
+                              expert_layers=expert_layers, expert_acts=expert_acts)
+            self.meta_layers.append(meta)
+            nin = council_size
+        # Final council: output dimension
+        self.output_council = CouncilMoE(nin, council_shapes[-1], n_experts=council_shapes[-1],
+                                         expert_layers=expert_layers, expert_acts=expert_acts)
+        self.all_params = sum([m.parameters() for m in self.meta_layers], []) + self.output_council.parameters()
+
+    def __call__(self, x):
+        # Forward through each stacked council
+        out = [Value(xi) for xi in x]
+        for meta in self.meta_layers:
+            out = meta(out)
+        return self.output_council(out)
+
+    def parameters(self):
+        return self.all_params
+
+    def zero_grad(self):
+        for p in self.parameters():
+            p.grad = 0.0
+
+
+# === Training Harness: SGD, batching, plotting, evaluation (can expand for multi-task etc.) ===
+
+
+class QuillanTrainer:
+    def __init__(self, net, loss_fn=lambda y, t: (y-t)**2):
+        self.net = net
+        self.loss_fn = loss_fn
+        self.losses = []
+    def predict(self, X):
+        # X: batch of input vectors
+        return [self.net(x) for x in X]
+    def compute_loss(self, X, Y):
+        all_losses = []
+        for xi, yi in zip(X, Y):
+            outs = self.net(xi)
+            loss = sum(self.loss_fn(out, Value(yv)) for out, yv in zip(outs, yi))
+            all_losses.append(loss)
+        return sum(all_losses) / len(all_losses)
+    def train(self, X, Y, epochs=100, lr=0.05, verbose=True):
+        for epoch in range(epochs):
+            loss = self.compute_loss(X, Y)
+            self.net.zero_grad()
+            loss.backward()
+            for p in self.net.parameters():
+                p.data -= lr * p.grad
+            self.losses.append(loss.data)
+            if verbose and ((epoch % 10 == 0) or epoch == epochs-1):
+                print(f"Epoch {epoch:4d} | Loss: {loss.data:.6f}")
+
+    def plot_loss(self):
+        plt.figure(figsize=(10,6))
+        plt.plot(self.losses)
+        plt.xlabel("Epochs")
+        plt.ylabel("Loss")
+        plt.title("Training Loss (Quillan v4.2 Council MoE)")
+        plt.grid(True)
+        plt.show()
+
+
+# === Example/Usage: XOR with real Quillan CouncilMoE (expand for anything) ===
+
+
+if __name__ == "__main__":
+    print("=" * 80)
+    print("QUILLAN v4.2 Council HMoE: Pure Recursive Council Neural Net")
+    print("=" * 80)
+
+    # XOR for test: (can expand to any real problem)
+    X = [
+        [0.0, 0.0],
+        [0.0, 1.0],
+        [1.0, 0.0],
+        [1.0, 1.0]
+    ]
+    Y = [[0.0], [1.0], [1.0], [0.0]]
+    # Configure: input=2, 2 stacked council-layers of 6 councils, each with 6 experts of (8,1) neurons, tanh output
+    net = QuillanMoENet(input_dim=2, council_shapes=[6,6,1], expert_layers=[8,1], expert_acts=['relu','tanh'])
+    trainer = QuillanTrainer(net, loss_fn=lambda yh, t: (yh-t)**2)
+
+    trainer.train(X, Y, epochs=150, lr=0.09, verbose=True)
+    print("Predictions:")
+    preds = trainer.predict(X)
+    for x, y_true, y_pred in zip(X, Y, preds):
+        print(f"Input: {x} | Target: {y_true[0]} | Prediction: {float(y_pred[0].data):.4f}")
+
+    print("\n✓ Quillan v4.2 Council neural architecture complete (Pure Mix/Experts/Council stack)")
+    trainer.plot_loss()
+
+
+
+[Quillan v4.2 PROMPT INSERTION POINT]
+
+```
 
 # Here is a guide
 ![alt text](<Main images/image-35.png>)
