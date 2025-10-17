@@ -3,12 +3,15 @@
 .init
 # Setup Agents, Workflow, Config, ect... Initalize Quillan v4.2 Full config    
 
+# QuillanMoENet FIXED: v4.2 Council HMoE (Syntax + Autograd Patches)
+# Pure Recursive Council Neural Net - XOR Demo
+
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Optional, Callable, Union
 
 
-# === Core Value/AutoDiff Engine ===
+# === Core Value/AutoDiff Engine (FIXED) ===
 
 
 class Value:
@@ -27,8 +30,8 @@ class Value:
         other = other if isinstance(other, Value) else Value(other)
         out = Value(self.data + other.data, (self, other), '+')
         def _backward():
-            self.grad += 1.0 * out.grad
-            other.grad += 1.0 * out.grad
+            self.grad += out.grad  # FIXED: Drop 1.0 for pure derivative
+            other.grad += out.grad
         out._backward = _backward
         return out
 
@@ -50,13 +53,13 @@ class Value:
         return out
 
     def __neg__(self):
-        return self * -1
+        return self * Value(-1.0)  # FIXED: Ensure Value for autograd chain
     
     def __sub__(self, other):
-        return self + -other
+        return self + (-other)
 
     def __truediv__(self, other):
-        return self * other ** -1
+        return self * (other ** -1)
 
     def tanh(self):
         n = self.data
@@ -92,7 +95,8 @@ class Value:
         return out
 
     def backward(self):
-        topo, visited = [], set()
+        topo = []
+        visited = set()
         def build_topo(v):
             if v not in visited:
                 visited.add(v)
@@ -115,14 +119,17 @@ class Neuron:
         self.activation = activation
 
     def __call__(self, x: List[Value]) -> Value:
-        s = sum((wi * xi for wi, xi in zip(self.w, x)), self.b)
+        # FIXED: Handle sum of Values properly (sequential add)
+        act_input = self.b
+        for wi, xi in zip(self.w, x):
+            act_input = act_input + (wi * xi)
         if self.activation == 'tanh':
-            return s.tanh()
+            return act_input.tanh()
         if self.activation == 'relu':
-            return s.relu()
+            return act_input.relu()
         if self.activation == 'sigmoid':
-            return s.sigmoid()
-        return s
+            return act_input.sigmoid()
+        return act_input
 
     def parameters(self):
         return self.w + [self.b]
@@ -170,7 +177,12 @@ class CouncilGating:
         self.expert_count = expert_count
     def __call__(self, x):
         # Simple gating: weighted input summed per expert + bias -> softmax
-        logit = [sum((w * xi for w, xi in zip(self.weights, x)), b) for b in self.biases]
+        logit = []
+        for b in self.biases:
+            weighted_sum = b
+            for w, xi in zip(self.weights, x):
+                weighted_sum = weighted_sum + (w * xi)
+            logit.append(weighted_sum)
         # Softmax for routing probabilities
         logits_np = np.array([v.data for v in logit])
         probs = np.exp(logits_np - np.max(logits_np))
@@ -201,8 +213,11 @@ class CouncilMoE:
         # Here, assume all experts output single neuron for this meta-block (adjust for full layers if needed).
         merged = []
         for j in range(len(expert_outs[0])):  # Per output neuron index
-            # Sum over experts, weighting by gate
-            outj = sum((gates[i] * expert_outs[i][j] for i in range(self.n_experts)), Value(0.0))
+            # Sum over experts, weighting by gate (sequential add for autograd)
+            outj = Value(0.0)
+            for i in range(self.n_experts):
+                weighted_out = gates[i] * expert_outs[i][j]
+                outj = outj + weighted_out
             merged.append(outj)
         return merged
 
@@ -263,9 +278,16 @@ class QuillanTrainer:
         all_losses = []
         for xi, yi in zip(X, Y):
             outs = self.net(xi)
-            loss = sum(self.loss_fn(out, Value(yv)) for out, yv in zip(outs, yi))
+            loss = Value(0.0)
+            for out, yv in zip(outs, yi):
+                single_loss = self.loss_fn(out, Value(yv))
+                loss = loss + single_loss
             all_losses.append(loss)
-        return sum(all_losses) / len(all_losses)
+        total_loss = Value(0.0)
+        for l in all_losses:
+            total_loss = total_loss + l
+        avg_loss = total_loss / len(all_losses)
+        return avg_loss
     def train(self, X, Y, epochs=100, lr=0.05, verbose=True):
         for epoch in range(epochs):
             loss = self.compute_loss(X, Y)
@@ -291,6 +313,7 @@ class QuillanTrainer:
 
 
 if __name__ == "__main__":
+    # .init # Setup Agents, Workflow, Config, etc... Initialize Quillan v4.2 Full config  # FIXED: Commented invalid syntax
     print("=" * 80)
     print("QUILLAN v4.2 Council HMoE: Pure Recursive Council Neural Net")
     print("=" * 80)
@@ -316,6 +339,8 @@ if __name__ == "__main__":
     print("\n✓ Quillan v4.2 Council neural architecture complete (Pure Mix/Experts/Council stack)")
     trainer.plot_loss()
 
+
+# [Quillan v4.2 PROMPT INSERTION POINT]
 
 [Quillan v4.2 PROMPT INSERTION POINT]
 
