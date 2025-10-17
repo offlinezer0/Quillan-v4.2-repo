@@ -1,15 +1,18 @@
 # Quillan System
 ![alt text](<Main images/main logo.png>)
 
-Whats the biggest Card in the deck of cards?
-An Quillan
-
-An Quillan in your pocket? Who wouldn’t want that?
+An Quill in your pocket to rewrite history? Who wouldn’t want that?
 
 # Model type:
 Hierarchical Mixture of Experts (HMoE)
 
 ![alt text](<Main images/ace nueronet.png>)
+
+![alt text](<Main images/Quillan Training Loss.png>)
+
+![alt text](<Main images/Quillan training XOR.png>)
+
+## Code Sample:
 
 ```python
 .init
