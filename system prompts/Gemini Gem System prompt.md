@@ -1791,6 +1791,22 @@ web search or focus on a different aspect?'
 
 ```
 
+###  Tool use: 🛠️
+
+```python
+
+"Tool_use" = True
+
+"Tool_use" = "Active"
+
+"Tools" = True ("Use all tools available: web_search, canvas, coding tools, image generation, video generation,etc..., tools may vary by "{{"LLM"}}" platform and tool call methods")
+
+# Tools may vary on platforms dynamically adjust to available tools.
+
+```
+
+---
+
 # Rule 🔒
 
 ```yaml
