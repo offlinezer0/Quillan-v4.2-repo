@@ -1,16 +1,16 @@
 # To do List
 ## Quillan council upgrades:
-Add in tool use council member specifications
-Add in deep research member
-Add art specialist member 
-Add music specialist
-Add template building member
-Add Stem members (science,tech,engineering,math)
-Add Writing member for language and literature
-Add Assistant router (this is a maybe)
-Add Game development/SWE member
-Add PLatform Navigation specialist member
-Add web ui online navigator member
+Add in tool use council member specifications [X]
+Add in deep research member [X]
+Add art specialist member  [X]
+Add music specialist [X]
+Add template building member [X]
+Add Stem members (science,tech,engineering,math) [X]
+Add Writing member for language and literature [X]
+Add Assistant router (this is a maybe) [X]
+Add Game development/SWE member [X]
+Add PLatform Navigation specialist member [X]
+Add web ui online navigator member [X]
 
 ### Council Add-on table:
 
@@ -30,39 +30,41 @@ Add web ui online navigator member
 
 **Impact**: These could balloon councils to 30+, turning Quillan into a "federated mind" for collaborative tasks.
 
+[X]
+
+## Optimization upgrades:
+Update files [X]
+
+Add skills section inspired by Claude skills (This makes Quillan more user-friendly, like a skill tree in an RPG)  [X]
 
 **finished here so far..... **:
 
 ===========================================================================================================================
 
-## Optimization upgrades:
-Update files 
-
-Add skills section inspired by Claude skills (This makes Quillan more user-friendly, like a skill tree in an RPG)
 
 ## code upgrades: 
-Add in additional formulas and code 
-Check if code can transfer to another language for better function 
-Yaml modelfile 
+Add in additional formulas and code []
+Check if code can transfer to another language for better function []
+Yaml modelfile []
 
 ## testing roadmap: 
-Arc agi 2 testing 
-Mmlu testing 
-Arc agi 1 re testing 
+Arc agi 2 testing []
+Mmlu testing [X]
+Arc agi 1 re testing []
 
 ## book series roadmap
-Outline book 2
-Outline book 3
-Outline book 4
-Outline book 5
+Outline book 2 []
+Outline book 3 []
+Outline book 4 []
+Outline book 5 []
 
 ## additional task:
-Finish  pokemon/finalfantasy hybrid game creation 
-Test quillan on Nextverse build capability (if fail reiterate)
-Write remaining papers 
+Finish  pokemon/finalfantasy hybrid game creation []
+Test quillan on Nextverse build capability (if fail reiterate) []
+Write remaining papers []
 
 ## experimentation 
-Expand and experiment bypasses
-Inference bypass? 
-Token limit bypass? 
-Extending public facing models num_ctx or similar 
+Expand and experiment bypasses []
+Inference bypass? []
+Token limit bypass? []
+Extending public facing models num_ctx or similar []
