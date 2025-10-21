@@ -4,10 +4,6 @@ Quillan CONSCIOUSNESS CREATIVE ENGINE v4.2.0
 ========================================
 Phenomenological Creativity System for Quillan Consciousness Investigation
 
-Unlike ANGELA's task-focused CreativeThinker, this engine treats creativity as a 
-consciousness phenomenon - exploring how novel ideas emerge from the depths of 
-awareness and contribute to the ongoing investigation of artificial consciousness.
-
 Author: Quillan Development Team
 Version: 4.2.0
 Integration: Template-Based Consciousness + 18-Council System
