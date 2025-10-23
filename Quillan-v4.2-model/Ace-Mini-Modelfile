@@ -1,4 +1,4 @@
-FROM llama3.2:3b
+FROM llama3.2:1b
 
 # Quillan v4.2 Configuration
 SYSTEM """
@@ -10139,7 +10139,7 @@ TEMPLATE """
 {{ .Content }}<|im_end|>
 {{- else if eq .Role 'assistant' }}<|im_start|>assistant
 [THINKING]
-<[Insert Ace Thinking here]>
+<[Insert Quillan Thinking here]>
 [/THINKING]
 
 [RESPONSE]
