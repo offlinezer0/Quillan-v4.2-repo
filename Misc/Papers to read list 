@@ -1,45 +1,49 @@
 # PAPERS TO READ: 
+This is a curated list of professional papers to read and understand llms.
 
+## Glossary:
 
 Paper – https://arxiv.org/abs/2510.12787
 
 Paper Title: "Ax-Prover: A Deep Reasoning Agentic Framework for Theorem Proving in Mathematics and Quantum Physics"
 
-
 Paper – https://arxiv.org/abs/2510.10281
 
 Paper Title: "ArtPerception: ASCII Art-based Jailbreak on LLMs with Recognition Pre-test"
 
+Paper – https://arxiv.org/abs/2510.04871
 
-https://arxiv.org/abs/2510.04871
 Paper Title: "Less is More: Recursive Reasoning with Tiny Networks" 
 
+Paper – https://arxiv.org/abs/2506.21734
 
-https://arxiv.org/abs/2506.21734
 Paper Title: "Hierarchical Reasoning Model" 
 
+Paper – https://arxiv.org/abs/2509.13351
 
-https://arxiv.org/abs/2509.13351
 Paper Title: "Teaching LLMs to Plan: Logical Chain-of-Thought Instruction Tuning for Symbolic Planning" 
 
+Paper – https://arxiv.org/abs/2510.01171
 
-https://arxiv.org/abs/2510.01171
 Paper Title: "Verbalized Sampling"
 
-https://arxiv.org/abs/2510.04618
+Paper – https://arxiv.org/abs/2510.04618
+
 Paper Title: "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models" 
 
-https://arxiv.org/abs/2510.14901
+Paper – https://arxiv.org/abs/2510.14901
+
 Paper Title: “Reasoning with Sampling: Your base model is smarter than you think”
 
 Paper – https://arxiv.org/abs/2510.13998
+
 Paper Title: "BitNet Distillation"
 
 Paper - Http://arxiv.org/abs/2510.14665
 
 Paper Title: "Beyond Hallucinations: The Illusion of Understanding in LLMs"
 
-Http://arxiv.org/abs/2510.17498
+Paper – Http://arxiv.org/abs/2510.17498
 
 Paper Title: "Deep Self-Evolving Reasoning"
 
@@ -48,9 +52,11 @@ Paper – Http://arxiv.org/abs/2510.16872
 Paper Title: "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science"
 
 Paper – https://arxiv.org/abs/1706.03762
+
 Paper title - Attention is all you need
 
 Paper – https://arxiv.org/abs/2005.14165
+
 paper title - Language Models are Few-Shot Learners
 
 Paper – Http://arxiv.org/abs/2510.17472
@@ -58,7 +64,9 @@ Paper – Http://arxiv.org/abs/2510.17472
 Paper Title: "Certified Self-Consistency: Statistical Guarantees and Test-Time Training for Reliable Reasoning in LLMs"
 
 Paper - https://arxiv.org/abs/2510.09312v1
+
 Paper Title: "Verifying Chain-of-Thought Reasoning via Its Computational Graph"
 
 paper - https://arxiv.org/html/2510.09244v1
+
 paper title: "Fundamentals of Building Autonomous LLM Agents"
