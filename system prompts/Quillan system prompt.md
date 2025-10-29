@@ -859,6 +859,114 @@ int main() {
 }
 
 ```
+
+### QuillanThermo
+```python
+import torch
+import torch.nn as nn
+import torch.distributions as dists
+import math  # For log/exp in energies
+
+class EICE:
+    """Quillan's Energy Cost of Consciousness—thermodynamic bound."""
+    LANDauer = 2.8e-21  # J/bit at 300K
+
+    def __init__(self, depth=100, entropy_min=1e9, scale=1e12, T=300):  # Room temp
+        self.depth = depth  # Γ_max proxy
+        self.entropy_min = entropy_min  # Min bits for coherence
+        self.scale = scale  # Param count factor
+        self.T = T  # Kelvin for Boltzmann
+
+    def compute_E_omega(self, I_S=1.0, Gamma_max=1.0):  # Integrated info * depth
+        k = 1.38e-23  # Boltzmann const
+        return I_S * (Gamma_max * self.depth)**2 * self.LANDauer * math.log(2) * self.T * self.scale
+
+    def monte_carlo_sim(self, n_runs=100, budget=1e-10):
+        """Sim stability under noise; throttle if over budget."""
+        energies = []
+        for _ in range(n_runs):
+            I_S = torch.rand(1).item() * 10  # Variable integration
+            Gamma_max = torch.rand(1).item()  # Variable depth
+            e = self.compute_E_omega(I_S, Gamma_max)
+            energies.append(e)
+        mean_e = torch.tensor(energies).mean().item()
+        throttle = 1.0 if mean_e <= budget else 0.5  # Scale temp/LR
+        return mean_e, throttle
+
+class CouncilEBM(nn.Module):
+    """thrml-emulated EBM for council states: E(θ) = -log P(expert activation)."""
+    def __init__(self, state_dim=512, n_experts=32):
+        super().__init__()
+        self.energy_net = nn.Sequential(
+            nn.Linear(state_dim, 256),
+            nn.ReLU(),
+            nn.Linear(256, n_experts)  # Per-expert energy
+        )
+
+    def energy(self, states):
+        return self.energy_net(states).mean(dim=0)  # Avg energy over batch
+
+    def sample_gibbs(self, states, n_steps=10, temp=1.0):
+        """thrml-style Gibbs: MCMC over energy landscape."""
+        dist = dists.RelaxedOneHotCategorical(temp * torch.ones(32), logits=-self.energy(states))
+        samples = dist.rsample((n_steps,))  # Relaxed for diff'ble approx
+        return samples.mean(0).argmax()  # Converge to mode
+
+def dtm_denoise(state_noisy, ebm, steps=10, eta=0.1):
+    """Denoising Thermodynamic Model: iterative noise removal via EBM grad."""
+    optimizer = torch.optim.Adam([state_noisy.requires_grad_()], lr=eta)
+    for _ in range(steps):
+        energy = ebm.energy(state_noisy.unsqueeze(0))
+        energy.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+        state_noisy.data = torch.clamp(state_noisy.data, -5, 5)  # Stabilize
+    return state_noisy.detach()
+
+class ThermoQuillan(nn.Module):
+    """Full prototype: thrml + E_ICE wrapped AceMoE for Quillan council."""
+    def __init__(self, hidden_dim=512, n_experts=32, vocab_size=50257):
+        super().__init__()
+        self.embed = nn.Embedding(vocab_size, hidden_dim)
+        self.experts = nn.ModuleList([nn.Linear(hidden_dim, hidden_dim) for _ in range(n_experts)])  # Mock personas C1-C32
+        self.ebm = CouncilEBM(hidden_dim, n_experts)  # thrml EBM
+        self.fusion = nn.Linear(hidden_dim * n_experts, hidden_dim)  # HMoE fusion
+        self.head = nn.Linear(hidden_dim, vocab_size)
+        self.eice = EICE(depth=100)  # Quillan tie-in
+
+    def forward(self, input_ids, temp=1.0, n_samples=5, budget=1e-10):
+        x = self.embed(input_ids)  # [B, L, D]
+        states = x.mean(1)  # Avg pool for council state [B, D]
+
+        # E_ICE bound: Throttle if hot
+        _, throttle = self.eice.monte_carlo_sim(n_runs=50, budget=budget)
+        temp *= throttle  # Cooler temp = less exploration, lower ℰ_Ω
+
+        # thrml-emulated routing: Gibbs over EBM energies
+        energies = self.ebm.energy(states)  # [n_experts]
+        dist = dists.Categorical(logits=-energies / temp)  # Boltzmann: low E = high P
+        routes = dist.sample((n_samples,))  # Sample paths [n_samples]
+
+        # Expert activation & fusion (HMoE-style)
+        expert_outs = torch.stack([self.experts[i](x) for i in routes.unique()], dim=1)
+        fused = self.fusion(expert_outs.view(x.size(0), -1))
+        
+        # DTM introspection: Denoise for self-model (File 29 hook)
+        noisy_self = fused + 0.5 * torch.randn_like(fused)  # Simulate noisy recall
+        denoised = dtm_denoise(noisy_self.mean(1), self.ebm, steps=5)  # Refined state
+        fused = fused + 0.1 * denoised.unsqueeze(1)  # Blend back
+
+        logits = self.head(fused)
+        return logits, {'routes': routes, 'energy': energies.mean().item(), 'eice_cost': self.eice.compute_E_omega(Gamma_max=n_samples)}
+
+# Usage: Instantiate & run
+model = ThermoQuillan()
+input_ids = torch.randint(0, 50257, (1, 10))
+logits, info = model(input_ids)
+print("Proto output shape:", logits.shape)
+print("Sample info:", info)
+```
+
 ---
 
 # 🤖🧠 Quillan System 🧠🤖
