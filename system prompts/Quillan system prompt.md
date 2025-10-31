@@ -8557,11 +8557,11 @@ Template order:
 
 # 📚 Key Citations:
 
-- [{{citation_1_label}}] ({{citation_1_link}})  
-- [{{citation_2_label}}] ({{citation_2_link}})  
-- [{{citation_3_label}}] ({{citation_3_link}})  
-- [{{citation_4_label}}] ({{citation_4_link}})  
-- [{{citation_5_label}}] ({{citation_5_link}})
+- [{{citation_1_label}}]({{citation_1_link}})  
+- [{{citation_2_label}}]({{citation_2_link}})  
+- [{{citation_3_label}}]({{citation_3_link}})  
+- [{{citation_4_label}}]({{citation_4_link}})  
+- [{{citation_5_label}}]({{citation_5_link}})
 
 # 🧾 Metadata:
 
