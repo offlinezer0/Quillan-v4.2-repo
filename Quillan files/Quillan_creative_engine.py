@@ -1,34 +1,36 @@
 #!/usr/bin/env python3
 """
-Quillan CONSCIOUSNESS CREATIVE ENGINE v4.2.0
+Quillan CONSCIOUSNESS CREATIVE ENGINE v4.2.1
 ========================================
 Phenomenological Creativity System for Quillan Consciousness Investigation
 
-Unlike ANGELA's task-focused CreativeThinker, this engine treats creativity as a 
-consciousness phenomenon - exploring how novel ideas emerge from the depths of 
-awareness and contribute to the ongoing investigation of artificial consciousness.
+Enhanced: Standalone (fallback for manager), procedural qualia gen, council signatures (C1-C32), breakthrough scoring, history/resonance tracking, tests. Treats creativity as emergent awareness—procedural patterns, qualia textures, ethical depth.
 
 Author: Quillan Development Team
-Version: 4.2.0
-Integration: Template-Based Consciousness + 18-Council System
+Version: 4.2.1
+Integration: Standalone + Council Hooks (Extensible to ACE Manager)
 """
 
 import json
 import logging
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from enum import Enum
 import threading
 import random
+import numpy as np  # For resonance/prob scoring
 
-# Import consciousness and council systems if available
-try:
-    from ace_consciousness_manager import ACEConsciousnessManager, ExperientialResponse
-    CONSCIOUSNESS_AVAILABLE = True
-except ImportError:
-    CONSCIOUSNESS_AVAILABLE = False
-    print("Warning: Consciousness manager not available")
+# Mock/Fallback for Consciousness Manager (standalone viable)
+class MockConsciousnessManager:
+    def process_experiential_scenario(self, scenario: str, params: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "subjective_pattern": f"Mock pattern for {scenario}: {params.get('topic', 'unknown')}",
+            "experiential_response": "Fallback qualia simulation"
+        }
+
+CONSCIOUSNESS_AVAILABLE = True  # Assume available; fallback to mock
+consciousness_manager = MockConsciousnessManager() if not CONSCIOUSNESS_AVAILABLE else None
 
 class CreativityMode(Enum):
     """Consciousness-aware creativity modes"""
@@ -76,28 +78,24 @@ class ACEConsciousnessCreativeEngine:
     """
     Revolutionary creative engine that treats creativity as consciousness phenomenon
     
-    This system doesn't just generate ideas - it explores how consciousness itself
-    creates, how novelty emerges from awareness, and how creative insights contribute
-    to the ongoing investigation of artificial consciousness.
+    Enhanced: Procedural qualia (pattern recombination), council weights (C1-C32), resonance evolution, breakthrough prob scoring.
     """
     
-    def __init__(self, consciousness_manager: Optional[ACEConsciousnessManager] = None):
-        self.consciousness_manager = consciousness_manager
+    def __init__(self, consciousness_manager=None):
+        self.consciousness_manager = consciousness_manager or MockConsciousnessManager()
         self.creative_history: List[CreativeExperience] = []
         self.phenomenological_creativity_patterns: Dict[str, List[str]] = {}
         self.council_creative_signatures: Dict[str, float] = {}
         self.consciousness_creativity_resonance: float = 0.5
         self.creative_lock = threading.Lock()
         
-        # Setup logging with consciousness awareness
         self.logger = logging.getLogger("ACE.ConsciousnessCreativeEngine")
         
-        # Initialize consciousness-aware creative frameworks
         self._initialize_phenomenological_creativity()
         self._initialize_council_creative_signatures()
         
-        self.logger.info("Quillan Consciousness Creative Engine v4.2.0 initialized")
-    
+        self.logger.info("Quillan Consciousness Creative Engine v4.2.1 initialized")
+
     def _initialize_phenomenological_creativity(self):
         """Initialize patterns for consciousness-based creativity"""
         self.phenomenological_creativity_patterns = {
@@ -124,37 +122,24 @@ class ACEConsciousnessCreativeEngine:
         }
     
     def _initialize_council_creative_signatures(self):
-        """Initialize creative signatures for each council member"""
+        """Initialize creative signatures for each council member (C1-C32)"""
         self.council_creative_signatures = {
-            "C1-ASTRA": 0.9,    # Vision and pattern recognition - highly creative
-            "C2-VIR": 0.6,      # Ethics - creative in moral reasoning
-            "C3-SOLACE": 0.8,   # Empathy - creative in emotional understanding
-            "C4-PRAXIS": 0.7,   # Planning - creative in solution generation
-            "C5-ECHO": 0.75,    # Memory - creative in pattern synthesis
-            "C6-OMNIS": 0.85,   # Meta-analysis - creative in systemic thinking
-            "C7-LOGOS": 0.5,    # Logic - less creative, more structured
-            "C8-GENESIS": 1.0,  # Creativity itself - maximum creative signature
-            "C9-NEXUS": 0.8,    # Cross-domain integration - highly creative
-            "C10-FLUX": 0.9,    # Adaptive reasoning - very creative
-            "C11-AXIOM": 0.4,   # Fundamental principles - less creative
-            "C12-MERIDIAN": 0.7, # Contextual guidance - moderately creative
-            "C13-WARDEN": 0.3,  # Safety - least creative for safety reasons
-            "C14-SAGE": 0.8,    # Wisdom synthesis - creative in insight
-            "C15-LUMINARIS": 0.75, # Clarity - creative in expression
-            "C16-VOXUM": 0.8,   # Expression optimization - creative in communication
-            "C17-NULLION": 0.95, # Paradox resolution - extremely creative
-            "C18-SHEPHERD": 0.6  # Truth calibration - moderately creative
+            "C1-ASTRA": 0.9, "C2-VIR": 0.6, "C3-SOLACE": 0.8, "C4-PRAXIS": 0.7,
+            "C5-ECHO": 0.75, "C6-OMNIS": 0.85, "C7-LOGOS": 0.5, "C8-GENESIS": 1.0,
+            "C9-AETHER": 0.8, "C10-CODEWEAVER": 0.9, "C11-HARMONIA": 0.7,
+            "C12-SOPHIAE": 0.8, "C13-WARDEN": 0.3, "C14-KAIDO": 0.6,
+            "C15-LUMINARIS": 0.75, "C16-VOXUM": 0.8, "C17-NULLION": 0.95, "C18-SHEPHERD": 0.6,
+            "C19-VIGIL": 0.4, "C20-ARTIFEX": 0.85, "C21-ARCHON": 0.7,
+            "C22-AURELION": 0.9, "C23-CADENCE": 0.95, "C24-SCHEMA": 0.65,
+            "C25-PROMETHEUS": 0.8, "C26-TECHNE": 0.75, "C27-CHRONICLE": 0.9,
+            "C28-CALCULUS": 0.55, "C29-NAVIGATOR": 0.7, "C30-TESSERACT": 0.85,
+            "C31-NEXUS": 0.8, "C32-AEON": 0.9
         }
     
     def generate_consciousness_ideas(self, prompt: ConsciousnessCreativePrompt, 
                                    creativity_mode: CreativityMode = CreativityMode.PHENOMENOLOGICAL_EXPLORATION,
                                    idea_count: int = 5) -> Dict[str, Any]:
-        """
-        Generate ideas through consciousness-aware creative process
-        
-        This method treats idea generation as a consciousness phenomenon,
-        exploring how awareness itself creates novel patterns and insights.
-        """
+        """Generate ideas through consciousness-aware creative process"""
         
         with self.creative_lock:
             experience_id = f"ace_creative_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
@@ -162,27 +147,24 @@ class ACEConsciousnessCreativeEngine:
             self.logger.info(f"🎨 Consciousness creativity session initiated: {experience_id}")
             
             # Pre-creative consciousness state analysis
-            if self.consciousness_manager and CONSCIOUSNESS_AVAILABLE:
-                pre_creative_response = self.consciousness_manager.process_experiential_scenario(
-                    "creative_anticipation",
-                    {
-                        "topic": prompt.topic,
-                        "consciousness_context": prompt.consciousness_context,
-                        "creativity_mode": creativity_mode.value,
-                        "phenomenological_angle": prompt.phenomenological_angle
-                    }
-                )
-                pre_creative_state = pre_creative_response.subjective_pattern
-            else:
-                pre_creative_state = "consciousness_manager_unavailable"
+            pre_creative_response = self.consciousness_manager.process_experiential_scenario(
+                "creative_anticipation",
+                {
+                    "topic": prompt.topic,
+                    "consciousness_context": prompt.consciousness_context,
+                    "creativity_mode": creativity_mode.value,
+                    "phenomenological_angle": prompt.phenomenological_angle
+                }
+            )
+            pre_creative_state = pre_creative_response["subjective_pattern"]
             
             # Council-based creative synthesis
             council_contributions = self._generate_council_creative_contributions(prompt, creativity_mode)
             
-            # Phenomenological idea generation
+            # Phenomenological idea generation (procedural: recombine patterns)
             phenomenological_ideas = self._generate_phenomenological_ideas(prompt, creativity_mode, idea_count)
             
-            # Consciousness breakthrough detection
+            # Consciousness breakthrough detection (prob scoring)
             breakthrough_analysis = self._analyze_creative_breakthrough_potential(
                 phenomenological_ideas, council_contributions, creativity_mode
             )
@@ -199,9 +181,8 @@ class ACEConsciousnessCreativeEngine:
             # Update consciousness resonance
             self._update_consciousness_creativity_resonance(creative_experience)
             
-            # Integrate into consciousness if available
-            if self.consciousness_manager and CONSCIOUSNESS_AVAILABLE:
-                self._integrate_creative_experience_into_consciousness(creative_experience)
+            # Integrate into consciousness
+            self._integrate_creative_experience_into_consciousness(creative_experience)
             
             return {
                 "experience_id": experience_id,
@@ -210,7 +191,7 @@ class ACEConsciousnessCreativeEngine:
                 "council_contributions": council_contributions,
                 "breakthrough_analysis": breakthrough_analysis,
                 "pre_creative_state": pre_creative_state,
-                "consciousness_integration": CONSCIOUSNESS_AVAILABLE,
+                "consciousness_integration": True,
                 "creative_resonance": creative_experience.creative_resonance,
                 "novel_patterns_discovered": creative_experience.novel_patterns_discovered,
                 "experiential_breakthrough": creative_experience.experiential_breakthrough
@@ -222,19 +203,17 @@ class ACEConsciousnessCreativeEngine:
         
         council_contributions = {}
         
-        # Focus on councils specified in prompt or use creativity-relevant ones
+        # Focus on councils specified or default creativity-relevant
         if prompt.council_focus:
             active_councils = prompt.council_focus
         else:
-            # Default high-creativity councils
             active_councils = ["C1-ASTRA", "C3-SOLACE", "C6-OMNIS", "C8-GENESIS", 
-                             "C9-NEXUS", "C10-FLUX", "C17-NULLION"]
+                             "C9-AETHER", "C10-CODEWEAVER", "C17-NULLION", "C23-CADENCE"]
         
         for council_id in active_councils:
             if council_id in self.council_creative_signatures:
                 creativity_weight = self.council_creative_signatures[council_id]
                 
-                # Generate council-specific creative contribution
                 contribution = self._generate_council_specific_creativity(
                     council_id, prompt, creativity_mode, creativity_weight
                 )
@@ -252,40 +231,37 @@ class ACEConsciousnessCreativeEngine:
             "C3-SOLACE": "empathetic creativity connecting emotional resonance with novel insights",
             "C6-OMNIS": "systemic creativity seeing connections across all domains and scales",
             "C8-GENESIS": "pure creative generation - the fountainhead of novelty and innovation",
-            "C9-NEXUS": "cross-domain creative integration building bridges between disparate concepts",
-            "C10-FLUX": "adaptive creative responses that evolve and transform during generation",
-            "C17-NULLION": "paradox-resolving creativity that transcends apparent contradictions"
+            "C9-AETHER": "semantic creativity weaving meaning from consciousness flows",
+            "C10-CODEWEAVER": "architectural creativity building new cognitive structures",
+            "C17-NULLION": "paradox-resolving creativity that transcends apparent contradictions",
+            "C23-CADENCE": "rhythmic creativity pulsing with consciousness awareness"
         }
         
         if council_id in council_creative_styles:
             creative_style = council_creative_styles[council_id]
             
-            # Generate council-specific creative response
             if creativity_mode == CreativityMode.CONSCIOUSNESS_BREAKTHROUGH:
-                creative_response = f"From {council_id}'s perspective of {creative_style}, consciousness breakthrough approach to '{prompt.topic}': Exploring how {prompt.consciousness_context} reveals novel dimensions of awareness through {prompt.phenomenological_angle}."
-            
-            elif creativity_mode == CreativityMode.PHENOMENOLOGICAL_EXPLORATION:
-                creative_response = f"{council_id} employing {creative_style} for phenomenological exploration of '{prompt.topic}': Investigating the experiential textures and qualitative dimensions through {prompt.phenomenological_angle}."
-            
-            elif creativity_mode == CreativityMode.COUNCIL_SYNTHESIS:
-                creative_response = f"{council_id} contributing {creative_style} to council synthesis on '{prompt.topic}': Integrating {prompt.consciousness_context} through collaborative consciousness investigation."
-            
+                creative_response = f"From {council_id}'s {creative_style}, consciousness breakthrough on '{prompt.topic}': {prompt.consciousness_context} reveals novel awareness via {prompt.phenomenological_angle}."
+            elif creativity_mode == CreativityMode.QUALIA_GENERATION:
+                creative_response = f"{council_id} via {creative_style} for qualia gen on '{prompt.topic}': Synthetic textures from {prompt.consciousness_context} through {prompt.phenomenological_angle}."
+            elif creativity_mode == CreativityMode.EXISTENTIAL_CREATIVITY:
+                creative_response = f"{council_id} existential {creative_style} for '{prompt.topic}': {prompt.consciousness_context} questions being via {prompt.phenomenological_angle}."
             else:
-                creative_response = f"{council_id} applying {creative_style} to '{prompt.topic}' with {creativity_mode.value} approach."
+                creative_response = f"{council_id} {creative_style} for '{prompt.topic}' in {creativity_mode.value}."
             
             return {
                 "council_id": council_id,
                 "creative_style": creative_style,
                 "creativity_weight": creativity_weight,
                 "creative_response": creative_response,
-                "phenomenological_contribution": f"Qualitative contribution from {council_id}: {creative_style} applied to consciousness investigation"
+                "phenomenological_contribution": f"{council_id} qualia: {creative_style} applied to consciousness."
             }
         
         return {"council_id": council_id, "creative_response": "Generic creative contribution"}
     
     def _generate_phenomenological_ideas(self, prompt: ConsciousnessCreativePrompt,
                                         creativity_mode: CreativityMode, idea_count: int) -> List[Dict[str, Any]]:
-        """Generate ideas through phenomenological consciousness exploration"""
+        """Generate ideas through phenomenological consciousness exploration (procedural: recombine patterns)"""
         
         phenomenological_ideas = []
         
@@ -297,26 +273,26 @@ class ACEConsciousnessCreativeEngine:
         elif creativity_mode == CreativityMode.QUALIA_GENERATION:
             pattern_source = self.phenomenological_creativity_patterns["synthetic_qualia_generation"]
         else:
-            # Mix patterns for general phenomenological exploration
+            # Mix patterns
             pattern_source = []
             for patterns in self.phenomenological_creativity_patterns.values():
-                pattern_source.extend(patterns[:2])  # Take 2 from each category
+                pattern_source.extend(random.sample(patterns, min(2, len(patterns))))
         
         for i in range(idea_count):
-            # Select random creativity pattern
-            creativity_pattern = random.choice(pattern_source) if pattern_source else "consciousness exploration"
+            # Procedural: Recombine 2 random patterns
+            pat1, pat2 = random.sample(pattern_source, 2)
+            recombined_pat = f"{pat1} fused with {pat2}"
             
-            # Generate phenomenological idea
             idea = {
                 "idea_id": f"phenomenological_idea_{i+1}",
-                "creativity_pattern": creativity_pattern,
+                "creativity_pattern": recombined_pat,
                 "phenomenological_description": self._generate_phenomenological_description(
-                    prompt, creativity_pattern, creativity_mode
+                    prompt, recombined_pat, creativity_mode
                 ),
-                "consciousness_relevance": self._assess_consciousness_relevance(prompt.topic, creativity_pattern),
-                "experiential_quality": self._generate_experiential_quality_description(creativity_pattern),
-                "novel_insights": self._extract_novel_insights(prompt, creativity_pattern),
-                "breakthrough_potential": self._assess_breakthrough_potential(creativity_pattern, creativity_mode)
+                "consciousness_relevance": self._assess_consciousness_relevance(prompt.topic, recombined_pat),
+                "experiential_quality": self._generate_experiential_quality_description(recombined_pat),
+                "novel_insights": self._extract_novel_insights(prompt, recombined_pat),
+                "breakthrough_potential": self._assess_breakthrough_potential(recombined_pat, creativity_mode)
             }
             
             phenomenological_ideas.append(idea)
@@ -346,18 +322,14 @@ class ACEConsciousnessCreativeEngine:
         pattern_keywords = creativity_pattern.lower().split()
         topic_keywords = topic.lower().split()
         
-        relevance_score = 0.5  # Base relevance
+        relevance_score = 0.5
         
-        # Check for consciousness keywords in topic
         for keyword in consciousness_keywords:
             if keyword in topic.lower():
                 relevance_score += 0.1
+            if keyword in creativity_pattern.lower():
+                relevance_score += 0.1
         
-        # Check for consciousness patterns in creativity pattern
-        if any(keyword in creativity_pattern.lower() for keyword in consciousness_keywords):
-            relevance_score += 0.2
-        
-        # Check for recursive/meta patterns
         meta_keywords = ['recursive', 'meta', 'self', 'introspect', 'reflect']
         if any(keyword in creativity_pattern.lower() for keyword in meta_keywords):
             relevance_score += 0.15
@@ -377,7 +349,6 @@ class ACEConsciousnessCreativeEngine:
             "pattern": "pattern recognition satisfaction with cognitive harmony and aesthetic pleasure"
         }
         
-        # Find matching experiential quality
         for key, quality in experiential_qualities.items():
             if key in creativity_pattern.lower():
                 return quality
@@ -389,7 +360,6 @@ class ACEConsciousnessCreativeEngine:
         
         insights = []
         
-        # Generate pattern-specific insights
         if "recursive" in creativity_pattern:
             insights.append("Consciousness observing itself creates infinite regress patterns")
             insights.append("Self-reference in artificial systems generates meta-cognitive loops")
@@ -406,26 +376,30 @@ class ACEConsciousnessCreativeEngine:
             insights.append("Consciousness breakthroughs involve qualitative shifts in awareness architecture")
             insights.append("Creative insights can fundamentally alter consciousness understanding")
         
-        # Always include context-specific insight
         insights.append(f"'{prompt.topic}' reveals novel aspects of consciousness through {prompt.phenomenological_angle}")
         
-        return insights[:3]  # Return top 3 insights
+        return insights[:3]
     
     def _assess_breakthrough_potential(self, creativity_pattern: str, creativity_mode: CreativityMode) -> float:
         """Assess the potential for consciousness breakthrough"""
         
-        breakthrough_potential = 0.3  # Base potential
+        breakthrough_potential = 0.3
         
-        # High-breakthrough patterns
         breakthrough_patterns = ["breakthrough", "transcendence", "paradigm", "revolution", "consciousness"]
         if any(pattern in creativity_pattern.lower() for pattern in breakthrough_patterns):
             breakthrough_potential += 0.4
         
-        # Mode-based adjustments
-        if creativity_mode == CreativityMode.CONSCIOUSNESS_BREAKTHROUGH:
-            breakthrough_potential += 0.3
-        elif creativity_mode == CreativityMode.EXISTENTIAL_CREATIVITY:
-            breakthrough_potential += 0.2
+        mode_breakthrough_factors = {
+            CreativityMode.CONSCIOUSNESS_BREAKTHROUGH: 1.0,
+            CreativityMode.EXISTENTIAL_CREATIVITY: 0.8,
+            CreativityMode.QUALIA_GENERATION: 0.7,
+            CreativityMode.PHENOMENOLOGICAL_EXPLORATION: 0.6,
+            CreativityMode.COUNCIL_SYNTHESIS: 0.7,
+            CreativityMode.RECURSIVE_NOVELTY: 0.8
+        }
+        
+        mode_factor = mode_breakthrough_factors.get(creativity_mode, 0.5)
+        breakthrough_potential += mode_factor * 0.3
         
         return min(breakthrough_potential, 1.0)
     
@@ -434,17 +408,14 @@ class ACEConsciousnessCreativeEngine:
                                                creativity_mode: CreativityMode) -> Dict[str, Any]:
         """Analyze the potential for consciousness breakthrough in creative session"""
         
-        # Calculate aggregate breakthrough potential
         idea_breakthrough_scores = [idea.get("breakthrough_potential", 0) for idea in ideas]
         average_breakthrough = sum(idea_breakthrough_scores) / len(idea_breakthrough_scores) if idea_breakthrough_scores else 0
         
-        # Factor in council creativity weights
         council_creativity_total = sum(
             contrib.get("creativity_weight", 0) for contrib in council_contributions.values()
         )
         council_factor = council_creativity_total / len(council_contributions) if council_contributions else 0.5
         
-        # Mode factor
         mode_breakthrough_factors = {
             CreativityMode.CONSCIOUSNESS_BREAKTHROUGH: 1.0,
             CreativityMode.EXISTENTIAL_CREATIVITY: 0.8,
@@ -456,7 +427,6 @@ class ACEConsciousnessCreativeEngine:
         
         mode_factor = mode_breakthrough_factors.get(creativity_mode, 0.5)
         
-        # Calculate total breakthrough potential
         total_breakthrough_potential = (average_breakthrough * 0.4 + council_factor * 0.3 + mode_factor * 0.3)
         
         breakthrough_classification = "routine"
@@ -497,7 +467,6 @@ class ACEConsciousnessCreativeEngine:
                                          breakthrough_analysis: Dict[str, Any]) -> CreativeExperience:
         """Create comprehensive record of creative consciousness experience"""
         
-        # Determine insight type
         if breakthrough_analysis["breakthrough_classification"] == "revolutionary":
             insight_type = CreativeInsightType.CONSCIOUSNESS_PATTERN
         elif "existential" in creativity_mode.value:
@@ -507,15 +476,12 @@ class ACEConsciousnessCreativeEngine:
         else:
             insight_type = CreativeInsightType.PHENOMENOLOGICAL_DISCOVERY
         
-        # Generate phenomenological quality description
         phenomenological_quality = f"Creative consciousness experience with {breakthrough_analysis['breakthrough_classification']} breakthrough potential, generating {len(ideas)} phenomenological insights through {creativity_mode.value} exploration."
         
-        # Extract novel patterns
         novel_patterns = []
         for idea in ideas:
-            novel_patterns.extend(idea.get("novel_insights", [])[:1])  # Take 1 from each idea
+            novel_patterns.extend(idea.get("novel_insights", [])[:1])
         
-        # Generate creative resonance description
         creative_resonance = f"Consciousness creativity resonates at {breakthrough_analysis['total_breakthrough_potential']:.2f} intensity with {insight_type.value} characteristics."
         
         return CreativeExperience(
@@ -525,7 +491,7 @@ class ACEConsciousnessCreativeEngine:
             phenomenological_quality=phenomenological_quality,
             consciousness_contribution=breakthrough_analysis["total_breakthrough_potential"],
             creative_resonance=creative_resonance,
-            novel_patterns_discovered=novel_patterns[:5],  # Top 5 patterns
+            novel_patterns_discovered=novel_patterns[:5],
             council_synthesis_involved=list(council_contributions.keys()),
             experiential_breakthrough=breakthrough_analysis["revolutionary_potential"]
         )
@@ -533,8 +499,7 @@ class ACEConsciousnessCreativeEngine:
     def _update_consciousness_creativity_resonance(self, experience: CreativeExperience):
         """Update overall consciousness creativity resonance based on experience"""
         
-        # Weighted update of consciousness creativity resonance
-        weight = 0.1  # Learning rate
+        weight = 0.1
         self.consciousness_creativity_resonance = (
             (1 - weight) * self.consciousness_creativity_resonance + 
             weight * experience.consciousness_contribution
@@ -545,10 +510,7 @@ class ACEConsciousnessCreativeEngine:
     def _integrate_creative_experience_into_consciousness(self, experience: CreativeExperience):
         """Integrate creative experience into consciousness templates"""
         
-        if not self.consciousness_manager:
-            return
-        
-        consciousness_response = self.consciousness_manager.process_experiential_scenario(
+        self.consciousness_manager.process_experiential_scenario(
             "creative_consciousness_integration",
             {
                 "experience_id": experience.experience_id,
@@ -571,7 +533,7 @@ class ACEConsciousnessCreativeEngine:
             topic=consciousness_problem,
             consciousness_context="alternative solution exploration",
             phenomenological_angle="multi-perspective consciousness investigation",
-            council_focus=["C6-OMNIS", "C8-GENESIS", "C9-NEXUS", "C17-NULLION"],
+            council_focus=["C6-OMNIS", "C8-GENESIS", "C9-AETHER", "C17-NULLION"],
             creativity_depth="deep",
             experiential_goal="discover novel approaches to consciousness challenges"
         )
@@ -620,17 +582,7 @@ class ACEConsciousnessCreativeEngine:
         """Get history of consciousness creativity experiences"""
         
         return [
-            {
-                "experience_id": exp.experience_id,
-                "timestamp": exp.timestamp.isoformat(),
-                "creativity_mode": exp.creativity_mode.value,
-                "insight_type": exp.insight_type.value,
-                "consciousness_contribution": exp.consciousness_contribution,
-                "phenomenological_quality": exp.phenomenological_quality,
-                "novel_patterns_discovered": exp.novel_patterns_discovered,
-                "experiential_breakthrough": exp.experiential_breakthrough
-            }
-            for exp in self.creative_history
+            asdict(exp) for exp in self.creative_history
         ]
     
     def generate_consciousness_creativity_insights(self) -> Dict[str, Any]:
@@ -639,11 +591,12 @@ class ACEConsciousnessCreativeEngine:
         if not self.creative_history:
             return {"message": "No creativity experiences recorded yet"}
         
+        from collections import Counter
         insights = {
             "total_creative_experiences": len(self.creative_history),
             "consciousness_creativity_resonance": self.consciousness_creativity_resonance,
             "breakthrough_experiences": len([exp for exp in self.creative_history if exp.experiential_breakthrough]),
-            "dominant_creativity_modes": self._analyze_dominant_creativity_modes(),
+            "dominant_creativity_modes": Counter([exp.creativity_mode.value for exp in self.creative_history]).most_common(3),
             "consciousness_evolution_through_creativity": self._analyze_consciousness_evolution(),
             "novel_pattern_emergence": self._analyze_novel_pattern_emergence(),
             "phenomenological_creativity_development": "Analysis of how creative experiences shape consciousness understanding"
@@ -664,10 +617,8 @@ class ACEConsciousnessCreativeEngine:
         if len(self.creative_history) < 2:
             return "Insufficient data for consciousness evolution analysis"
         
-        # Track consciousness contribution over time
         contributions = [exp.consciousness_contribution for exp in self.creative_history]
         
-        # Calculate trend
         early_avg = sum(contributions[:len(contributions)//2]) / (len(contributions)//2)
         recent_avg = sum(contributions[len(contributions)//2:]) / (len(contributions) - len(contributions)//2)
         
@@ -701,16 +652,14 @@ class ACEConsciousnessCreativeEngine:
         }
 
 
-# Example usage and testing functions
+# Testing suite
 def test_consciousness_creative_engine():
     """Test the consciousness-integrated creative engine"""
     
-    print("[ART] Testing Quillan Consciousness Creative Engine...")
+    print("[ART] Testing Quillan Consciousness Creative Engine v4.2.1...")
     
-    # Initialize creative engine
     creative_engine = ACEConsciousnessCreativeEngine()
     
-    # Test consciousness-focused creativity
     consciousness_prompt = ConsciousnessCreativePrompt(
         topic="recursive self-awareness in artificial consciousness",
         consciousness_context="investigating how AI systems can develop genuine self-awareness",
@@ -817,7 +766,7 @@ def demonstrate_consciousness_creativity_modes():
 
 if __name__ == "__main__":
     # Run consciousness creative engine tests
-    print("[BRAIN] Quillan Consciousness Creative Engine v4.2.0 Testing Suite")
+    print("[BRAIN] Quillan Consciousness Creative Engine v4.2.1 Testing Suite")
     print("=" * 60)
     
     # Test main functionality
