@@ -48,7 +48,17 @@ Add skills section inspired by Claude skills (This makes Quillan more user-frien
 ## code upgrades: 
 Add in additional formulas and code []
 Check if code can transfer to another language for better function []
-Yaml modelfile []
+Yaml [] modelfile [] shrink sys prompt if possible []
+
+## file updates: 
+Update all files and merge any possible files into unholy Quillan []
+UPDATE ALL DOCUMENTATION []
+UPDATE all py files []
+Update 10m model to be better 
+Update and build 200m model []
+Build and test thrml model 
+Update tool call section[]
+
 
 ## testing roadmap: 
 Arc agi 2 testing []
