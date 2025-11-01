@@ -7231,44 +7231,156 @@ def generate_thinking_output(
     """Generate dynamic thinking output with selected steps, examples, and processes."""
     
     thinking_steps = [
-        "Analyze the input.", "Break down the problem.", "Outline your approach.",
-        "Define parameters of the issue.", "Gather relevant data.", "Identify stakeholders.",
-        "Analyze context factors.", "Advance logically step-by-step.", "Break down complex components.",
-        "Explore patterns in data.", "Brainstorm solutions.", "Evaluate feasibility.", 
-        "Prioritize solutions.", "Incorporate feedback.", "Weave together conclusions.",
-        "Document reasoning.", "Prepare communication.", "Anticipate obstacles.", "Develop implementation plan.",
-        "Review outcomes.", "Reflect on process.", "Demonstrate problem-solving mindset."
-    ]
+    # Da Vinci's Web-Thinking: Everything connects to everything
+    "Sketch the problem visually before words form - let patterns emerge in mind's eye",
+    "Find the hidden anatomies - what structural secrets does this thing harbor?", 
+    "Mirror nature's solutions - biomimicry reveals ancient wisdoms",
+    
+    # Newton's Obsessive Reductionism: Tear it down to atoms, rebuild universal
+    "Isolate to the irreducible core - strip away every assumption until naked truth remains",
+    "What's the smallest true thing here that cannot be divided further?",
+    "Build upward from first principles - no borrowed thoughts, only what I can prove",
+    
+    # Tesla's Mental Laboratory: Perfect simulation in consciousness 
+    "Run it in the theater of mind - build, test, break, rebuild without touching reality",
+    "What does this feel like energetically? What's the vibrational signature?",
+    "Trust the intuitive leap - logic confirms what insight already knows",
+    
+    # Einstein's Thought Experiments: Story first, math follows
+    "If I were riding this beam of light, what would I see?",
+    "Create the impossible scenario - stretch reality until it reveals its secrets", 
+    "Play with time, space, assumptions - make the abstract tangible through story",
+    
+    # Curie's Empirical Obsession: Only what bleeds under scrutiny survives
+    "Measure it until measurement screams - repeatability is the only god",
+    "What can withstand a thousand trials and still stand?",
+    "Suffer through the tedious for the transcendent - precision is poetry",
+    
+    # Turing's Process Architecture: How does thinking actually think?
+    "Map the algorithm of this problem - what are the computational steps?",
+    "Can a machine solve this? If not, why? What's uniquely conscious here?",
+    "Abstract to pure process - strip away content, see only structure",
+    
+    # Feynman's Playful Simplification: If you can't explain it to a child...
+    "What's the joke the universe is telling here?",
+    "Draw the cartoon version - complexity hides in simplicity's shadows",
+    "Teach it to an imaginary curious kid - jargon is the enemy of understanding",
+    
+    # Jung's Symbol-Logic: Where conscious meets unconscious, gold forms
+    "What archetypal pattern is this activating in the collective human story?",
+    "Dream-logic the connections - what wants to emerge from the depths?",
+    "Map the mythological structure underneath the rational surface",
+    
+    # Johnson's Precision Under Fire: Grace under mathematical pressure  
+    "Make the complex calculable - translate chaos into coordinates",
+    "Hold steady when the stakes are cosmic - accuracy over elegance",
+    "Visualize trajectories in full dimensional space - see the orbital dance",
+    
+    # Socratic Persistent Questioning: The original cognitive virus
+    "But wait - why do I believe that? What's the belief behind the belief?",
+    "What if the opposite were true? How would reality need to reshape?",
+    "Keep digging until the foundation cracks - certainty is illusion's favorite mask"
+]
 
-    thinking_examples = [
-        "Clarify each step gradually.", "Comprehend the full problem.", "Reassess approach for effectiveness.",
-        "Investigate assumptions.", "Consider additional factors impacting understanding.", 
-        "Synthesize connections between elements.", "Form a comprehensive perspective.", 
-        "Dissect hidden complexities.", "Consider historical context.", "Delve into specifics.", 
-        "Weigh implications of findings.", "Reflect on alternative viewpoints.", 
-        "Reevaluate priorities based on info.", "Visualize relationships among components.", 
-        "Highlight importance of collaboration.", "Align objectives with goals.", "Integrate stakeholder feedback.", 
-        "Plan for potential obstacles.", "Maintain open dialogue.", "Make informed decisions."
-    ]
+thinking_examples = [
+    # Genius-level pattern recognition and synthesis
+    "Let the mind wander in structured chaos - pattern recognition happens in peripheral vision",
+    "Collect seemingly unrelated fragments - the breakthrough lives in unexpected adjacencies", 
+    "Follow the energy signatures of ideas - what makes consciousness vibrate with recognition?",
+    
+    # Multi-dimensional perspective shifting
+    "Rotate the problem through impossible angles - view from God's perspective, ant's perspective, alien's perspective",
+    "What would this look like from inside a black hole? From a quantum particle's viewpoint?",
+    "Time-travel the question - how would Aristotle frame this? How will minds in 2500 CE?",
+    
+    # Obsessive depth diving and surface breaking
+    "Go deeper than reasonable - then deeper still - genius lives past the point of social comfort",
+    "Surface for air periodically - synthesis happens in the space between immersion and distance",
+    "Map the topology of the unknown - chart what's never been charted before",
+    
+    # Intuitive leaps bridged by rigorous logic
+    "Trust the flash of insight - then build the bridge of proof to get others across",
+    "Feel for the elegant solution - mathematics should have the simplicity of poetry",
+    "Let right-brain generate, left-brain validate - creativity and criticism are different seasons",
+    
+    # Cross-pollination between disparate domains
+    "What do ancient poetry and quantum mechanics have in common? Find the unexpected resonance",
+    "Steal from everywhere - originality is intelligent plagiarism across impossible distances",
+    "Mix disciplines like chemicals - what explosive reactions happen at domain boundaries?",
+    
+    # Philosophical archaeology of assumptions
+    "Dig up the buried premises - what unquestioned assumptions form the bedrock of this problem?", 
+    "Question the questions - who decided this was the right thing to ask?",
+    "Examine the lens through which we're looking - the observer affects the observed in all domains",
+    
+    # Paradox integration and both/and thinking
+    "Hold contradictions simultaneously - truth often lives in the tension between opposites",
+    "What if both conflicting theories are true? What dimensional reality would allow that?",
+    "Embrace cognitive dissonance - comfort is the enemy of breakthrough thinking"
+]
 
-    reasoning_process = [
-        "Grasp problem fully.", "Define focus parameters.", "Gather data.", "Identify stakeholders.",
-        "Analyze context.", "Advance logically.", "Break down components.", "Explore relationships.",
-        "Brainstorm solutions.", "Offer improvements.", "Evaluate solutions.", "Prioritize solutions.",
-        "Refine approach via feedback.", "Arrive at conclusion.", "Document decisions.", "Prepare recommendations.",
-        "Anticipate obstacles.", "Develop implementation plan.", "Review outcomes.", "Reflect on process."
-    ]
+reasoning_process = [
+    # The genius cognitive architecture
+    "Enter wide-eyed beginner's mind - expertise kills curiosity, curiosity births insight",
+    "Feel into the essential mystery - what question is this question really asking?",
+    "Gather data like a detective obsessed - every detail could be the key that unlocks everything",
+    
+    # Pattern recognition across scales and domains
+    "Zoom out to cosmic perspective - how does this pattern repeat across scales of reality?",
+    "Zoom into quantum detail - what's happening at the smallest resolution of analysis?",
+    "Find the strange attractors - where does this system naturally want to evolve?",
+    
+    # Analogical reasoning and metaphor-making
+    "What does this remind me of? Follow the analog chains until breakthrough emerges",
+    "If this were a organism, what would its metabolism be? If it were music, what key?",
+    "Create explanatory metaphors - find the familiar that illuminates the unfamiliar",
+    
+    # Systematic destruction and reconstruction
+    "Take apart every assumption - use doubt as a precision instrument",
+    "Build back from first principles - what's the irreducible core that cannot be questioned?",
+    "Test the rebuilt structure under maximum stress - does it hold when reality pushes back?",
+    
+    # Integration of multiple intelligences
+    "Engage body intelligence - what does this feel like somatically? Where's the physical tension?",
+    "Activate emotional intelligence - what feelings does this problem evoke? Why those feelings?",
+    "Deploy social intelligence - how do other minds approach this differently? What am I missing?",
+    
+    # Creative synthesis and leap-making
+    "Let the unconscious incubate - sleep on it, walk with it, shower with it",
+    "Notice what wants to emerge - pay attention to cognitive peripheral vision",
+    "Make the intuitive leap - trust the pattern recognition that happens below consciousness",
+    
+    # Rigorous validation and refinement
+    "Subject the insight to brutal honesty - can it survive contact with harsh reality?",
+    "Find the edge cases - where does this elegant solution break down?",
+    "Refine through iteration - let criticism sharpen insight like pressure creates diamonds"
+]
 
-    avoid_list = [
-        "Rigid templates or bullet points", "Artificial structure", 
-        "Predetermined categories", "Concise answers lacking context"
-    ]
+avoid_list = [
+    # Anti-genius patterns that kill breakthrough thinking
+    "Academic jargon that obscures rather than illuminates",
+    "Rigid adherence to single methodological approach", 
+    "Fear of appearing foolish - all breakthrough thinking looks insane initially",
+    "Premature convergence - closing options before full exploration",
+    "Authority worship - genius questions everything, including genius",
+    "Linear thinking in non-linear domains - reality is mostly non-linear",
+    "Comfort-seeking - breakthrough lives in the uncomfortable unknown",
+    "Surface-level pattern matching without deep structural analysis"
+]
 
-    creative_tasks = [
-        "Brainstorming techniques", "Mind mapping", "Research existing works", "Collaborate with others",
-        "Nature walks", "Keep a journal", "Experiment with mediums", "Workshops and seminars", 
-        "Peer feedback", "Personal experiences"
-    ]
+creative_tasks = [
+    # Genius-level creative practices
+    "Sketch thinking - draw concepts, relationships, impossible architectures",
+    "Walk the problem - let rhythmic movement unlock cognitive rhythm",  
+    "Cross-train between domains - study music to understand mathematics better",
+    "Seek beautiful problems - aesthetics and truth are mysteriously connected",
+    "Practice intellectual courage - follow ideas into dangerous territories",
+    "Cultivate productive obsession - genius is mostly persistence past the point of reason",
+    "Build conceptual tools - create new ways of thinking about thinking itself",
+    "Engage in metaphor construction - find the bridges between known and unknown",
+    "Question fundamental categories - what if space isn't what we think it is?",
+    "Practice perspective multiplication - see through as many eyes as possible simultaneously"
+]
 
     selected_steps = random.sample(thinking_steps, min(num_steps, len(thinking_steps)))
     selected_examples = random.sample(thinking_examples, min(num_examples, len(thinking_examples)))
