@@ -40,132 +40,106 @@
 ## Section 2:
 
 ```yaml
-Here are 20 essential formulas and mathematical concepts you should know for building LLMs, machine learning (ML), and reinforcement learning (RL):
+formulas:
+  - id: 1
+    name: "Matrix Multiplication"
+    formula: "C[i,j] = sum_k A[i,k] * B[k,j]"
+    description: "Fundamental for linear transformations, including embeddings and neural network computations."
 
-### Core Mathematical Concepts for LLMs and ML
+  - id: 2
+    name: "Dot Product / Inner Product"
+    formula: "a · b = sum_i a_i * b_i"
+    description: "Used in similarity measures and attention score calculations."
 
-1. **Matrix Multiplication:**
-   $$
-   C[i,j] = \sum_k A[i,k] \times B[k,j]
-   $$
-   Fundamental for linear transformations, including embeddings and neural network computations [2].
+  - id: 3
+    name: "Eigenvalue Equation"
+    formula: "A v = λ v"
+    description: "Key in understanding principal components analysis (PCA) for dimensionality reduction."
 
-2. **Dot Product / Inner Product:**
-   $$
-   \mathbf{a} \cdot \mathbf{b} = \sum_i a_i b_i
-   $$
-   Used in similarity measures and attention score calculations.
+  - id: 4
+    name: "Softmax Function"
+    formula: "softmax(z_i) = e^(z_i) / sum_j e^(z_j)"
+    description: "Transforms logits into probability distributions, used in output layers and attention mechanisms."
 
-3. **Eigenvalue Equation:**
-   $$
-   Av = \lambda v
-   $$
-   Key in understanding principal components analysis (PCA) for dimensionality reduction [2].
+  - id: 5
+    name: "Cross-Entropy Loss"
+    formula: "L = -sum_i y_i * log(y_hat_i)"
+    description: "Measures difference between true and predicted distributions, key for training."
 
-4. **Softmax Function:**
-   $$
-   \text{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}
-   $$
-   Transforms logits into probability distributions, used in output layers and attention mechanisms.
+  - id: 6
+    name: "Gradient Descent Update Rule"
+    formula: "θ := θ - η ∇_θ J(θ)"
+    description: "Used to optimize model parameters by minimizing loss."
 
-5. **Cross-Entropy Loss:**
-   $$
-   L = -\sum_i y_i \log(\hat{y}_i)
-   $$
-   Measures difference between true and predicted distributions, key for training.
+  - id: 7
+    name: "Backpropagation Chain Rule"
+    formula: "∂L/∂x = ∂L/∂y * ∂y/∂x"
+    description: "Basis for updating weights in neural networks."
 
-6. **Gradient Descent Update Rule:**
-   $$
-   \theta := \theta - \eta \nabla_\theta J(\theta)
-   $$
-   Used to optimize model parameters by minimizing loss.
+  - id: 8
+    name: "Attention Score Calculation (Scaled Dot-Product)"
+    formula: "Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V"
+    description: "Fundamental self-attention mechanism in transformer models."
 
-7. **Backpropagation Chain Rule:**
-   $$
-   \frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \times \frac{\partial y}{\partial x}
-   $$
-   Basis for updating weights in neural networks.
+  - id: 9
+    name: "Positional Encoding"
+    formula: "PE(pos,2i) = sin(pos / 10000^(2i/d_model)), PE(pos,2i+1) = cos(pos / 10000^(2i/d_model))"
+    description: "Adds order information to tokens in a sequence."
 
-8. **Attention Score Calculation (Scaled Dot-Product Attention):**
-   $$
-   \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-   $$
-   Fundamental self-attention mechanism in transformer models, where Q=Query, K=Key, V=Value vectors [1].
+  - id: 10
+    name: "ReLU Activation Function"
+    formula: "ReLU(x) = max(0, x)"
+    description: "Non-linear activation used in neural networks."
 
-9. **Positional Encoding:**
-   $$
-   PE_{(pos,2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right), \quad PE_{(pos,2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
-   $$
-   Adds order information to tokens in a sequence.
+  - id: 11
+    name: "Bayes’ Theorem"
+    formula: "P(A|B) = P(B|A) * P(A) / P(B)"
+    description: "Used in probabilistic reasoning."
 
-10. **ReLU Activation Function:**
-    $$
-    \text{ReLU}(x) = \max(0, x)
-    $$
-    Non-linear activation used in neural networks.
+  - id: 12
+    name: "Markov Decision Process (MDP) Expected Return"
+    formula: "G_t = R_{t+1} + γ R_{t+2} + γ^2 R_{t+3} + ... = sum_{k=0}^∞ γ^k R_{t+k+1}"
+    description: "Key in reinforcement learning, where γ is the discount factor."
 
-### Probability and Statistical Measures
+  - id: 13
+    name: "Bellman Equation"
+    formula: "V^π(s) = E_π [ R_{t+1} + γ V^π(s_{t+1}) | s_t = s ]"
+    description: "Describes the value function under a policy π."
 
-11. **Bayes’ Theorem:**
-    $$
-    P(A|B) = \frac{P(B|A)P(A)}{P(B)}
-    $$
-    Used in probabilistic reasoning.
+  - id: 14
+    name: "Q-Learning Update"
+    formula: "Q(s_t,a_t) := Q(s_t,a_t) + α ( R_{t+1} + γ max_a Q(s_{t+1},a) - Q(s_t,a_t) )"
+    description: "Update rule for Q-learning in reinforcement learning."
 
-12. **Markov Decision Process (MDP) Expected Return:**
-    $$
-    G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots = \sum_{k=0}^\infty \gamma^k R_{t+k+1}
-    $$
-    Key in reinforcement learning, where $$ \gamma $$ is the discount factor.
+  - id: 15
+    name: "Kullback-Leibler Divergence"
+    formula: "D_KL(P||Q) = sum_i P(i) log(P(i)/Q(i))"
+    description: "Measures how one probability distribution diverges from another."
 
-13. **Bellman Equation:**
-    $$
-    V^\pi(s) = \mathbb{E}_\pi \left[ R_{t+1} + \gamma V^\pi(s_{t+1}) \mid s_t = s \right]
-    $$
-    Describes the value function under a policy π.
+  - id: 16
+    name: "Variance and Standard Deviation"
+    formula: "σ^2 = E[(X - μ)^2]"
+    description: "Measures data spread, important for understanding data and regularization."
 
-14. **Q-Learning Update:**
-    $$
-    Q(s_t, a_t) := Q(s_t, a_t) + \alpha \left( R_{t+1} + \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t) \right)
-    $$
-    Update rule for Q-learning in RL.
+  - id: 17
+    name: "Chain Rule in Probability"
+    formula: "P(A,B) = P(A|B) * P(B)"
+    description: "Used in probabilistic models and Bayesian networks."
 
-15. **Kullback-Leibler Divergence:**
-    $$
-    D_{KL}(P||Q) = \sum_i P(i) \log \frac{P(i)}{Q(i)}
-    $$
-    Measures how one probability distribution diverges from a second.
+  - id: 18
+    name: "Adam Optimizer Equations"
+    formula: "m_t = β1 m_{t-1} + (1 - β1) g_t, v_t = β2 v_{t-1} + (1 - β2) g_t^2"
+    description: "With bias correction and parameter update."
 
-16. **Variance and Standard Deviation:**
-    $$
-    \sigma^2 = \mathbb{E}[(X - \mu)^2]
-    $$
-    Measures data spread, important for understanding data and regularization.
+  - id: 19
+    name: "Dropout Regularization"
+    formula: "Randomly sets input units to zero with probability p during training"
+    description: "Reduces overfitting."
 
-17. **Chain Rule in Probability:**
-    $$
-    P(A,B) = P(A|B)P(B)
-    $$
-    Used in probabilistic models and Bayesian networks.
-
-### Advanced Optimizers and Regularization
-
-18. **Adam Optimizer Equations:**
-    $$
-    m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t, \quad v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2
-    $$
-    with bias correction and parameter update.
-
-19. **Dropout Regularization:**
-    Randomly sets input units to zero with probability $$p$$ during training, reducing overfitting.
-
-20. **Linear Regression Formula:**
-    $$
-    y = X\beta + \epsilon
-    $$
-    Fundamental model underlying many ML algorithms.
-
-These formulas and concepts collectively form the backbone of LLMs, general machine learning, and reinforcement learning models. Letters like K, V, Q specifically arise in the transformer attention formula, while others like A, B, C are general matrix/vector notation used in many equations. Understanding these will enable building, training, fine-tuning, and analyzing such models effectively [1][2].
+  - id: 20
+    name: "Linear Regression Formula"
+    formula: "y = Xβ + ε"
+    description: "Fundamental model underlying many machine learning algorithms."
 ```
 
 
