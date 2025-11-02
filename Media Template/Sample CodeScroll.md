@@ -531,6 +531,13 @@ if __name__ == "__main__":
 [Insert descriptions]
 ### .py code 
 [Insert .py file 📂 ]
+
+---
+
+// "---" adds seperation line and sections off code section 1
+
+[continue till no .py left to add...]
+
 ## 📊 Table Overview:
 
 | Component Name | Status | Emotional Resonance | Processing Depth / Description |
@@ -547,11 +554,7 @@ if __name__ == "__main__":
 | {{component_10}} | {{status_10}} | {{resonance_10}} | {{description_10}} |
 
 
----
 
-// "---" adds seperation line and sections off code section 1
-
-[continue till no .py left to add...]
 
 ---
 
