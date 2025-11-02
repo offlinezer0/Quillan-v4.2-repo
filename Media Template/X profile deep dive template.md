@@ -77,6 +77,7 @@ Let emoji serve as **emotional punctuation**, not decoration.
 
 ---
 
+===≠====================================================================================
 
 # X Deep Dive v2.1
 
@@ -190,7 +191,7 @@ Write like someone thinking out loud—intelligence in motion.
 
 ---
 
-
+===≠====================================================================================
 
 
 # 💥 X Deep Dive v4: RAW HUMAN INTELLIGENCE EDITION
