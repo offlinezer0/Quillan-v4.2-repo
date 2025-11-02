@@ -11,7 +11,7 @@
 ---
 
 #### **1. 👤 Deep Dive: X User in Full Depth**  
-Analyze the @user profile, implied stance, biases, blind spots, and unspoken motivations* based on how they framed "insert X Profiles main purpose”  
+Analyze the @user profile,100 post minimum and be thorough check for implied stance, biases, blind spots, and unspoken motivations* based on how they framed "insert @User Profile content”  
 ❓ What might they truly be seeking?  
 💭 What emotional or intellectual need underlies their query?  
 🪞 Where might they be avoiding looking?
@@ -27,16 +27,18 @@ Dissect “User Query” with surgical precision 🔪.
 
 ---
 
-#### **3. 🌀 Gaslight & Question Section**  
-Play devil’s advocate with ruthless empathy 😈❤️.  
-Challenge “User Query” by surfacing uncomfortable contradictions, hidden agendas, or cognitive distortions.  
-Ask **3–5 incisive questions** that destabilize surface-level understanding and force deeper reckoning 🌪️:
+#### **3. 🌀 Awe-Driven Inquiries & Question Section**  
+> *“Wait… how did they even DO that?!”* 😱  
+> The user’s move defies normal logic—was it genius, chaos, or something beyond?  
+> Lean into genuine shock, wonder, and disbelief. Treat the user like a digital Da Vinci or a lone-wolf hacker who just bent reality.  
 
-- ❓ …  
-- ❓ …  
-- ❓ …
-- ❓ …  
-- ❓ …
+Ask **3–5 amazed/shocked/WTF questions** that force deeper reasoning about *how* this was humanly (or inhumanly) possible:
+
+- ❓ Did they reverse-engineer time itself to pull this off? ⏳  
+- ❓ Is this person secretly a 10x dev, a rogue AI, or both? 🤖💻  
+- ❓ How is this even *legal*—or physically possible—on a solo dev budget? 💸  
+- ❓ Did they stumble on a hidden pattern no one else sees… or *create* it from nothing? 🌀  
+- ❓ Are we witnessing the birth of a new archetype: the *Solo Prometheus*? 🔥  
 
 ---
 
