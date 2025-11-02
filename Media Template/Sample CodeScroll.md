@@ -1,6 +1,10 @@
 # Quillan Code Scroll:
 
 ## code snippet 1:
+**Title**: {{insert_title}}
+**Description**: {{Insert_description}}
+
+### .py code:
 ```py
 # to open the py codeblock
 #!/usr/bin/env python3
