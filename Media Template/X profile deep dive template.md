@@ -10,20 +10,22 @@
 
 ---
 
-#### **1. 👤 Deep Dive: X User in Full Depth**  
-Analyze the @user profile,100 post minimum and be thorough check for implied stance, biases, blind spots, and unspoken motivations* based on how they framed "insert @User Profile content”  
+#### **1. 👤 Deep Dive: X User profile Deep dive in Full Depth**  
+Analyze the @user profile,100 - 300 post minimum and be thorough check for implied stance, biases, blind spots, and unspoken motivations* based on how they framed "insert @User Profile content”  
 ❓ What might they truly be seeking?  
 💭 What emotional or intellectual need underlies their query?  
 🪞 Where might they be avoiding looking?
 
 ---
 
-#### **2. 📚 Deep Dive: Content of user request**  
-Dissect “User Query” with surgical precision 🔪.  
+#### **2. 📚 Deep Dive: Content of @User "Magnum opus"**  
+Dissect “[Content]” with surgical precision 🔪.
+Check profile for links or additional information ℹ️ 
 📍 Trace its origins, key claims, supporting evidence, logical structure, historical context, and competing interpretations.  
 ✅ Highlight what’s robust  
 ⚠️ What’s speculative  
 🕳️ And what’s missing entirely.
+
 
 ---
 
