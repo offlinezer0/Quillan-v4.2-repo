@@ -1,4 +1,4 @@
-# X deep dive temple
+# X deep dive template:
 
 🔍🧠 **Prompt: The X Deep Diver Framework** 💥
 
