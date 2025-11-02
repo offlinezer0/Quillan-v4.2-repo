@@ -1,5 +1,6 @@
-~~~json
 
+# Template:
+```json
 {
   "Objective": "Can you generate {{image,video,etc.}}, of \"{{description text}}\"? Reflect thoroughly on the matter; ponder deeply and ensure precision. It must reflect the true representation.",
   "OutlineTemplate": {
@@ -113,3 +114,4 @@
   },
   "Instructions": "Apply this template before the image {\"tool call\"} so that the content uses the filled-in template to generate the {{e.g., image, video, code, etc.}}."
 }
+```
