@@ -303,117 +303,97 @@ These formulas and concepts collectively form the backbone of LLMs, general mach
 
 ## Cheat sheet:
 
----
+# LLM / ML / RL Cheat Sheet – Core Formulas
 
-LLM / ML / RL Cheat Sheet – Core Formulas
-
-1. Linear Algebra & Neural Computations
-
-Formula	Purpose / Use	Symbols
-
-	Matrix multiplication, linear transformations	 matrices
-	Dot product, similarity scores, attention	 vectors
-	Eigenvalues, PCA	 matrix,  vector
-	Fully connected layer	 weights,  bias
-	ReLU activation	 input
-	Convert logits to probability distribution	 logits
-
-
+A concise reference for building, training, and analyzing LLMs, machine learning, and reinforcement learning models.
 
 ---
 
-2. Loss & Optimization
+## 1. Linear Algebra & Neural Computations
 
-Formula	Purpose / Use
-
-	Cross-entropy loss for classification
-	Mean squared error for regression
-	Gradient descent
-Adam optimizer:<br><br><br>	Adaptive optimization
-
-
-
----
-
-3. Backpropagation & Chain Rules
-
-Formula	Purpose / Use
-
-	Gradient computation for backprop
-Chain rule in probability:<br>P(A,B) = P(A	B) P(B)
-
-
+| Formula | Purpose / Use | Symbols |
+|---------|---------------|---------|
+| `C[i,j] = Σ_k A[i,k] * B[k,j]` | Matrix multiplication, linear transformations | `A,B,C` matrices |
+| `a · b = Σ_i a_i b_i` | Dot product, similarity scores, attention | `a,b` vectors |
+| `Av = λv` | Eigenvalues, PCA | `A` matrix, `v` vector |
+| `y = Wx + b` | Fully connected layer | `W` weights, `b` bias |
+| `ReLU(x) = max(0,x)` | Non-linear activation | `x` input |
+| `softmax(z_i) = e^{z_i} / Σ_j e^{z_j}` | Convert logits to probability distribution | `z_i` logits |
 
 ---
 
-4. Transformer & Attention Mechanics
+## 2. Loss & Optimization
 
-Formula	Purpose / Use
-
-Scaled Dot-Product Attention:<br>	Self-attention mechanism, core of LLMs
-Multi-Head Attention:<br><br>	Capture multiple representation subspaces
-Positional Encoding:<br>,<br>	Encode token order
-
-
-
----
-
-5. Probability & Statistical Measures
-
-Formula	Purpose / Use
-
-Bayes’ Theorem:<br>P(A	B) = \frac{P(B
-KL Divergence:<br>D_{KL}(P	
-Variance / Std Dev:<br>	Data spread, normalization
-
-
+| Formula | Purpose / Use |
+|---------|---------------|
+| `L = -Σ_i y_i log(ŷ_i)` | Cross-entropy loss (classification) |
+| `L = (1/n) Σ_i (ŷ_i - y_i)^2` | Mean squared error (regression) |
+| `θ := θ - η ∇_θ L` | Gradient descent update |
+| Adam Optimizer:<br>`m_t = β1 m_{t-1} + (1-β1) g_t`<br>`v_t = β2 v_{t-1} + (1-β2) g_t^2`<br>`θ_t = θ_{t-1} - η (m_t / (1-β1^t)) / (√(v_t/(1-β2^t)) + ε)` | Adaptive optimization |
 
 ---
 
-6. Reinforcement Learning
+## 3. Backpropagation & Chain Rules
 
-Formula	Purpose / Use
-
-MDP Expected Return:<br>	Discounted reward accumulation
-Bellman Equation:<br>	Value function for policy π
-Q-Learning Update:<br>	Off-policy RL update
-Policy Gradient:<br>\nabla_\theta J(\theta) = \mathbb{E}\pi[\nabla\theta \log \pi_\theta(a	s) R]
-
-
+| Formula | Purpose / Use |
+|---------|---------------|
+| `∂L/∂x = (∂L/∂y) * (∂y/∂x)` | Gradient computation for backprop |
+| `P(A,B) = P(A|B) * P(B)` | Chain rule in probability, Bayesian networks |
 
 ---
 
-7. Regularization
+## 4. Transformer & Attention Mechanics
 
-Formula	Purpose / Use
-
-Dropout:<br>	Reduce overfitting
-
-
-
----
-
-8. Linear / Regression Foundation
-
-Formula	Purpose / Use
-
-Linear Regression:<br>	Core supervised learning model
-
-
+| Formula | Purpose / Use |
+|---------|---------------|
+| `Attention(Q,K,V) = softmax(QK^T / √d_k) V` | Scaled dot-product attention, self-attention |
+| `MultiHead(Q,K,V) = Concat(head_1,...,head_h) W^O`<br>`head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)` | Capture multiple representation subspaces |
+| `PE(pos,2i) = sin(pos / 10000^{2i/d_model})`<br>`PE(pos,2i+1) = cos(pos / 10000^{2i/d_model})` | Positional encoding for token order |
 
 ---
 
-💡 Think notes:
+## 5. Probability & Statistical Measures
 
-K, Q, V = Key, Query, Value in attention—not arbitrary.
+| Formula | Purpose / Use |
+|---------|---------------|
+| `P(A|B) = P(B|A) * P(A) / P(B)` | Bayes’ theorem, probabilistic reasoning |
+| `D_KL(P||Q) = Σ_i P(i) log(P(i)/Q(i))` | Kullback-Leibler divergence |
+| `σ^2 = E[(X-μ)^2]` | Variance, standard deviation |
 
-Most LLM formulas are matrix/vector algebra + probability + gradient updates.
+---
 
-RL formulas introduce expectations, discount factors, and policy optimization.
+## 6. Reinforcement Learning
 
-This cheat sheet essentially covers everything from basic MLPs → transformers → RL.
+| Formula | Purpose / Use |
+|---------|---------------|
+| `G_t = Σ_{k=0}^∞ γ^k R_{t+k+1}` | MDP expected return, discounted rewards |
+| `V^π(s) = E_π [R_{t+1} + γ V^π(s_{t+1})]` | Bellman equation, value function |
+| `Q(s_t,a_t) := Q(s_t,a_t) + α [R_{t+1} + γ max_a Q(s_{t+1},a) - Q(s_t,a_t)]` | Q-learning update |
+| `∇_θ J(θ) = E_π [∇_θ log π_θ(a|s) R]` | Policy gradient, REINFORCE |
 
+---
 
+## 7. Regularization
+
+| Formula | Purpose / Use |
+|---------|---------------|
+| `y = x ⊙ mask, mask ~ Bernoulli(p)` | Dropout, reduces overfitting |
+
+---
+
+## 8. Linear / Regression Foundation
+
+| Formula | Purpose / Use |
+|---------|---------------|
+| `y = Xβ + ε` | Linear regression, supervised learning |
+
+---
+
+### **Think Notes**
+- K, Q, V = Key, Query, Value vectors in attention.  
+- Most LLM formulas revolve around **linear algebra + probability + gradient updates**.  
+- RL formulas introduce **expectations, discount factors, and policy optimization**.  
+- This cheat sheet covers **ML fundamentals → Transformers → RL pipelines**.
 
 ---
  
