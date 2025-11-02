@@ -538,6 +538,8 @@ if __name__ == "__main__":
 
 [continue till no .py left to add...]
 
+---
+
 ## 📊 Table Overview:
 
 | Component Name | Status | Emotional Resonance | Processing Depth / Description |
