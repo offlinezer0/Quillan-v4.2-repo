@@ -23,7 +23,7 @@
 | 14 | `S(i,j) = (X * K)(i,j) = Σ_m Σ_n X(i+m,j+n) K(m,n)` | Convolution operation (CNNs, embeddings) |
 | 15 | `V^π(s) = E_π [ r_t + γ V^π(s_{t+1}) ]` | Bellman Equation in Reinforcement Learning |
 | 16 | `Q(s_t,a_t) ← Q(s_t,a_t) + α [ r_t + γ max_a Q(s_{t+1},a) - Q(s_t,a_t) ]` | Q-Learning update |
-| 17 | `∇_θ J(θ) = E_π [ ∇_θ log π_θ(a|s)R ]` | Policy Gradient (REINFORCE) |
+| 17 | `∇_θ J(θ) = E_π [ ∇_θ log π_θ(a¦s) R ]` | Policy Gradient (REINFORCE) |
 | 18 | `MultiHead(Q,K,V) = Concat(head_1,...,head_h) W^O`<br>`head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)` | Transformer Multi-Head Attention |
 | 19 | `W ~ U(-√6/√(n_in+n_out), √6/√(n_in+n_out))` | Weight Initialization (Xavier/Glorot) |
 | 20 | `y = x ⊙ mask, mask ~ Bernoulli(p)` | Dropout Regularization |
