@@ -7,8 +7,10 @@
 # triple tick to close embedding 
 ```
 
+[Insert .md Table]
+
 ---
 
-// "---" adds seperation line 
+// "---" adds seperation line and sections off code section 1
 
 [continue till no .py left to add...]
