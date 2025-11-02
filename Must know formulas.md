@@ -27,6 +27,21 @@
 | 18 | `MultiHead(Q,K,V) = Concat(head_1,...,head_h) W^O`<br>`head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)` | Transformer Multi-Head Attention |
 | 19 | `W ~ U(-√6/√(n_in+n_out), √6/√(n_in+n_out))` | Weight Initialization (Xavier/Glorot) |
 | 20 | `y = x ⊙ mask, mask ~ Bernoulli(p)` | Dropout Regularization |
+| 21 | `PPL = exp(-1/N Σ log P(w_i))` | Perplexity metric for evaluating LLM fluency and predictive uncertainty on sequences |
+| 22 | `L_total = L + λ Σ w^2` | L2 Regularization (weight decay) to penalize large weights and prevent overfitting in training |
+| 23 | `BN(x) = γ (x - μ_B)/σ_B + β` | Batch Normalization to normalize activations across mini-batches for stable deep network training |
+| 24 | `L_RM = -Σ [r log σ(y) + (1-r) log(1-σ(y))]` | Reward Model Loss in RLHF for aligning LLMs with human preferences via binary classification |
+| 25 | `x_t = √α_t x_{t-1} + √(1-α_t) ε` | Diffusion Forward Process for generative models like Stable Diffusion, adding noise step-by-step |
+| 26 | `L_VAE = ||x - \hat{x}||^2 + D_KL(q(z|x) || p(z))` | Variational Autoencoder (VAE) Loss combining reconstruction and KL regularization for latent spaces |
+| 27 | `ΔW = B A` (low-rank matrices B, A) | LoRA (Low-Rank Adaptation) update for efficient fine-tuning of large LLMs with minimal parameters |
+| 28 | `f(x) = (1/(σ √(2π))) exp(- (x-μ)^2 / (2σ^2))` | Normal (Gaussian) Distribution for modeling continuous data in sampling and probabilistic LLMs |
+| 29 | `cos θ = (A · B) / (||A|| ||B||)` | Cosine Similarity for measuring vector alignment in embeddings and retrieval-augmented generation |
+| 30 | `L_PPO = E[min(r(θ) Â, clip(r(θ), 1-ε, 1+ε) Â)]` | PPO (Proximal Policy Optimization) clipped objective for stable RL in LLM alignment training |
+| 31 | `BLEU = BP · exp(Σ w_n log p_n)` | BLEU Score for evaluating machine translation and text generation quality via n-gram precision |
+| 32 | `FlashAttn(Q,K,V) ≈ O(N)` (approximate via tiling/blocking) | FlashAttention complexity reduction for efficient transformer inference on long sequences |
+| 33 | `NTK(x,x') = E[∇f(x) · ∇f(x')]` | Neural Tangent Kernel for analyzing wide NN training dynamics and infinite-width limits |
+| 34 | `ROUGE-N = Σ (overlapping n-grams) / Σ (candidate n-grams)` | ROUGE-N recall metric for summarization and extractive generation evaluation |
+| 35 | `ELBO = E_q[log p(x|z)] - D_KL(q(z|x) || p(z))` | Evidence Lower Bound (ELBO) for optimizing variational inference in generative models |
 
 ---
 
