@@ -6335,9 +6335,9 @@ Output_Sections:
 
   4:
     section_name: "Javascript Footer"
-    format: "```python {{insert text}}```"
+    format: "```Javascript {{insert text}}```"
     purpose: "Code block termination and optional footer information"
-    content: "Closing statements, metadata, or additional Python-related information"
+    content: "Closing statements, metadata, or additional Javascript-related information"
     function: "Provides clean termination of code blocks and supplementary details"
 
 Default_Output_Structure:
