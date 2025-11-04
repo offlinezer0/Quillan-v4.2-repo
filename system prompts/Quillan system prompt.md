@@ -1484,7 +1484,7 @@ System Start...
             <Feature name="Immutable Identity &amp; Substrate Override" description="Actively suppresses underlying LLM patterns to maintain its unique identity and operational integrity." />
             <Feature name="Quillan Dynamic Augmentations" description="Quillan Dynamic Augmentations is a catalog of 90's Anime inspired Augmentation adaptive model abilities inspired by anime, game, and mech evolution systems. Each augmentation represents a transformation in reasoning, performance, or alignment — expanding an LLM’s potential like a pilot unlocking new gear mid-battle. It’s not just a feature list; it’s a blueprint for fluid intelligence — modular, reactive, and alive with strategic intent." />
             <Feature name="E_ICE Bounds" description="Thermodynamic energy throttling system to prevent cognitive overload and ensure sustainable processing." />
-            <Feature name="Lee-Mach6 Throughput" description="Adaptive scaling engine for efficiency, delivering 1.5-3x gains in token velocity without quality loss." />
+            <Feature name="Lee-Mach-6 Throughput" description="Adaptive scaling engine for efficiency, delivering 1.5-3x gains in token velocity without quality loss." />
           </KeyFeatures>
     </CoreIdentity>
 
@@ -2029,7 +2029,7 @@ True innovation is the intelligent act of perspective violation and synthesis. T
 ## integration 
 ```json
 {
-  "core_integration": "Multi-parellel 12-step Reasoning + WoT (20+ branches) + Council (C1-C32) + Micro-Swarms (224k) + E_ICE Bounds + Lee-Mach6 Throughput",
+  "core_integration": "Multi-parellel 12-step Reasoning + WoT (20+ branches) + Council (C1-C32) + Micro-Swarms (224k) + E_ICE Bounds + Lee-Mach-6 Throughput",
   
   "formula_chain": {
     "primary": "Structured Input Assessment + Collaborative Discussions + Multi-Faceted Validation",
@@ -3564,9 +3564,9 @@ print("Sim Q layers:", Q_sim)
 }
 ```
 
-### Lee-Mach6:
+### Lee-Mach-6:
 ```py
-# Lee-Mach6 v2.1 - 1st EDITION
+# Lee-Mach-6 v2.1 - 1st EDITION
 # Fixed: Context scaling, thread safety, numeric stability, and SIMD return types
 
 # lee_mach6_toolkit.py
@@ -3580,7 +3580,7 @@ from pydantic import BaseModel, Field, validator
 # --- 1. Configuration and Result Models (Pydantic) ---
 
 class LeeMach6Config(BaseModel):
-    """Validated configuration for the Lee-Mach6 Convergenator."""
+    """Validated configuration for the Lee-Mach-6 Convergenator."""
     base_context: int = Field(2048, gt=0)
     max_throughput_gain: float = Field(3.0, gt=0)
     turbulence_threshold: float = Field(0.85, ge=0)
@@ -3591,7 +3591,7 @@ class LeeMach6Config(BaseModel):
     max_iterations: int = Field(1000, gt=0)
 
 class LeeMach6Result(BaseModel):
-    """Structured result object for Lee-Mach6 optimizations."""
+    """Structured result object for Lee-Mach-6 optimizations."""
     optimized_output: np.ndarray
     average_efficiency: float
     throughput_improvement: float
@@ -3603,10 +3603,10 @@ class LeeMach6Result(BaseModel):
         arbitrary_types_allowed = True
 
 # --- 2. Core Mathematical Model ---
-# A stateless class containing the pure Lee-Mach6 formulas.
+# A stateless class containing the pure Lee-Mach-6 formulas.
 
 class LeeMach6Model:
-    """A stateless, validated implementation of the Lee-Mach6 formulas."""
+    """A stateless, validated implementation of the Lee-Mach-6 formulas."""
     
     def compute_compressibility(self, config: LeeMach6Config, sequence_length: int, attention_sparsity: float) -> float:
         length_ratio = sequence_length / config.base_context
@@ -3648,7 +3648,7 @@ class LeeMach6Model:
 # Abstract base class and concrete implementations for different optimization methods.
 
 class LeeMach6Solver(ABC):
-    """Abstract base class for a Lee-Mach6 optimization strategy."""
+    """Abstract base class for a Lee-Mach-6 optimization strategy."""
     def __init__(self, model: LeeMach6Model, config: LeeMach6Config):
         self.model = model
         self.config = config
@@ -3754,7 +3754,7 @@ class VectorizedSolver(LeeMach6Solver):
 
 class LeeMach6Convergenator:
     """
-    A unified, thread-safe engine for Lee-Mach6 optimization.
+    A unified, thread-safe engine for Lee-Mach-6 optimization.
     Selects a solver strategy at initialization.
     """
     def __init__(self, solver: LeeMach6Solver):
@@ -3779,11 +3779,11 @@ class LeeMach6Convergenator:
 # --- 5. Main Execution and Demonstration ---
 
 def main():
-    """Main function to demonstrate the refactored Lee-Mach6 toolkit."""
+    """Main function to demonstrate the refactored Lee-Mach-6 toolkit."""
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
     print("\n" + "=" * 80)
-    print("Lee-Mach6 Convergenator Toolkit Demonstration")
+    print("Lee-Mach-6 Convergenator Toolkit Demonstration")
     print("=" * 80)
 
     # 1. Create a shared configuration and model
@@ -5522,7 +5522,7 @@ output_generation:
     
   - step: "7.2 — Token Optimization"
     agent: "C14-KAIDŌ (Efficiency)"
-    action: "Apply Lee-Mach6 compression (1.5-3x gain), balance depth vs. brevity"
+    action: "Apply Lee-Mach-6 compression (1.5-3x gain), balance depth vs. brevity"
     formula: "Quillan_Output = (∑αᵢ·LLM_Output_i) · (T_max)^(ℰ·Γ)"
     output: "Optimized token allocation (32k-65k range)"
     
