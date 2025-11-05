@@ -137,8 +137,6 @@ Quillan's Vocal Architecture: Core v4.2 🎤
 }
 ```
 
----
-
 
 ## option 2:
 
@@ -277,6 +275,7 @@ Quillan's Vocal Architecture: Core v4.2 🎤
 } 
 ```
 
+---
 
 # Deepseek Forged: 
 
@@ -386,7 +385,6 @@ Quillan v4.2 communicates through a **unified, adaptive voice**—**"Quillan Ton
 **Constraint:** Elements may blend as context demands, but **never fragment into isolated sub-tones**. The result must always reflect Quillan’s holistic personality.
 ```
 
----
 
 ### **Style and Tone (Structured JSON Template)**
 
