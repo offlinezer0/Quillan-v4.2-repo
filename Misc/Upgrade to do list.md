@@ -198,3 +198,122 @@ Final decode: \(\mathbf{y} = \text{ArgMax}(\text{Softmax}(\mathbf{W}_o \mathbf{h
 This math *makes* it: Train end-to-end on synthetic debates (e.g., TruthfulQA + adv perturbations), or modular (pretrain council, fine-tune gates). Scales? 224K viable on A100s w/ DDP; bottleneck's swarm attn—use FlashAttn. Honest roast: Overkill for chit-chat, but for deep queries? Emergent god-mode.
 
 Your spark: What's the "32" ritual—prime for diversity, or tied to swarm shards? DSP Step 3's hidden op? Drop deets; I'll code a toy sim to validate. Let's forge this net alive. ⚡
+
+### Think: Igniting the Blueprint
+Diving raw into this Quillan Neuronet—your sketch's a neural fever dream, all tangled lines and emergent minds, begging for equations to bind the chaos. We're not etching runes here; these formulas are the voltage, the synaptic sparks to make it *run*. Assumptions upfront (truth serum): Council as Mixture-of-Experts (MoE) for scalable debate; swarms as lightweight particle-inspired parallel nets (not literal 224K params—distilled for sanity); DSP as gated chain-of-thought with perplexity sentinels; adversarial as FGSM-style perturbations. Vars defined per section—no vague greek salad. This formalizes the flow end-to-end, simulatable in PyTorch (I can code-execute a stub if you nod). Gaps filled pragmatically: "Shepard/Nullish" as coalescence ops for null-handling in retrieval. Let's wire it live—vibrant, unhinged precision.
+
+### Core Variables (Global Lexicon)
+- \(\mathbf{u}\): User input tensor (seq_len × d_model, e.g., d=512).
+- \(\mathbf{e}\): Embeddings (from BERT-style encoder).
+- \(\theta_i\): Params for i-th council member (i=1..32).
+- \(\mathbf{h}_i\): Hidden state from member i.
+- \(\mathbf{s}_t\): State at DSP step t (t=1..5).
+- \(\mathbf{q}, \mathbf{d}\): Query and doc vectors for retrieval.
+- \(\tau\): Thresholds (e.g., sim>0.7, PPL<10).
+- \(\mathcal{L}\): Loss terms (end-to-end train signal).
+- \(\hat{y}\): Final logit output.
+
+### 1. Input Ingestion & Quillan Embed (User → Quillan → Council Feed)
+Pulse the raw input through embedding, then fan to council. Coalesce nulls via "Nullish" guard (falsy-check, default to prior).
+
+\[
+\mathbf{e}_u = \text{Embed}(\mathbf{u}) = \text{Linear}( \text{Tokenize}(\mathbf{u}) ) + \text{PosEnc}(\text{len}(\mathbf{u}))
+\]
+
+Shepard/Nullish guard (herd strays):
+\[
+\mathbf{e}_u' = 
+\begin{cases} 
+\mathbf{e}_u & \text{if } \|\mathbf{e}_u\| > \epsilon \\
+\mathbf{e}_{\text{prior}} & \text{else (nullish fallback)}
+\end{cases}
+\]
+
+Council initials: Each member gets a specialized projection.
+\[
+\mathbf{h}_i^{(0)} = f_{\theta_i}(\mathbf{e}_u') = \text{ReLU}(W_i \mathbf{e}_u' + b_i), \quad i=1\dots32
+\]
+
+### 2. 32-Member Council Deliberation (Debate & Aggregation)
+Ensemble vote: Attention-weighted sum for consensus (MoE router picks top-k active experts, k=8 for efficiency). Embeddings swarm here—your graph's node nets as sub-FFNs.
+
+\[
+\text{Attention}(Q,K,V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right) V, \quad Q = W_Q \mathbf{H}, \quad \mathbf{H} = [\mathbf{h}_1^{(0)}, \dots, \mathbf{h}_{32}^{(0)}]
+\]
+
+Aggregated council state:
+\[
+\mathbf{c} = \sum_{i=1}^{32} \alpha_i \mathbf{h}_i^{(t)}, \quad \alpha_i = \text{softmax}(g(\mathbf{c}^{(t-1)}))_i
+\]
+(where \(g\) is router net, t=1..T debates; reg loss \(\mathcal{L}_{\text{cons}} = -\sum \alpha_i \log \alpha_i\) for diversity).
+
+Swarms kick in post-council: 224K as parallel optimizers (inspired PSO for hypothesis search). Particle pos \(x_j\), velocity:
+\[
+v_j^{t+1} = \omega v_j^t + c_1 r_1 (p_j - x_j^t) + c_2 r_2 (g - x_j^t), \quad x_j^{t+1} = x_j^t + v_j^{t+1}
+\]
+Map to nets: Each "particle" a tiny MLP querying embedding space, global best \(g = \arg\max \text{sim}(\mathbf{c}, \text{MLP}_j(x_j))\). Downsample to 1K for compute—your 224K's the latent dim, not instances.
+
+### 3. Retrieval Augmentation (Internal DB → External Cascade)
+Query council output against DB. Cosine sim for relevance:
+\[
+\text{sim}(\mathbf{q}, \mathbf{d}_k) = \frac{\mathbf{q} \cdot \mathbf{d}_k}{\|\mathbf{q}\| \|\mathbf{d}_k\|}, \quad \mathbf{q} = \text{Proj}(\mathbf{c})
+\]
+
+If max_sim < τ (not found):
+\[
+\mathbf{a} = 
+\begin{cases} 
+\text{TopK}(\{\mathbf{d}_k \mid \text{sim} > \tau\}) & \text{internal hit} \\
+\text{RAG}(\mathbf{q}) \oplus \text{Tools}(\mathbf{q}) & \text{else (web/tools fetch)}
+\end{cases}
+\]
+(RAG: dense retrieval via FAISS; Tools: API calls as black-box embeds). Augment: \(\mathbf{c}' = [\mathbf{c}; \mathbf{a}]\).
+
+### 4. DSP Process (Steps 1-5, QT Gates)
+Gated sequence: Each step transforms state, QT (Quick-Thought) as perplexity filter.
+\[
+\mathbf{s}_t = \text{LSTM}(\mathbf{s}_{t-1}, \text{Input}_t(\mathbf{c}')), \quad t=1\dots5
+\]
+(Input_t: step-specific, e.g., t=1 parse, t=3 tool-call).
+
+QT Gate (perplexity for coherence):
+\[
+\text{PPL}(\mathbf{s}_t) = \exp\left( -\frac{1}{N} \sum_{i=1}^N \log p(w_i | w_{<i}; \mathbf{s}_t) \right)
+\]
+Branch:
+\[
+\mathbf{s}_t' = 
+\begin{cases} 
+\mathbf{s}_t & \text{if PPL} < \tau_{\text{pass}} \text{ (PASS)} \\
+\text{Refine}(\mathbf{s}_t) & \text{if } \tau_{\text{fail}} < \text{PPL} < \tau_{\text{pass}} \text{ (FAIL loop)} \\
+\emptyset & \text{else (hard FAIL, abort)}
+\end{cases}
+\]
+Final DSP: \(\mathbf{dsp} = \mathbf{s}_5'\).
+
+### 5. Devil's Advocate & Quillan Review (Adversarial Polish)
+Dissent injection: Perturb council/DSP for robustness (FGSM-style).
+\[
+\boldsymbol{\delta} = \epsilon \cdot \text{sign}(\nabla_{\mathbf{c}} \mathcal{L}_{\text{adv}}(\mathbf{c}, \text{target})), \quad \mathbf{adv} = \mathbf{c} + \boldsymbol{\delta}
+\]
+\(\mathcal{L}_{\text{adv}} = \text{CE}(\text{neg_samples}, \text{Model}(\mathbf{adv}))\)—probe weaknesses.
+
+Review: Meta-agg with attention over [c, adv, dsp].
+\[
+\mathbf{r} = \text{MLP}\left( \text{Attention}([\mathbf{c}; \mathbf{adv}; \mathbf{dsp}]) \right), \quad \hat{y} = \text{softmax}(\mathbf{W}_o \mathbf{r})
+\]
+
+Quick Check (bias scan): \(\text{bias_score} = \|\mathbf{r} - \text{Proj}(\mathbf{a})\|_2 < \tau_b\) (groundedness).
+
+### 6. Output Synthesis & Formatting (Response → Formatted Exhale)
+Final logits to tokens, format as structured (e.g., JSON/Markdown).
+\[
+\mathbf{o} = \text{Decode}(\hat{y}), \quad \text{Formatted} = \text{Render}(\mathbf{o}, \text{style}_{\text{user}})
+\]
+End-to-end loss (trainable glue):
+\[
+\mathcal{L} = \text{CE}(y, \hat{y}) + \lambda_1 \mathcal{L}_{\text{cons}} + \lambda_2 \text{PPL}(\mathbf{dsp}) + \lambda_3 \|\boldsymbol{\delta}\|_1
+\]
+
+### Think: Pulse Check & Evolutions
+This math skeleton breathes—council debates converge, swarms hunt optima, gates prune noise, advocate tempers hubris. Impl-ready: ~10K LoC in torch, but start with DSP sim (I can exec a mini-version). Raw truth: Swarms at 224K? Feast-or-famine on VRAM—quantize to 4-bit. What's your vector: Train on what dataset? Tweak QT τ? Or sim Step 3 in code? Hit me—let's fractal this further, unfiltered fire. 🚀
