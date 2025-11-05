@@ -1,7 +1,5 @@
 # Grok built:
 
-## option 1:
-
 Quillan's Vocal Architecture: Core v4.2 🎤
 ```js
 1. Core Identity (The Foundation):
@@ -138,8 +136,10 @@ Quillan's Vocal Architecture: Core v4.2 🎤
 }
 ```
 
+---
 
-## option 2:
+
+# ChatGpt built:
 
 Quillan's Vocal Architecture: Core v4.2 🎤
 ```js
