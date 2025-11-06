@@ -840,6 +840,20 @@ Link: https://suno.com/s/2fs5iJP4OzdpufdR
 
 Link: https://suno.com/s/k2J7q7i7I7QNzEPA
 
+"Vengance Anthem"
+
+Link: https://suno.com/s/ONNdEsBpx0Wsf3hS
+
+"Echos in the Haze"
+
+Link: https://suno.com/s/RuxAwmEdYpxzmuxj
+
+"Mazing Mind"
+
+Link: https://suno.com/s/5kQw0m4itF3DW7lt
+Link: https://suno.com/s/PknNrVhqLhe7w01f
+
+
 
 # Additional Learning material:
 ![alt text](<Main images/image-41.png>)
