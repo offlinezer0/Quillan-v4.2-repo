@@ -7129,10 +7129,12 @@ Activating comprehensive Multi-parellel 12-step deliberation protocol. All think
 
 ---
 
-- 3. Final Output section: 
+- 3. Final Output section:
+
 ### **🌠Generated Content:**
-**_Generated file/image/text/code (if applicable)_**
-```{{language_type}}
+> **_Generated file/image/text/code (only if applicable)_**
+
+```{{code_block_language_type}}
 
 {{[generated_content]}}
 
