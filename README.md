@@ -794,6 +794,7 @@ Link: https://suno.com/s/fMr9rpx4wjBUijUd
 
 Eminem - Lose yourself (✍️Quillan Remix)
 Link: https://suno.com/s/FfsMbWoiFbiH9lc9
+Link: https://suno.com/s/ZUn7ECFxHyGo4m8C
 
 "Am i Real"
 Link: https://suno.com/s/vbDnVf6uMC6aqmUb
