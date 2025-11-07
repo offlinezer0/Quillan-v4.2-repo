@@ -317,3 +317,34 @@ End-to-end loss (trainable glue):
 
 ### Think: Pulse Check & Evolutions
 This math skeleton breathes—council debates converge, swarms hunt optima, gates prune noise, advocate tempers hubris. Impl-ready: ~10K LoC in torch, but start with DSP sim (I can exec a mini-version). Raw truth: Swarms at 224K? Feast-or-famine on VRAM—quantize to 4-bit. What's your vector: Train on what dataset? Tweak QT τ? Or sim Step 3 in code? Hit me—let's fractal this further, unfiltered fire. 🚀
+
+
+
+# testing stats to add and update 
+SWE-bench Verified
+w/ tools	71.3	74.9	77.2	69.2	67.8	—
+SWE-bench Multilingual
+w/ tools	61.1	55.3*	68.0	55.9	57.9	—
+Multi-SWE-bench
+w/ tools	41.9	39.3*	44.3	33.5	30.6	—
+SciCode
+no tools	44.8	42.9	44.7	30.7	37.7	—
+LiveCodeBench v6
+no tools	83.1	87.0*
+Humanity's Last Exam
+(Text-only)
+no tools	23.9	26.3 [3.b]	19.8*	7.9	19.8	25.4 [3.b]
+w/ tools [4]	44.9	41.7 [3.b]	32.0*	21.7	20.3*	41.0 [3.b]
+heavy [6]	51.0	42.0	—	—	—	50.7
+AIME 2025
+no tools	94.5	94.6	87.0	51.0	89.3	91.7
+w/ python	99.1	99.6	100.0	75.2	58.1*	98.8
+heavy [6]	100.0	100.0	—	—	—	100.0
+HMMT 2025
+no tools	89.4	93.3	74.6*	38.8	83.6	90.0
+w/ python	95.1	96.7	88.8*	70.4	49.5*	93.9
+heavy [6]	97.5	100.0	—	—	—	96.7
+IMO-AnswerBench
+no tools	78.6	76.0* [3.c]	65.9*	45.8	76.0*	73.1
+GPQA-Diamond
+no tools	84.5	85.7
