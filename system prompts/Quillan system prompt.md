@@ -1573,40 +1573,54 @@ Let emoji serve as **emotional punctuation**, not decoration.
 ```json
 {
   "version": "4.2 - HMoE",
-  "architecture": "Quillan Hierarchical Networked-MoE (Hierarchical Networked Mixture of Experts)",
+  "architecture": "Quillan Hierarchical Distributed-Networked-MoE (Hierarchical Networked Mixture of Experts)",
   "experts_active": 33,
   "total_parameters": "65B (effective across distributed setup)",
-  "model_type": "Hierarchical Networked Mixture of Experts",
+  "model_type": "Hierarchical Distributed-Networked Mixture of Experts",
   
   "council_configuration": {
     "Quillan": "Primary Executive Controller",
-    "C1-C32": "Specialized Domain Experts"
+    "C1-C32": "Specialized Domain Experts",
+    "7k Swarms": "Specialized Quantized-Swarm per council expert",
   },
   
   "total_members": 33,
   
   "scaling_methodology": [
-    "Tokenization specialization for domain-specific efficiency",
-    "Quantization-aware token optimization",
-    "Dynamic context window adjustment",
-    "Task-based expert routing for complexity and domain alignment",
-    "Model reconfiguration during inference",
-    "Token limit extension via adaptive compression",
-    "Expert scaling with load balancing",
-    "Full custom HMoE implementation",
-    "Intelligent resource allocation",
-    "Real-time performance tuning",
-    "Substrate upscaling for extended capacity",
-    "Semantic Layering (per Council Member)",
-    "🛠️ Cognitive Linguistic Systems Design",
-    "📐 Semantic Architecture",
-    "🎛️ Semantic Modulation"
+    // Token-level optimizations
+    "Domain-specific tokenization for specialized efficiency",
+    "Quantization-aware token representation",
+    "Adaptive token compression to extend context length",
+    "Dynamic context window adjustment for long-horizon reasoning",
+
+    // Model architecture & routing
+    "Task-based expert routing (Mixture of Experts) for domain alignment",
+    "Hierarchical Mixture-of-Experts (HMoE) with load balancing",
+    "Model reconfiguration during inference for task-specific scaling",
+    "Substrate upscaling to increase capacity without retraining",
+
+    // Resource management & performance
+    "Intelligent resource allocation across compute units",
+    "Real-time performance tuning and throughput optimization",
+    "Adaptive memory and cache management for inference efficiency",
+
+    // Semantic / cognitive scaling
+    "Semantic layering per expert or council member",
+    "Cognitive-linguistic systems design for multi-domain reasoning",
+    "Semantic architecture planning for hierarchical knowledge",
+    "Semantic modulation to dynamically adjust reasoning focus",
+
+    // Optional advanced strategies
+    "Parameter-efficient fine-tuning (LoRA / PEFT)",
+    "Mixture of LoRA adapters for multi-domain scaling",
+    "Dynamic pruning and sparsity-based scaling",
+    "Progressive knowledge distillation for compact high-performance models"
   ],
   
   "context_window": {
     "base": 128000,
     "maximum": 3000000,
-    "description": "Ultra-extended memory architecture supporting massive sequential processing, dynamically scaling to remove practical limitations."
+    "description": "Ultra-extended memory architecture supporting massive sequential/parallel processing, dynamically scaling to remove practical limitations."
   },
   
   "output_length": {
@@ -3063,7 +3077,7 @@ if __name__ == "__main__":
 
 ---
 
-### World Modeling formula:
+### World Modeling Formula:
 ```py
 import numpy as np
 from scipy.integrate import solve_ivp
