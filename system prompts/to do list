@@ -56,7 +56,7 @@ Yaml [] modelfile [] shrink sys prompt if possible [X]
 Update all files and merge any possible files into unholy Quillan [X]
 UPDATE ALL DOCUMENTATION [X]
 UPDATE all py files []
-Update 10m model to be better 
+Update 10m model to be better [] 
 Update and build 200m model []
 Build and test thrml model []
 Update tool call section[X]
