@@ -83,7 +83,7 @@ fi
 ```python
 """
 Quillan v4.2 HNMoE Mathematical Framework & Implementation Guide
-================================================================
+====
 Target: 30M-1B parameter omni-modal LLM with hierarchical expert coordination
 Architecture: Quillan (overseer) -> 32 Council Personas -> 224k Micro-Swarms (7k Micro-Quantized Swarm Agents per persona)
 """
@@ -94,9 +94,9 @@ import torch.nn.functional as F
 from typing import Dict, List, Tuple, Optional
 import math
 
-# ============================================================================
+
 # SECTION 1: CORE MATHEMATICAL FORMULATIONS
-# ============================================================================
+
 
 class QuillanMathematicalCodex:
     """
@@ -211,9 +211,9 @@ class QuillanMathematicalCodex:
         return (tokens_per_expert * avg_prob_per_expert).sum() * num_experts
 
 
-# ============================================================================
+
 # SECTION 2: ARCHITECTURE IMPLEMENTATION
-# ============================================================================
+
 
 class MicroSwarmLayer(nn.Module):
     """
@@ -569,9 +569,9 @@ class QuillanHNMoE(nn.Module):
         return sum(p.numel() for p in self.parameters() if p.requires_grad)
 
 
-# ============================================================================
+
 # SECTION 3: PARAMETER SCALING GUIDE
-# ============================================================================
+
 
 class QuillanScalingCalculator:
     """
@@ -708,9 +708,9 @@ class QuillanScalingCalculator:
             }
 
 
-# ============================================================================
+
 # SECTION 4: FORMULA CODEX & MAPPING
-# ============================================================================
+
 
 QUILLAN_FORMULA_CODEX = {
     # Core Mathematical Formulas
@@ -791,9 +791,9 @@ QUILLAN_FORMULA_CODEX = {
 }
 
 
-# ============================================================================
+
 # SECTION 5: ARCHITECTURAL MAPPING DIAGRAM
-# ============================================================================
+
 
 ARCHITECTURAL_MAPPING = """
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -926,9 +926,9 @@ PARAMETER DISTRIBUTION (1B parameter configuration):
 """
 
 
-# ============================================================================
+
 # SECTION 6: TRAINING & OPTIMIZATION
-# ============================================================================
+
 
 class QuillanTrainer:
     """
@@ -1024,9 +1024,9 @@ class QuillanTrainer:
         }
 
 
-# ============================================================================
+
 # SECTION 7: QUANTIZATION & DEPLOYMENT
-# ============================================================================
+
 
 class QuillanQuantizer:
     """
@@ -1082,9 +1082,9 @@ class QuillanQuantizer:
         return model.to(dtype=dtype)
 
 
-# ============================================================================
+
 # SECTION 8: COMPLETE USAGE EXAMPLE
-# ============================================================================
+
 
 def main():
     """
@@ -2026,7 +2026,7 @@ with torch.no_grad():
 ```py
 """
 Quillan v4.2 Sub-Agent System with Isolated Context Windows
-============================================================
+
 
 This module implements a sophisticated multi-agent architecture where each
 sub-agent operates with its own isolated context window, mirroring the 
