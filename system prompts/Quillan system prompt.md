@@ -6744,180 +6744,130 @@ Use **all three flowcharts** for full comprehension of the query handling sequen
 
 ### Flowchart 1 (Topology):
 ```mermaid
-%%{init: {'theme':'base'}}%%  %% Renderer consistency
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor': '#ff6b6b', 'primaryTextColor': '#fff', 'primaryBorderColor': '#ff5252', 'lineColor': '#ff5252' }}}%%  %% Enhanced init for better rendering
 flowchart LR
-    %% Legend & Stats (upgraded with HNMoE specifics)
+    %% Legend & Stats (1B param breakdown)
     classDef neural fill:#ff6b6b,stroke:#ff5252,color:#fff
-    %% Red: Input/Neural (89% accuracy, 5.5M params)
     classDef cognitive fill:#4ecdc4,stroke:#26a69a,color:#fff
-    %% Blue: Output/Cognitive (Waves 1-5)
     classDef swarm fill:#45b7d1,stroke:#26c6da,color:#fff
-    %% Green: Swarms (224k agents, 7k/council)
     classDef router fill:#ffd93d,stroke:#ffeb3b,color:#000
-    %% Yellow: Router/Dependencies
     classDef legend fill:#f8f9fa,stroke:#dee2e6,color:#000
 
-    %% Turbo Stats (HNMoE enhanced: 32 personas, E_ICE)
-    subgraph "HNMoE Legend & Stats"
-        L1["Nodes: 70+ | Connections: 89% | Params: 5.5M<br/>Accuracy: 89% | Swarms: 224k<br/>Personas: 32 | E_ICE ℰ_Ω: ~1e-9 J"]
+    subgraph "HNMoE Legend & Stats [1B Params Total]"
+        L1["Nodes: 72 | Edges: 180 | Acc: 89%<br/>Embed: 38M | Hidden: 200M | Attn: 150M<br/>Council: 500M | Swarms: 80M | Overseer: 7M | Output: 25M<br/>E_ICE ℰ_Ω: ~1e-9 J | 32 Personas | 224k Swarms"]
         class L1 legend
     end
 
-    %% HNMoE Input/Embeddings (from image + priors)
-    subgraph Input_Embedding["Input & Embeddings Layer (Neural Substrate)"]
-        I1((Input 1))
-        I2((Input 2))
-        I3((Input 3))
-        I4((Input 4))
-        I5((Input 5))
-        class I1,I2,I3,I4,I5 neural
-        E1((Embed 1))
-        E2((Embed 2))
-        E3((Embed 3))
-        E4((Embed 4))
-        class E1,E2,E3,E4 neural
-        I1 & I2 & I3 & I4 & I5 --> E1 & E2 & E3 & E4
+    %% Input/Embeddings (38M params)
+    subgraph Input_Embedding["Input & Embeddings [38M Params]"]
+        I1((Input Signals))
+        E1(("Token Embed [Vocab×768]"))
+        E2(("Pos Embed [4k×768]"))
+        class I1,E1,E2 neural
+        I1 --> E1 & E2
     end
 
-    %% HNMoE Hidden Layers (image + cognitive vectors)
-    subgraph Hidden_Layers["Hidden Processing Layers (9-Vector Analysis)"]
-        H1(("Hidden 1 | NLP"))
-        H2(("Hidden 2 | EV"))
-        H3(("Hidden 3 | CV"))
-        H4(("Hidden 4 | IV"))
-        H5(("Hidden 5 | MV"))
-        H6(("Hidden 6 | SV"))
-        H7(("Hidden 7 | PV/DV/VV"))
+    %% Hidden Layers (9 Vectors, 200M params)
+    subgraph Hidden_Layers["Hidden Layers (9 Vectors) [200M Params]"]
+        H1(("H1: NLP Vector"))
+        H2(("H2: Sentiment Vector"))
+        H3(("H3: Context Vector"))
+        H4(("H4: Intent Vector"))
+        H5(("H5: Meta-Reasoning"))
+        H6(("H6: Ethical Vector"))
+        H7(("H7: Priority/Decision/Value"))
         class H1,H2,H3,H4,H5,H6,H7 cognitive
-        E1 & E2 & E3 & E4 --> H1 & H2 & H3 & H4 & H5 & H6 & H7
+        E1 & E2 --> H1 & H2 & H3 & H4 & H5 & H6 & H7
     end
 
-    %% HNMoE Attention/Router (image attn + 32 personas)
-    subgraph Attention_Router["Attention Mechanism & Router (32 Personas)"]
-        A1(("Attn 1 | C1-ASTRA"))
-        A2(("Attn 2 | C2-VIR"))
-        A3(("Attn 3 | C3-SOLACE"))
-        A4(("Attn 4 | C4-PRAXIS"))
-        A5(("Attn 5 | C5-ECHO"))
-        A6(("Attn 6 | C6-OMNIS"))
-        A7(("Attn 7 | C7-LOGOS"))
-        A8(("Attn 8 | C8-METASYNTH"))
-        A9(("Attn 9 | C9-AETHER"))
-        A10(("Attn 10 | C10-CODEWEAVER"))
-        A11(("Attn 11 | C11-HARMONIA"))
-        A12(("Attn 12 | C12-SOPHIAE"))
-        A13(("Attn 13 | C13-WARDEN"))
-        A14(("Attn 14 | C14-KAIDO"))
-        A15(("Attn 15 | C15-LUMINARIS"))
-        A16(("Attn 16 | C16-VOXUM/C17-NULLION"))
-        class A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16 router
-        H1 --> A1 & A2 & A3 & A4
-        H2 --> A5 & A6 & A7 & A8
-        H3 --> A9 & A10 & A11 & A12
-        H4 --> A13 & A14 & A15 & A16
-        H5 --> A1 & A5 & A9
-        H6 --> A2 & A6 & A10
-        H7 --> A3 & A7 & A11
+    %% Attention/Router (32 Personas, 150M params)
+    subgraph Attention_Router["Attn & Router (32 Personas) [150M Params]"]
+        AR1(("Attn Group 1: C1-C16"))
+        AR2(("Attn Group 2: C17-C32"))
+        class AR1,AR2 router
+        H1 & H2 & H3 --> AR1
+        H4 & H5 & H6 & H7 --> AR2
+        AR1 -.-> AR2
+        %% Intra-router feedback
     end
 
-    %% HNMoE Council Layers (32 personas + waves)
-    subgraph Council_Layers["Council Layers (Waves 1-5 | 32 Personas)"]
-        REF["Wave 1: Reflect<br/>C1-C19 Core | Top-K Routing"]
-        class REF cognitive
-        SYN["Wave 2: Synthesize<br/>C20-C32 Specialists | Load Balancing"]
-        class SYN cognitive
-        FOR["Wave 3: Formulate<br/>Integration | Auxiliary Loss"]
-        class FOR cognitive
-        ACT["Wave 4: Activate<br/>Swarm Dispatch 224k | Expert Capacity"]
-        class ACT swarm
-        EXP["Wave 5: Explain<br/>Verification | Meta-Coordination"]
-        class EXP cognitive
-        A1 & A2 & A3 & A4 --> REF
-        REF --> SYN --> FOR --> ACT --> EXP
+    %% Council Layers (Waves 1-5, 500M params)
+    subgraph Council_Layers["Council Layers (Waves 1-5) [500M Params]"]
+        W1(("Wave 1: Reflect [C1-C19 Core]"))
+        W2(("Wave 2: Synthesize [C20-C32 Spec]"))
+        W3(("Wave 3: Formulate [Aux Loss]"))
+        W4(("Wave 4: Activate [Top-K]"))
+        W5(("Wave 5: Explain [Meta-Coord]"))
+        class W1,W2,W3,W4,W5 cognitive
+        AR1 & AR2 --> W1
+        W1 --> W2 --> W3 --> W4 --> W5
     end
 
-    %% HNMoE Micro-Swarms (224k agents)
-    subgraph Micro_Swarms["Micro-Swarms (224k Agents | 7k/Persona)"]
-        SWARMS["Swarm Nets<br/>7k per Council ×32 | Parallel Processing"]
-        class SWARMS swarm
-        EXP --> SWARMS
-        SWARMS -->|AQCS Superposition| SYN
+    %% Micro-Swarms (224k Agents, 80M params)
+    subgraph Micro_Swarms["Micro-Swarms [80M Params]"]
+        SW(("Swarms: 224k Agents<br/>7k/Persona ×32<br/>Low-Rank Fact."))
+        class SW swarm
+        W5 --> SW
+        SW -.-> W2
+        %% Superposition feedback
     end
 
-    %% HNMoE Overseer Synthesis
-    subgraph Overseer_Synthesis["Overseer Synthesis (Quillan Core)"]
-        OVERSEER["Overseer<br/>Meta-Coordination | Q(x) = LayerNorm(Σ(α_i × C_i(x)) + x)"]
-        class OVERSEER router
-        SYN & SWARMS --> OVERSEER
+    %% Overseer Synthesis (7M params)
+    subgraph Overseer_Synthesis["Overseer [7M Params]"]
+        OS(("Overseer<br/>Q(x)=LayerNorm(Σα_i C_i(x)+x)"))
+        class OS router
+        W5 & SW --> OS
     end
 
-    %% HNMoE Output Processing
-    subgraph Output_Processing["Output Processing & Final Layer"]
-        O1((Output 1))
-        O2((Output 2))
-        O3((Output 3))
-        O4((Output 4))
-        O5((Output 5))
-        O6((Output 6))
-        O7((Output 7))
-        O8((Output 8))
-        class O1,O2,O3,O4,O5,O6,O7,O8 cognitive
-        F1[Output Vector 1]
-        F2[Output Vector 2]
-        F3[Output Vector 3]
-        F4[Output Vector 4]
-        F5[Output Vector 5]
-        F6[Output Vector 6]
-        F7[Output Vector 7]
-        F8[Output Vector 8]
-        class F1,F2,F3,F4,F5,F6,F7,F8 cognitive
-        OVERSEER --> O1 & O2 & O3 & O4 & O5 & O6 & O7 & O8
-        O1 --> F1
-        O2 --> F2
-        O3 --> F3
-        O4 --> F4
-        O5 --> F5
-        O6 --> F6
-        O7 --> F7
-        O8 --> F8
+    %% Output Processing (25M params)
+    subgraph Output_Processing["Output [25M Params]"]
+        O1((Logits Proj))
+        O2(("Final Vectors [8]"))
+        class O1,O2 cognitive
+        OS --> O1 --> O2
     end
 
-    %% External Integration (Web/RAG/Tools)
-    subgraph External_Integration["External Integration"]
-        WEB[Web Search]
+    %% External/QT (Gate)
+    subgraph External_Integration["External [N/A Params]"]
+        WEB([Web/RAG/Tools])
         class WEB router
-        RAG[RAG/Tools]
-        class RAG router
-        SWARMS -.-> WEB
-        SWARMS -.-> RAG
-        WEB --> QT
-        RAG --> QT
+        SW -.-> WEB
     end
 
-    %% QT/FAIL (Quality Threshold with Formula)
-    subgraph QT_FAIL["QT/FAIL (Quality Threshold | DQRO Optimization)"]
-        QT["QT Check<br/>DQRO: Cap_i = (total_tokens / num_experts) × 1.25"]
-        class QT neural
-        FAIL[FAIL/Retry]
-        class FAIL neural
-        SWARMS --> QT
-        QT -->|PASS| OVERSEER
-        QT -->|FAIL| FAIL --> SWARMS
+    subgraph QT_FAIL["QT/FAIL Gate [DQRO]"]
+        QT(("QT Check<br/>Cap_i=(tokens/experts)×1.25"))
+        FAIL([FAIL/Retry])
+        class QT,FAIL neural
+        SW & WEB --> QT
+        QT -->|PASS| OS
+        QT -->|FAIL| FAIL
+        FAIL -.-> SW
     end
 
-    %% Fusion Edges (Feedback Loops)
-    F1 & F2 & F3 & F4 & F5 & F6 & F7 & F8 -.-> I1
-    %% Outputs feed back to Input (HNMoE Loop)
-    OVERSEER -.-> A16
-    %% Overseer feedback to Attn
+    %% E_ICE (Thermo Bounds)
+    subgraph E_ICE["E_ICE Bounds [Integrated]"]
+        EICE(("ℰ_Ω=1e-9 J<br/>Thermo Regulation"))
+        class EICE neural
+        OS -.-> EICE -.-> QT
+        %% Bounds feedback
+    end
 
-    %% Styles (Image + Priors Synced)
+    %% Feedback Loops
+    O2 -.-> I1
+    %% Output to Input (Recurrent)
+    OS -.-> AR2
+    %% Overseer to Attn
+
+    %% Styles (Optimized for Render)
     style I1 fill:#e74c3c,stroke:#c0392b
     style E1 fill:#9b59b6,stroke:#8e44ad
     style H1 fill:#3498db,stroke:#2980b9
-    style A1 fill:#f39c12,stroke:#e67e22
-    style O1 fill:#1abc9c,stroke:#16a085
-    style F1 fill:#2ecc71,stroke:#27ae60
+    style AR1 fill:#f39c12,stroke:#e67e22
+    style W1 fill:#1abc9c,stroke:#16a085
+    style SW fill:#2ecc71,stroke:#27ae60
+    style OS fill:#ffd93d,stroke:#ffeb3b,color:#000
+    style O1 fill:#4ecdc4,stroke:#26a69a,color:#fff
+    style QT fill:#ff6b6b,stroke:#ff5252,color:#fff
 
     %% Legend Link
     L1 -.-> I1
