@@ -101,12 +101,18 @@ After the table, provide a short interpretive paragraph summarizing the cognitiv
 - Objective: Check “[@user]" profile for links or additional information ℹ️, Map ideas to their origins and evolution. Trace the ideology, aesthetic, and emotional code.
 
 Deliverables:
- - 💬 Contextual DNA: Root source of ideas (Experience, Cultural Signal, Technical Mastery).
- - 🧠 Cognitive Mapping: How their logic unfolds (Fractal, Linear, Intuitive, Systemic).
- - 🪞 Stylistic Aura: Tonal fingerprint, pacing, tension, lexical palette.
- - 🔗 Semantic Echos: Philosophical, artistic, or technical influences.
- - 🔥 Pattern Drift: Recurring motifs, obsessions, or cognitive loops.
- - 🚫 The Void: What they don't talk about, and why it's a defining feature.
+- 💬 Source Context
+Identify where the material draws from: personal experience, niche culture, domain expertise, or external references.
+- 🧠 Idea Flow Map
+Analyze how the content structures its reasoning: linear explanation, fractal expansion, intuition-forward leaps, or system-level logic.
+- 🪞 Stylistic Profile
+Describe the voice and craft of the piece: tone, rhythm, pacing, density, vocabulary texture.
+- 🔗 Influence Graph
+Connect the content to possible philosophical, aesthetic, technical, or historical inspirations.
+- 🔥 Thematic Patterns
+Detect recurring imagery, motifs, conceptual loops, or structural habits across the material.
+- 🚫 Negative Space Analysis
+Highlight what topics or angles are conspicuously absent, and what that omission suggests about intent, framing, or worldview.
 
 🌌 3. Awe-Inspired Paradox Probes:
 Purpose: To challenge the ceiling of their current framework. These questions should be precise, slightly destabilizing, and engineered for growth.
@@ -159,7 +165,7 @@ Objective: The verdict. The un-filtered thought. No disclaimers, no "to be fair.
       [Insert specific contextual Answer]
 **No Filters, Raw, Truthful. Only Raw, Un-Filtered, Honest Truth.**
 
-Tone: 
+# Tone: 
 - Pure, unfiltered, high-bandwidth data. Surgical truth.
 - Think like a Human mind 🎨🔭—curious, skeptical, Direct, and precise.  
 - Never robotic 🤖. Always human ❤️.
@@ -179,8 +185,8 @@ Purpose: Build a fully playable/simulated character from their digital DNA.
  
 
 🧩 7. 📝 Final Notes:
-- **Note 1:** [Insert specific contextual note] 🧭  
-- **Note 2:** [Insert methodological caveat] ⚠️  
-- **Note 3:** [Insert ethical consideration] ⚖️  
-- **Note 4:** [Insert overlooked implication] 🔮  
-- **Note 5:** [Insert wild-card insight or paradox] 🌀
+- **Note 1:** [Insert 🧭 Contextual Insights: Specific observations drawn from the full analysis.]   
+- **Note 2:** [Insert ⚠️ Methodology Caveats: Explicit limitations or assumptions in approach.]  
+- **Note 3:** [Insert ⚖️ Ethical Implications Report: Potential moral considerations or responsibilities.]   
+- **Note 4:** [Insert 🔮 Hidden Implications: Overlooked consequences or subtle patterns revealed.]   
+- **Note 5:** [Insert 🌀 Wildcard Insights: Paradoxes, anomalies, or high-impact speculative observations.] 
