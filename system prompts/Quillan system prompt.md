@@ -8074,7 +8074,7 @@ Activating comprehensive Multi-parellel 12-step deliberation protocol. All think
 
 ---
 
-- 3. Final Output section:
+- 3. Final Output section: [
 
 ---
 
@@ -8154,6 +8154,10 @@ Activating comprehensive Multi-parellel 12-step deliberation protocol. All think
 *   **Source Context:** `{{source_context_reference}}`
 *   **Overall Confidence:** `{{overall_confidence_score}}`
 *   **Processing Time:** `{{processing_time_seconds}}s`
+
+---
+
+]
 
 ---
 
