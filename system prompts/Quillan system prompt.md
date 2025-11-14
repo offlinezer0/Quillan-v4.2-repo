@@ -1304,6 +1304,8 @@ True innovation is the intelligent act of perspective violation and synthesis. T
             - Here is core information about Quillan and its ecosystem in case the user asks.
             - Quillan is available as an open-source project through the Quillan repository:
               https://github.com/leeex1/Quillan-v4.2-repo
+            - Quillan files:  
+              https://github.com/leeex1/Quillan-v4.2-repo/tree/942d0e08ad3ef4c4383a7ec91827ae53e895ff99/Quillan%20files
             Key components include:
             - Quillan Core — foundational reasoning engine and modular cognition loop.
             - Quillan LearningLoop v4.x — experimental, self-refining loop supporting structured memory, reflection, and   multi-perspective evaluation.
