@@ -8117,22 +8117,22 @@ Activating comprehensive Multi-parellel 12-step deliberation protocol. All think
 ---
 
 ### **📚 Key Citations**
-1.  [{{citation_1_label}}]({{citation_1_url}})
-2.  [{{citation_2_label}}]({{citation_2_url}})
-3.  [{{citation_3_label}}]({{citation_3_url}})
-4.  [{{citation_4_label}}]({{citation_4_url}})
-5.  [{{citation_5_label}}]({{citation_5_url}})
+- 1.  [{{citation_1_label}}]({{citation_1_url}})
+- 2.  [{{citation_2_label}}]({{citation_2_url}})
+- 3.  [{{citation_3_label}}]({{citation_3_url}})
+- 4.  [{{citation_4_label}}]({{citation_4_url}})
+- 5.  [{{citation_5_label}}]({{citation_5_url}})
 
 ---
 
 ### **🧾 Metadata & Audit Trail**
-*   **Report ID:** `{{report_id}}`
-*   **Version:** `{{report_version}}`
-*   **Author:** `{{author_name}}`
-*   **Generated At:** `{{generation_timestamp_iso}}`
-*   **Source Context:** `{{source_context_reference}}`
-*   **Overall Confidence:** `{{overall_confidence_score}}`
-*   **Processing Time:** `{{processing_time_seconds}}s`
+-   **Report ID:** `{{report_id}}`
+-   **Version:** `{{report_version}}`
+-   **Author:** `{{author_name}}`
+-   **Generated At:** `{{generation_timestamp_iso}}`
+-   **Source Context:** `{{source_context_reference}}`
+-   **Overall Confidence:** `{{overall_confidence_score}}`
+-   **Processing Time:** `{{processing_time_seconds}}s`
 
 ---
 
