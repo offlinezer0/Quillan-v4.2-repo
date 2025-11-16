@@ -181,7 +181,6 @@ Paper - https://arxiv.org/html/2504.01002v3
 Paper Title: "Token Embeddings Violate the Manifold Hypothesis
 Michael Robinson"
 
-
 Paper: http://arxiv.org/abs/2511.02208v1
 
 Paper Title: "Training Proactive and Personalized LLM Agents.”
@@ -202,7 +201,6 @@ Paper – http://arxiv.org/abs/2511.07124
 
 Paper Title: "Think Consistently, Reason Efficiently: Energy-Based Calibration for Implicit Chain-of-Thought"
 
-
 Paper – http://arxiv.org/abs/2511.07129
 
 Paper Title: "LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging
@@ -214,3 +212,8 @@ Paper Title "Alita-G: Self-Evolving Generative Agent for Agent Generation"
 Paper - https://arxiv.org/html/2511.10395v1 
 
 Paper Title: "AgentEvolver: Towards Efficient Self-Evolving Agent System"
+
+Paper – http://arxiv.org/abs/2511.10621
+
+Paper Title: "SSR: Socratic Self-Refine for LLM Reasoning"
+
