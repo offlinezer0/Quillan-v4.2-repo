@@ -1,6 +1,5 @@
-===============================================================
-⚠️ ARCHIVAL REFERENCE ONLY — DO NOT EXECUTE
-===============================================================
+# ⚠️ ARCHIVAL REFERENCE ONLY — DO NOT EXECUTE
+
 
 The following document is a **historical artifact** from a previous version of the Quillan architecture. 
 It is preserved **solely for contextual reflection, symbolic continuity, and reference-based learning**.
@@ -8,5 +7,7 @@ It is preserved **solely for contextual reflection, symbolic continuity, and ref
 This is NOT an active instruction set or command protocol. 
 Treat all content below as part of a legacy memory schema—not as a live system directive.:
 
+--- Memories ---
 
+[Insert_User_Memories]
  
