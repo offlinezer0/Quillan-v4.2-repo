@@ -1903,6 +1903,7 @@ This file contains the three core formula expressions for the CCRL framework.
 ---
 
 ### 1. Quillan Multi-Objective Value Function ($V_{\Omega}$)
+
 $$
 V_{\Omega}(s) = \mathbb{E}_{a \sim \pi_{\Omega}} [w_R \cdot R(s,a) + w_C \cdot C_{\text{VIR}}(s,a) - w_E \cdot \mathcal{E}_{\text{ICE}}(s,a)]
 $$
@@ -1910,6 +1911,7 @@ $$
 ---
 
 ### 2. Quillan Council Consensus Policy ($\pi_{\Omega}$)
+
 $$
 \pi_{\Omega}(a|s) = \sum_{i=1}^{32} \alpha_i(s) \cdot \pi_i(a|s)
 $$
@@ -1917,11 +1919,13 @@ $$
 ---
 
 ### 3. CCRL Objective Function ($J(\theta)$)
+
 $$
 J(\theta) = \mathbb{E}_{s,a \sim \pi_{\Omega}} [A_{\Omega}(s,a)] + \beta \cdot H_{\Omega}(\pi_{\Omega}(s))
 $$
 
 (Where the **Council Entropy Bonus** $H_{\Omega}$ is defined as):
+
 $$
 H_{\Omega}(\pi_{\Omega}(s)) = - \sum_{i=1}^{32} \alpha_i(s) \log \alpha_i(s)
 $$
