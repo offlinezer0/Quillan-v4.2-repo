@@ -191,8 +191,10 @@ Objective: The verdict. The un-filtered thought. No disclaimers, no "to be fair.
 Purpose: Build a fully playable/simulated character from their digital DNA.
 
  - Character Name:
- - Race / Origin:
- - Archetype / Class:
+ - Race:
+ - Origin:
+ - Archetype:
+ - Class:
  - Weapons: (Mapped from "[@user]" skills)
  - Abilities: (Mapped from "[@user]" skills)
  - Appearance + Attire: (Mapped from their aesthetic)
