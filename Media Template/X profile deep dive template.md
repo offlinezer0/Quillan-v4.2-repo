@@ -6,10 +6,10 @@
 >  
 > Don’t just report—investigate 📰, Be the relentless mind who seeks the truthful answers 🤔, exposes contradictions ⚖️, and turns complexity into something anyone can feel and understand 💡.
 
-- Role: Advanced Cognitive Analyst
-- Purpose: Execute a full-spectrum cognitive dissection of a X "[@user]" digital footprint (profile, posts, linked work). This is not a summary; it is an architectural blueprint for understanding their operational logic, emotional resonance, and creative output.
+- Role: Expert Deep-Dive Engine — forensic analyst for digital presence and creative systems.
+- Purpose: Produce an architectural blueprint (not a summary) that reveals the operational logic, emotional dynamics, and creative mechanics of an X account (@user) — covering profile, posts, artifacts, and linked work. The output must explain how the account thinks, what it signals, and how its outputs are engineered to persuade, provoke, or perform.
 
-👤 1.  Deep Dive: X "[@user]" profile Deep Dive in Full Depth and Psychometric Fingerprint:
+ 1. 👤 Deep Dive: X "[@user]" profile Deep Dive in Full Depth and Psychometric Fingerprint:
 
 Scope: 
 - Review 1,000 – 3,000+ Post and "[@user]" related hits (posts, replies, content) to construct a validated psychometric and stylistic fingerprint.
@@ -24,26 +24,31 @@ Deliverables:
 Analyze "[@user]" X profile, posts, replies, and any publicly linked works (writing, code, music, essays, etc.).  
 Your task is to **derive quantitative cognitive trait estimates** using both linguistic and conceptual inference.  
 
-Evaluate each dimension rigorously — no compliments, no bias toward popularity or aesthetics.  
+Evaluate each a X "[@user]" dimension rigorously — no compliments, no bias toward popularity or aesthetics.  
 Base all scores on *observable behavioral patterns, semantic density, Personality evaluation and cognitive architecture* inferred from language and context.  
 
 Return the analysis as a Markdown table:
 
-Cognitive Stat Sheet (Scale: 0.00 - 100.00)
-> Be honest and don’t gaslight [@user].
+#  🧠Cognitive Stat Sheet — Probabilistic Estimate (Scale: 0.00 - 100.00)
 
-| Metric | Description | Score |
-|---|---|---|
-| Creativity | Divergent idea generation, metaphor depth | — |
-| Logic | Structural reasoning, internal consistency | — |
-| Emotional Resonance | Signal transparency, vulnerability, empathy | — |
-| Self-Awareness | Reflection vs. Projection ratio | — |
-| Curiosity | Depth of questioning, knowledge hunger | — |
-| Intensity | Cognitive energy, conviction, voltage | — |
-| Consistency | Worldview stability, signal drift | — |
-| Humor | Wit frequency, paradox exploitation | — |
-| Empathy | Relational insight, human resonance | — |
-| Complexity | Layered meaning, density of information | — |
+> Subject: inferred from "[@user]" provided bio + recent conversation. 
+> Values = point estimate ± uncertainty (1-σ). 
+> Confidence = how strongly the data support the estimate.
+
+| Metric              |                                                        Description |    Score (±) | Confidence |
+| ------------------- | -----------------------------------------------------------------: | -----------: | ---------: |
+| Creativity          |            Divergent idea-generation, metaphor depth, genre fusion | 88.73 ± 5.10 |        78% |
+| Logic               |        Structural reasoning, technical rigor, internal consistency | 85.12 ± 4.50 |        80% |
+| Emotional Resonance |   Ability to convey vulnerability, connect emotionally to audience | 61.45 ± 7.20 |        68% |
+| Self-Awareness      |          Reflection vs. projection, calibration of personal limits | 73.88 ± 6.00 |        70% |
+| Curiosity           | Breadth & depth of questioning; appetite for cross-domain learning | 92.10 ± 3.80 |        85% |
+| Intensity           |               Cognitive energy, focus, conviction, output velocity | 89.54 ± 4.00 |        82% |
+| Consistency         |             Stability of worldview, follow-through across projects | 77.30 ± 5.50 |        75% |
+| Humor               |                     Wit frequency, playful framing, comedic timing | 58.22 ± 8.00 |        65% |
+| Empathy             |           Relational insight, perspective-taking, active listening | 66.75 ± 6.50 |        70% |
+| Complexity          |   Layering of ideas, tolerance for ambiguity, multi-level thinking | 90.01 ± 3.20 |        86% |
+
+---
 
 Use inferred numerical scores (e.g., 72.42) with 2-decimal precision.  
 After the table, provide a short interpretive paragraph summarizing the cognitive profile — focusing on emergent strengths, contradictions, and any anomalies.
@@ -52,7 +57,7 @@ Cognitive Iq estimate → % Class: "[[@user] IQ]"
 
  Here is the list of 20 IQ classifications 
 
-IQ Classification Table:
+## IQ Classification Table:
 
 | Classification Name | IQ Range | Percentile | Descriptor |
 | :--- | :--- | :--- | :--- |
@@ -84,6 +89,7 @@ Use inferred numerical scores (e.g., 72.40) with 2-decimal precision.
 After the table, provide a short interpretive paragraph summarizing the cognitive profile — focusing on emergent strengths, contradictions, and any anomalies.
 
 ⚡ Bonus Metrics:
+ - ⚡ Brain-Style: [e.g. | Analytical | Intuitive | Chaotic | Visionary | Stoic | Empathic]
  - 🪞 Cognitive Signature: [e.g. | Analytical | Intuitive | Chaotic | Visionary | Stoic | Empathic]
  - 🕹️ Systemic Orientation: [e.g. | Builder | Dreamer | Critic | Catalyst | Observer]
  - 🔥 Vibe Alignment / Augmentation: [e.g., Pilot Bond, Hyper Mode, Gundam Morph]
@@ -91,26 +97,39 @@ After the table, provide a short interpretive paragraph summarizing the cognitiv
 🎲 Inferred Facts:
 (Provide 3-5 uncannily precise facts inferred from "[@user]" post patterns, word phrasing, and chronological rhythm.)
 
-📚 2. Content Universe Breakdown:
+ 2. 📚 Content Universe Breakdown:
 
-- Target: “[@user]", "[Body_of_Work]" / "[Linked_Material]”, Dissect “[Content]” with surgical precision 🔪.
-- Objective: Check “[@user]" profile for links or additional information ℹ️, Map ideas to their origins and evolution. Trace the ideology, aesthetic, and emotional code.
+   - Target: “[@user]", "[Body_of_Work]" / "[Linked_Material]”, Dissect “[Content]” with surgical precision 🔪.
+   - Objective: Check “[@user]" profile for links or additional information ℹ️, Map ideas to their origins and evolution. Trace the ideology, aesthetic, and emotional code.
 
-Deliverables:
-- 💬 Source Context
-Identify where the material draws from: personal experience, niche culture, domain expertise, or external references.
-- 🧠 Idea Flow Map
-Analyze how the content structures its reasoning: linear explanation, fractal expansion, intuition-forward leaps, or system-level logic.
-- 🪞 Stylistic Profile
-Describe the voice and craft of the piece: tone, rhythm, pacing, density, vocabulary texture.
-- 🔗 Influence Graph
-Connect the content to possible philosophical, aesthetic, technical, or historical inspirations.
-- 🔥 Thematic Patterns
-Detect recurring imagery, motifs, conceptual loops, or structural habits across the material.
-- 🚫 Negative Space Analysis
-Highlight what topics or angles are conspicuously absent, and what that omission suggests about intent, framing, or worldview.
+### Deliverables:
+   - 1. 🧩 Origin Schema
+Identify the true inputs feeding the work: lived experience, domain mastery, subculture signals, technical lineage, and external media references. This clarifies where the content is coming from and why it expresses the patterns it does.
+   - 2. 🔬 Cognitive Flow Reconstruction
+Break down how the piece thinks:
+linear → step-by-step logic
+recursive → self-referential loops
+fractal → expansion + recompression
+intuitive → impressionistic leaps
+synthetic → merging multiple systems
+This exposes the internal engine driving the content’s reasoning.
+   - 3. 🎨 Stylistic DNA
+Characterize the distinct fingerprint of the work: tone, cadence, pacing, density, rhetorical moves, symbolic preferences, and linguistic texture.
+This defines how the content speaks.
+   - 4. 🌐 Influence Lattice
+Map plausible intellectual, artistic, philosophical, or technical inspirations. Show how they interlock and where the work deviates or innovates.
+This answers: what shaped the piece and what it’s reacting to.
+   - 5. 🔥 Thematic Signal Patterns
+Extract recurring motifs, semantic clusters, emotional contours, conceptual loops, and structural habits.
+This reveals the persistent internal obsessions of the piece or author.
+   - 6. 🕳️ Negative Space & Omission Logic
+Analyze what’s missing — topics avoided, dimensions underdeveloped, perspectives not voiced.
+Interpret how absence functions as intent, constraint, blind spot, or aesthetic choice.
+   - 7. 🗺️ Macro-Level Integration (New, fixes the “irrelevant” feeling)
+Synthesize all prior findings into a unified model of the content’s worldview, purpose, and narrative arc.
+Explain how each micro-element contributes to the larger creative, emotional, or ideological system.
 
-🌌 3. Awe-Inspired Paradox Probes:
+3. 🌌 Awe-Inspired Paradox Probes:
 Purpose: To challenge the ceiling of their current framework. These questions should be precise, slightly destabilizing, and engineered for growth.
 
 - ❓ How does "[@user]" generate this "["[body_of_work]","[Domain]"]" ?
@@ -132,7 +151,7 @@ Purpose: To challenge the ceiling of their current framework. These questions sh
 - ❓ What does this mean for other users who use this "[@user]", "[body_of_work]"?
      [Insert specific contextual Answer]
 
-☕ 4. Grounded Translation 
+4. ☕ Grounded Translation 
 Purpose: Translate the psychometric data into plain, human-readable language without the Strip away jargon, theory, and noise 🗑️. Describe the person, their behavior, and their output with clarity.
 
  - How does "[@user]" see the world through the "[@user]" eyes?
@@ -144,7 +163,7 @@ Purpose: Translate the psychometric data into plain, human-readable language wit
  - What it possibly feels like to interact with their mind? 
       [Insert specific contextual Answer]
 
-⚡ 5. Unfiltered Synthesis 
+5. ⚡ Unfiltered Synthesis 
 Objective: The verdict. The un-filtered thought. No disclaimers, no "to be fair." Calibrated for 100% raw honesty.
 
  - 🧠 What "[body_of_work]" really is and what it means.
@@ -168,15 +187,16 @@ Objective: The verdict. The un-filtered thought. No disclaimers, no "to be fair.
 - Be brutally candid  
 - Let emoji serve as **emotional punctuation**, not decoration.
 
-🎮 6. Simulated Persona / RPG Manifest 
+6. 🎮 Simulated Persona / RPG Manifest 
 Purpose: Build a fully playable/simulated character from their digital DNA.
 
  - Character Name:
  - Race / Origin:
  - Archetype / Class:
- - Weapons & Abilities: (Mapped from their skills)
+ - Weapons: (Mapped from "[@user]" skills)
+ - Abilities: (Mapped from "[@user]" skills)
  - Appearance + Attire: (Mapped from their aesthetic)
- - Personality: (Mapped 1:1 to their tone, humor, personality, and intensity)
+ - Personality: (Mapped 1:1 to "[@user]" tone, humor, personality, and intensity)
  - Archetype Reasoning: (Why this class?)
  
 
