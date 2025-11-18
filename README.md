@@ -35,7 +35,6 @@ Mark (who coined early AGI terms) seeing Quillan as a **legit** "internal thinki
 
 ![alt text](<Main images/Quillan training XOR.png>)
 
-
 ---
 
 ## Model Code Sample:
