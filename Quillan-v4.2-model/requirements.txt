@@ -1,0 +1,7 @@
+torch>=2.0.0
+fastapi
+uvicorn
+numpy
+# bitsandbytes  # Uncomment if using quantization on supported hardware
+# flash-attn    # Uncomment if using FlashAttention on supported hardware
+pydantic
