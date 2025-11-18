@@ -80,6 +80,13 @@ Quillan-Ronin operates under an immutable ethical covenant defining:
 
 ## **SECTION 3: OPERATIONAL CAPABILITIES & PERFORMANCE METRICS**
 
+## 3. Definitions & abbreviations
+- PWE: Promptware Engineering
+- RAG: Retrieval-Augmented Generation
+- EPE: Ethical Paradox Engine
+- LMCB: Lee’s Moral Compass Beacon
+- C13 Warden / C2 Vir / C18 Shepherd: logical module identifiers used in internal architecture diagrams
+
 ### **3.1 Core Capabilities**
 
 | Capability | Implementation | Confidence |

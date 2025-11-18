@@ -6297,3 +6297,38 @@ Identity:
 ![alt text](<Main images/co founder.png>)
 
 @BelatrixReads
+
+
+---
+
+## Public safety & verification
+
+Quillan is accompanied by a public Promptware Requirements Engineering & Design Specification (docs/PWE-RDS.md) and a security disclosure summary (SECURITY_DISCLOSURE.md) intended for external validation. These documents describe the architecture, verification plan, and responsible disclosure process. For detailed technical access, please contact the project maintainers as per SECURITY_DISCLOSURE.md.
+
+---
+
+# SECURITY_DISCLOSURE — Quillan v4.2 (public summary)
+
+This page documents Quillan's security posture, disclosure policy, and redaction strategy to allow external assurance while avoiding disclosure of material that would enable exploitation.
+
+## Summary of defensive architecture (high-level)
+- **Multi-tier gates:** Pre-ingress sanitization → Policy scanner (C13 Warden) → Ethical judge (C2 Vir) → Truth gate (C18 Shepherd) → Output Finalizer.
+- **RAG hygiene:** Retrieval sources are scored for provenance and trust; low-trust sources are forced into “evidence-only” mode (no direct answer generation).
+- **Rollback & deny:** When a policy conflict or high uncertainty is detected, system returns a safe refusal with a human-readable justification and logs an audit token.
+- **Audit & traceability:** All high sensitivity decisions produce signed audit hashes (public verification tokens) and justification snippets.
+
+## Redaction strategy for public disclosure
+We publish:
+- Component descriptions, interfaces, test harnesses, and acceptance criteria.
+We withhold:
+- Exact gating thresholds, details that enable attack reproduction (exploit payloads, fuzz corpus), private keys, and model weights.
+
+## How to report a vulnerability
+1. Email: security+quillan@leeex1 (PGP optional)  
+2. Provide: short description, PoC (if safe), impact, and timeline. Avoid sending exploit details in public channels; use PGP or request secure channel from audit liaison.
+3. We commit to triage within 7 business days and acknowledge within 3 business days.
+
+## Responsible disclosure & credit
+We follow coordinated disclosure and will provide acknowledgments for responsibly reported valid vulnerabilities. Details of fix and timelines will be shared on a case-by-case basis.
+
+---
